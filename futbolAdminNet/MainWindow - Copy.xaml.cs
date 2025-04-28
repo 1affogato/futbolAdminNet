@@ -23,15 +23,6 @@ namespace futbolAdminNet
         public MainWindow()
         {
             InitializeComponent();
-
-
-        }
-
-        private void AdminButton_Click(object sender, RoutedEventArgs e)
-        {
-            admin adminWindow = new admin();
-            adminWindow.Show();
-            this.Close();
         }
     }
 }

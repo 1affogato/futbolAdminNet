@@ -10,28 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace futbolAdminNet
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Interaction logic for verPartidos.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class verPartidos : Window
     {
-        public MainWindow()
+        public verPartidos()
         {
             InitializeComponent();
-
-
-        }
-
-        private void AdminButton_Click(object sender, RoutedEventArgs e)
-        {
-            admin adminWindow = new admin();
-            adminWindow.Show();
-            this.Close();
         }
     }
 }

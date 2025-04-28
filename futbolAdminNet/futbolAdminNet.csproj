@@ -55,11 +55,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="agregarCalendarizacion.xaml.cs">
+      <DependentUpon>agregarCalendarizacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="eliminarCalendarizacion.xaml.cs">
+      <DependentUpon>eliminarCalendarizacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="gestionarCatalogos.xaml.cs">
+      <DependentUpon>gestionarCatalogos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="verPartidos.xaml.cs">
+      <DependentUpon>verPartidos.xaml</DependentUpon>
+    </Compile>
     <Page Include="..\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <Link>MainWindow.xaml</Link>
     </Page>
+    <Compile Include="admin.xaml.cs">
+      <DependentUpon>admin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -69,8 +84,35 @@
       <SubType>Code</SubType>
       <Link>MainWindow.xaml.cs</Link>
     </Compile>
+    <Page Include="admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="agregarCalendarizacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="eliminarCalendarizacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gestionarCatalogos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="verPartidos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="login.xaml.cs">
+      <DependentUpon>login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -95,6 +137,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\balon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
