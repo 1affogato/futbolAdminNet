@@ -55,6 +55,72 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Calendarizacion\CalendarizacionAgregar.xaml.cs">
+      <DependentUpon>CalendarizacionAgregar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Calendarizacion\CalendarizacionConsulta.xaml.cs">
+      <DependentUpon>CalendarizacionConsulta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crud\CatalogosCrudWindow.xaml.cs">
+      <DependentUpon>CatalogosCrudWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crud\Equipo\AgregarJugadorAEquipo.xaml.cs">
+      <DependentUpon>AgregarJugadorAEquipo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crud\Equipo\ConsultarEquipoWindow.xaml.cs">
+      <DependentUpon>ConsultarEquipoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crud\Equipo\CrearEquipoWindow.xaml.cs">
+      <DependentUpon>CrearEquipoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crud\Equipo\CrudEquipoWIndow.xaml.cs">
+      <DependentUpon>CrudEquipoWIndow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crud\Equipo\EliminarEquipoWindow.xaml.cs">
+      <DependentUpon>EliminarEquipoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crud\Equipo\SeleccionarJugadorExistenteWindow.xaml.cs">
+      <DependentUpon>SeleccionarJugadorExistenteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crud\Jugador\ConsultarJugadorWindow.xaml.cs">
+      <DependentUpon>ConsultarJugadorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crud\Jugador\CrearJugadorWindow.xaml.cs">
+      <DependentUpon>CrearJugadorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crud\Jugador\CrudJugadorWindow.xaml.cs">
+      <DependentUpon>CrudJugadorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crud\Jugador\EliminarJugadorWindow.xaml.cs">
+      <DependentUpon>EliminarJugadorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crud\Jugador\ModificarJugadorWindow.xaml.cs">
+      <DependentUpon>ModificarJugadorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VaciarPartidos\AgregarEventoWindow.xaml.cs">
+      <DependentUpon>AgregarEventoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VaciarPartidos\SeleccionarJugadorWindow.xaml.cs">
+      <DependentUpon>SeleccionarJugadorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VaciarPartidos\VaciarPartidoWindow.xaml.cs">
+      <DependentUpon>VaciarPartidoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Visitantes\ConsultarEquiposWindow.xaml.cs">
+      <DependentUpon>ConsultarEquiposWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Visitantes\ConsultarResultadosWindow.xaml.cs">
+      <DependentUpon>ConsultarResultadosWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Visitantes\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +133,94 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Calendarizacion\CalendarizacionAgregar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Calendarizacion\CalendarizacionConsulta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crud\CatalogosCrudWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crud\Equipo\AgregarJugadorAEquipo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crud\Equipo\ConsultarEquipoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crud\Equipo\CrearEquipoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crud\Equipo\CrudEquipoWIndow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crud\Equipo\EliminarEquipoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crud\Equipo\SeleccionarJugadorExistenteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crud\Jugador\ConsultarJugadorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crud\Jugador\CrearJugadorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crud\Jugador\CrudJugadorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crud\Jugador\EliminarJugadorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crud\Jugador\ModificarJugadorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VaciarPartidos\AgregarEventoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VaciarPartidos\SeleccionarJugadorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VaciarPartidos\VaciarPartidoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Visitantes\ConsultarEquiposWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Visitantes\ConsultarResultadosWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Visitantes\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -93,6 +247,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CustomControls\" />
+    <Folder Include="Model\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="View\Componentes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\balon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
