@@ -1,3 +1,6 @@
+## Construir BD
+Para que funcione el programa se debe contar ya con la base de datos creada, para esto existe un archivo que contiene el codigo SQL para construir la BD. Se encuentra en futbolAdmin -> sqls -> FUTBOLADMIN.sql
+
 ## ERROR EN LA CLASE "RepositoryBase": NO se encuentra el namespace
 ### Solucion:
 Desinstalar los paquetes de oracle:
