@@ -110,7 +110,10 @@
     <Compile Include="Model\JugadorModel.cs" />
     <Compile Include="Model\PartidoModel.cs" />
     <Compile Include="Model\TipoEventoModel.cs" />
+    <Compile Include="Repositories\ICrud.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\RepositoryEvento.cs" />
+    <Compile Include="Repositories\RepositoryJugador.cs" />
     <Compile Include="View\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
@@ -319,6 +322,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\balon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FUTBOLADMIN.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
