@@ -20,5 +20,13 @@ namespace FutbolAdmin.View {
         public LoginWindow() {
             InitializeComponent();
         }
+
+        public void BtnMinimizar_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        public void BtnCerrar_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }

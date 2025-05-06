@@ -63,7 +63,7 @@
                                Grid.Column="0" 
                                VerticalAlignment="Center" 
                                Margin="10,0,0,0"/>
-                    <Button x:Name="btnMinimizar"
+                    <Button x:Name="BtnMinimizar"
                             BorderThickness="0"
                             Content="-"
                             Foreground="White"
@@ -71,7 +71,7 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             Grid.Column="1"
-                            Click="btnMinimizar_Click">
+                            Click="BtnMinimizar_Click">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#2D5A2D" />
@@ -93,7 +93,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button x:Name="btnCerrar"
+                    <Button x:Name="BtnCerrar"
                             BorderThickness="0"
                             Content="X"
                             Foreground="White"
@@ -101,7 +101,7 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             Grid.Column="2"
-                            Click="btnCerrar_Click">
+                            Click="BtnCerrar_Click">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#D22B2B" />
