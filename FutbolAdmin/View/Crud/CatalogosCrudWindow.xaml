@@ -6,7 +6,39 @@
         xmlns:local="clr-namespace:FutbolAdmin.View.Crud"
         mc:Ignorable="d"
         Title="CatalogosCrudWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="#F0F0F0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Titulo -->
+        <Label Grid.Row="0" Content="Catalogos" 
+           FontSize="28" FontWeight="Bold" 
+           HorizontalAlignment="Center" Margin="0,20"
+           Foreground="#333333"/>
+
+        <!-- Botones principales -->
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!-- Boton gestionar equipo -->
+            <Button Content="Gestionar equipo" x:Name="GestionarEquipoButton"
+                Width="250" Height="60" Margin="0,0,0,20"
+                FontSize="18"
+                Background="#333333" Foreground="White"
+                BorderThickness="0" Cursor="Hand"/>
+
+            <!-- Boton gestionar jugadores -->
+            <Button Content="Gestionar jugadores" x:Name="GestionarJugadoresButton"
+                Width="250" Height="60" Margin="0,0,0,20"
+                FontSize="18"
+                Background="#333333" Foreground="White"
+                BorderThickness="0" Cursor="Hand"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5"  Background="#aaaaaa" />
+        </StackPanel>
     </Grid>
 </Window>

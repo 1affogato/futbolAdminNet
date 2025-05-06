@@ -7,6 +7,38 @@
         mc:Ignorable="d"
         Title="ConsultarJugadorWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Título -->
+        <Label Grid.Row="0" Content="Consultar jugador" 
+   FontSize="28" FontWeight="Bold" 
+   HorizontalAlignment="Center" Margin="0,10"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+            <TextBox x:Name="SearchTextBox" Width="300" Height="30" Margin="0,0,5,0" 
+                     Padding="5" VerticalContentAlignment="Center"
+                     ToolTip="Ingrese nombre del jugador a buscar"/>
+            <Button x:Name="SearchButton" Content="Buscar" Width="90" Height="30"
+                    Background="#333333" Foreground="White" FontWeight="Bold"
+                    Cursor="Hand" Click="SearchButton_Click"/>
+        </StackPanel>
+
+        <!-- Tabla de clasificación -->
+        <DataGrid Grid.Row="2" Width="400" x:Name="PartidosDataGrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                <DataGridTextColumn Header="Edad" Binding="{Binding Edad}" Width="70"/>
+                <DataGridTextColumn Header="Equipo" Binding="{Binding Equipo}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5"  Background="#aaaaaa" />
+        </StackPanel>
     </Grid>
 </Window>

@@ -6,7 +6,45 @@
         xmlns:local="clr-namespace:FutbolAdmin.View"
         mc:Ignorable="d"
         Title="AdminWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="#F0F0F0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Titulo -->
+        <Label Grid.Row="0" Content="Administrador" 
+               FontSize="28" FontWeight="Bold" 
+               HorizontalAlignment="Center" Margin="0,20"
+               Foreground="#333333"/>
+
+        <!-- Botones principales -->
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!-- Boton calendarizacion -->
+            <Button Content="Calendarizacion" x:Name="CalendarizacionButton"
+                    Width="250" Height="60" Margin="0,0,0,20"
+                    FontSize="18"
+                    Background="#333333" Foreground="White"
+                    BorderThickness="0" Cursor="Hand"/>
+
+            <!-- Boton gestionar catalogos -->
+            <Button Content="Gestionar catalogos" x:Name="GestionarCatalogosButton"
+                    Width="250" Height="60" Margin="0,0,0,20"
+                    FontSize="18"
+                    Background="#333333" Foreground="White"
+                    BorderThickness="0" Cursor="Hand"/>
+
+            <!-- Boton vaciar pedidos -->
+            <Button Content="Vaciar partidos" x:Name="VaciarPartidoButton"
+                    Width="250" Height="60"
+                    FontSize="18"
+                    Background="#333333" Foreground="White"
+                    BorderThickness="0" Cursor="Hand"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Left" Margin="60,10">
+            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa"/>
+        </StackPanel>
     </Grid>
 </Window>

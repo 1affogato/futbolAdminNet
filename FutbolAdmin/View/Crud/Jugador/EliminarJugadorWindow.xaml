@@ -7,6 +7,30 @@
         mc:Ignorable="d"
         Title="EliminarJugadorWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Título -->
+        <Label Grid.Row="0" Content="Eliminar jugador" 
+       FontSize="28" FontWeight="Bold" 
+       HorizontalAlignment="Center" Margin="0,10"/>
+
+        <!-- Tabla de clasificación -->
+        <DataGrid Grid.Row="1" Width="400" x:Name="PartidosDataGrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                <DataGridTextColumn Header="Edad" Binding="{Binding Edad}" Width="70"/>
+                <DataGridTextColumn Header="Equipo" Binding="{Binding Equipo}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Botones -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5"  Background="#aaaaaa" />
+            <Button x:Name="EliminarButton" Content="Eliminar" Width="120" Margin="5" Background="#aaaaaa" />
+        </StackPanel>
     </Grid>
 </Window>

@@ -6,7 +6,52 @@
         xmlns:local="clr-namespace:FutbolAdmin.View.Calendarizacion"
         mc:Ignorable="d"
         Title="CalendarizacionAgregar" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Título -->
+        <Label Grid.Row="0" Content="Agregar" 
+               FontSize="24" FontWeight="Bold"
+               HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+        <!-- Tabla con campos de texto -->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Encabezados -->
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Fecha:" Margin="5" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Jornada:" Margin="5" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Local:" Margin="5" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Visitante:" Margin="5" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Goles Local:" Margin="5" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Goles Visitante:" Margin="5" VerticalAlignment="Center"/>
+
+            <!-- Campos de texto -->
+            <DatePicker Grid.Row="0" Grid.Column="1" Margin="5" Height="25"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25"/>
+            <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25"/>
+            <ComboBox Grid.Row="3" Grid.Column="1" Margin="5" Height="25"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Height="25"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Height="25"/>
+        </Grid>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Left" Margin="60,10">
+            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa"/>
+        </StackPanel>
     </Grid>
 </Window>
