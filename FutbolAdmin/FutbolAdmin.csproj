@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\EquipoModel.cs" />
+    <Compile Include="Model\EventoModel.cs" />
+    <Compile Include="Model\JugadorModel.cs" />
+    <Compile Include="Model\PartidoModel.cs" />
+    <Compile Include="Model\TipoEventoModel.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="View\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
@@ -250,8 +256,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomControls\" />
-    <Folder Include="Model\" />
-    <Folder Include="Repositories\" />
     <Folder Include="ViewModel\" />
     <Folder Include="View\Componentes\" />
   </ItemGroup>
