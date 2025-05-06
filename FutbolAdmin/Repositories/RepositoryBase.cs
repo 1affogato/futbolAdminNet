@@ -3,30 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using System.Data.SqlClient;
-using System.Data.Entity;
-
-using FutbolAdmin.Model;
+using Oracle.ManagedDataAccess.Client;
 
 namespace FutbolAdmin.Repositories {
-    internal class RepositoryBase : DbContext {
+    internal class RepositoryBase {
 
-        // La string de conexión está en App.config en la raíz del proyecto
-        public RepositoryBase() : base("name=RepositoryBase") {
-            // TODO: _connectionString = "";
+        private readonly string _connectionString;
+
+        public RepositoryBase() {
+            _connectionString = "User Id=TU_USUARIO;Password=TU_CONTRASEÑA_DEL_USUARIO;Data Source=localhost:1521/ORCLPDB1;";
         }
 
-        public DbSet<EquipoModel> Equipos { get; set; }
-        public DbSet<JugadorModel> Jugadores { get; set; }
-        public DbSet<PartidoModel> Partidos { get; set; }
-        public DbSet<EventoModel> Eventos { get; set; }
-        public DbSet<TipoEventoModel> TiposEventos { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder) {
-            modelBuilder.HasDefaultSchema("MYSCHEMA");
-
-
+        public OracleConnection GetConnection() {
+            return new OracleConnection(_connectionString);
         }
     }
 }
