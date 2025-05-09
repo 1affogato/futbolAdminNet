@@ -20,5 +20,9 @@ namespace FutbolAdmin.View.Crud.Jugador {
         public ConsultarJugadorWindow() {
             InitializeComponent();
         }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
