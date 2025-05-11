@@ -7,6 +7,63 @@
         mc:Ignorable="d"
         Title="CrudJugadorWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Titulo -->
+        <Label Grid.Row="0" Content="Jugador" 
+       FontSize="28" FontWeight="Bold" 
+       HorizontalAlignment="Center" Margin="0,20"
+       Foreground="#333333"/>
+
+        <!-- Botones principales -->
+        <Grid Grid.Row="1" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Primera columna -->
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                <!-- Botón Modificar jugador -->
+                <Button Content="Modificar jugador" x:Name="ModificarJugadorButton"
+                    Width="250" Height="60" Margin="0,0,0,20"
+                    FontSize="18" FontWeight="SemiBold"
+                    Background="#333333" Foreground="White"
+                    BorderThickness="0" Cursor="Hand"/>
+
+                <!-- Botón Eliminar jugador -->
+                <Button Content="Eliminar jugador" x:Name="EliminarJugadorButton"
+                    Width="250" Height="60"
+                    FontSize="18" FontWeight="SemiBold"
+                    Background="#333333" Foreground="White"
+                    BorderThickness="0" Cursor="Hand"/>
+            </StackPanel>
+
+            <!-- Segunda columna -->
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                <!-- Botón Crear jugador -->
+                <Button Content="Crear jugador" x:Name="CrearJugadorButton"
+                    Width="250" Height="60" Margin="0,0,0,20"
+                    FontSize="18" FontWeight="SemiBold"
+                    Background="#333333" Foreground="White"
+                    BorderThickness="0" Cursor="Hand"/>
+
+                <!-- Botón Consultar jugador -->
+                <Button Content="Consultar jugador" x:Name="ConsultarJugadorButton"
+                    Width="250" Height="60"
+                    FontSize="18" FontWeight="SemiBold"
+                    Background="#333333" Foreground="White"
+                    BorderThickness="0" Cursor="Hand"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Botón Regresar -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5"  Background="#aaaaaa" />
+        </StackPanel>
     </Grid>
 </Window>
