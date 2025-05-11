@@ -12,12 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace FutbolAdmin.View.VaciarPartidos {
+namespace FutbolAdmin.View.Crud.Jugador.ventanasSecundarias
+{
     /// <summary>
-    /// Interaction logic for SeleccionarJugadorWindow.xaml
+    /// Lógica de interacción para EditarJugadorWindow.xaml
     /// </summary>
-    public partial class SeleccionarJugadorWindow : Window {
-        public SeleccionarJugadorWindow() {
+    public partial class EditarJugadorWindow : Window
+    {
+        public EditarJugadorWindow()
+        {
             InitializeComponent();
         }
     }
