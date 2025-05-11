@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 
 namespace FutbolAdmin.Repositories {
-    internal class RepositoryBase {
+    internal abstract class RepositoryBase<T> : ICrud<T> {
 
         private readonly string _connectionString;
 
@@ -17,5 +17,11 @@ namespace FutbolAdmin.Repositories {
         public OracleConnection GetConnection() {
             return new OracleConnection(_connectionString);
         }
+
+        public abstract void Add(T entity);
+        public abstract void Delete(int id);
+        public abstract IEnumerable<T> GetAll();
+        public abstract T GetById(int id);
+        public abstract void Update(T entity);
     }
 }

@@ -7,8 +7,9 @@ using FutbolAdmin.Model;
 using Oracle.ManagedDataAccess.Client;
 
 namespace FutbolAdmin.Repositories {
-    internal class RepositoryJugador : RepositoryBase, ICrud<JugadorModel> {
-        public void Add(JugadorModel entity) {
+    internal class RepositoryJugador : RepositoryBase<JugadorModel> {
+
+        public override void Add(JugadorModel entity) {
             using (var connection = GetConnection())
             using (var command = new OracleCommand()) {
                 connection.Open();
@@ -28,7 +29,7 @@ namespace FutbolAdmin.Repositories {
             }
         }
 
-        public void Delete(int id) {
+        public override void Delete(int id) {
             using (var connection = GetConnection())
             using (var command = new OracleCommand()) {
                 connection.Open();
@@ -40,7 +41,7 @@ namespace FutbolAdmin.Repositories {
             }
         }
 
-        public IEnumerable<JugadorModel> GetAll() {
+        public override IEnumerable<JugadorModel> GetAll() {
             using (var connection = GetConnection())
             using (var command = new OracleCommand()) {
                 connection.Open();
@@ -59,7 +60,7 @@ namespace FutbolAdmin.Repositories {
             }
         }
 
-        public JugadorModel GetById(int id) {
+        public override JugadorModel GetById(int id) {
             using (var connection = GetConnection())
             using (var command = new OracleCommand()) {
                 connection.Open();
@@ -78,7 +79,7 @@ namespace FutbolAdmin.Repositories {
             }
         }
 
-        public void Update(JugadorModel entity) {
+        public override void Update(JugadorModel entity) {
             using (var connection = GetConnection())
             using (var command = new OracleCommand()) {
                 connection.Open();

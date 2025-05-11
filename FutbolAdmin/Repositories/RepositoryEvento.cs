@@ -8,8 +8,8 @@ using FutbolAdmin.Model;
 using Oracle.ManagedDataAccess.Client;
 
 namespace FutbolAdmin.Repositories {
-    internal class RepositoryEvento : RepositoryBase, ICrud<EventoModel> {
-        public void Add(EventoModel entity) {
+    internal class RepositoryEvento : RepositoryBase<EventoModel> {
+        public override void Add(EventoModel entity) {
             using (var connection = GetConnection())
             using (var command = new OracleCommand()) {
                 connection.Open();
@@ -26,7 +26,7 @@ namespace FutbolAdmin.Repositories {
             }
         }
 
-        public void Delete(int id) {
+        public override void Delete(int id) {
             using (var connection = GetConnection())
             using (var command = new OracleCommand()) {
                 connection.Open();
@@ -38,7 +38,7 @@ namespace FutbolAdmin.Repositories {
             }
         }
 
-        public IEnumerable<EventoModel> GetAll() {
+        public override IEnumerable<EventoModel> GetAll() {
             using (var connection = GetConnection())
             using (var command = new OracleCommand()) {
                 connection.Open();
@@ -57,7 +57,7 @@ namespace FutbolAdmin.Repositories {
             }
         }
 
-        public EventoModel GetById(int id) {
+        public override EventoModel GetById(int id) {
             using (var connection = GetConnection())
             using (var command = new OracleCommand()) {
                 connection.Open();
@@ -76,7 +76,7 @@ namespace FutbolAdmin.Repositories {
             }
         }
 
-        public void Update(EventoModel entity) {
+        public override void Update(EventoModel entity) {
             using (var connection = GetConnection())
             using (var command = new OracleCommand()) {
                 connection.Open();
