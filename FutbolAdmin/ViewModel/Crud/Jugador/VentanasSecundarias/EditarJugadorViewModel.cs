@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using FutbolAdmin.Model;
 using FutbolAdmin.Repositories;
 
@@ -21,10 +23,13 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador.VentanasSecundarias {
             }
         }
 
+        ICommand ModificarJugadorCommand;
+
         public EditarJugadorViewModel(JugadorModel jugador) {
             JugadorSeleccionado = jugador;
             _jugadorRepository = new RepositoryJugador();
             _equipoRepository = new RepositoryEquipo();
+            ModificarJugadorCommand = new ComandoViewModel(execute => ModificarJugador());
         }
 
         private string _nombreJugador;
@@ -34,6 +39,27 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador.VentanasSecundarias {
                 _nombreJugador = value;
                 OnPropertyChanged(nameof(NombreJugador));
             }
+        }
+
+        private int _edadJugador;
+        public int EdadJugador {
+            get { return _edadJugador; }
+            set {
+                _edadJugador = value;
+                OnPropertyChanged(nameof(EdadJugador));
+            }
+        }
+
+        public ObservableCollection<EquipoModel> Equipos {
+            get { return GetEquipos(); }
+        }
+
+        public ObservableCollection<EquipoModel> GetEquipos() {
+            return new ObservableCollection<EquipoModel>(_equipoRepository.GetAll());
+        }
+
+        public void ModificarJugador() {
+
         }
     }
 }
