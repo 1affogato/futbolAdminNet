@@ -37,5 +37,9 @@ namespace FutbolAdmin.View.Visitantes {
         {
             NavigationHelper.ShowWindowAndHideParent(new ConsultarResultadosWindow(), this);
         }
+
+        private void ClasificacionDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        }
     }
 }

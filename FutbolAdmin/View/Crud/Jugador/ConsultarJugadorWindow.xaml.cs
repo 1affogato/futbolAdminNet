@@ -24,5 +24,10 @@ namespace FutbolAdmin.View.Crud.Jugador {
         private void SearchButton_Click(object sender, RoutedEventArgs e) {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.CloseWindow(this);
+        }
     }
 }

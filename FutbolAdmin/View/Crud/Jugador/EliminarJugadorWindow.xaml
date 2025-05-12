@@ -50,7 +50,7 @@
 
                 <!-- Botón de regreso -->
                 <Button Grid.Column="0" Width="150" Height="50" HorizontalAlignment="Left"
-                        Margin="10, 40, 0, 0">
+                        Margin="10, 40, 0, 0" Click="Button_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Template">

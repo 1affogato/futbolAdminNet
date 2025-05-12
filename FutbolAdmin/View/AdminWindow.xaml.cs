@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FutbolAdmin.View.Calendarizacion;
+using FutbolAdmin.View.Crud;
+using FutbolAdmin.View.VaciarPartidos;
+using FutbolAdmin.View.Visitantes;
 
 namespace FutbolAdmin.View {
     /// <summary>
@@ -23,7 +27,22 @@ namespace FutbolAdmin.View {
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            NavigationHelper.CloseWindow(this);
+        }
+
+        private void CalendarizacionButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.ShowWindowAndHideParent(new CalendarizacionAgregar(), this);
+        }
+
+        private void GestionarCatalogosButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.ShowWindowAndHideParent(new CatalogosCrudWindow(), this);
+        }
+
+        private void VaciarPartidoButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.ShowWindowAndHideParent(new VaciarPartidoWindow(), this);
         }
     }
 }

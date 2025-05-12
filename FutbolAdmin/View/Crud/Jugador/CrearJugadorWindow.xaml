@@ -42,7 +42,7 @@
         </Grid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Width="650">
-            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5,0" Background="#aaaaaa"/>
+            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5,0" Background="#aaaaaa" Click="BackButton_Click"/>
             <Button x:Name="CrearJugadorButton" Content="Crear jugador" Width="120" Margin="400,0" Background="#aaaaaa" Height="20"/>
         </StackPanel>
     </Grid>

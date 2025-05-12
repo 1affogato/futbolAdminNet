@@ -170,6 +170,9 @@
     <Compile Include="View\Crud\Jugador\ModificarJugadorWindow.xaml.cs">
       <DependentUpon>ModificarJugadorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Crud\Jugador\ventanasSecundarias\EditarJugadorWindow.xaml.cs">
+      <DependentUpon>EditarJugadorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -260,6 +263,10 @@
     <Page Include="View\Crud\Jugador\ModificarJugadorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crud\Jugador\ventanasSecundarias\EditarJugadorWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LoginWindow.xaml">
       <SubType>Designer</SubType>

@@ -26,21 +26,21 @@
                     Width="250" Height="60" Margin="0,0,0,20"
                     FontSize="18"
                     Background="#333333" Foreground="White"
-                    BorderThickness="0" Cursor="Hand"/>
+                    BorderThickness="0" Cursor="Hand" Click="CalendarizacionButton_Click"/>
 
             <!-- Boton gestionar catalogos -->
             <Button Content="Gestionar catalogos" x:Name="GestionarCatalogosButton"
                     Width="250" Height="60" Margin="0,0,0,20"
                     FontSize="18"
                     Background="#333333" Foreground="White"
-                    BorderThickness="0" Cursor="Hand"/>
+                    BorderThickness="0" Cursor="Hand" Click="GestionarCatalogosButton_Click"/>
 
             <!-- Boton vaciar pedidos -->
             <Button Content="Vaciar partidos" x:Name="VaciarPartidoButton"
                     Width="250" Height="60"
                     FontSize="18"
                     Background="#333333" Foreground="White"
-                    BorderThickness="0" Cursor="Hand"/>
+                    BorderThickness="0" Cursor="Hand" Click="VaciarPartidoButton_Click"/>
         </StackPanel>
 
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Left" Margin="60,10">

@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace FutbolAdmin.View.Crud.Jugador.ventanasSecundarias
@@ -22,6 +23,11 @@ namespace FutbolAdmin.View.Crud.Jugador.ventanasSecundarias
         public EditarJugadorWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.CloseWindow(this);
         }
     }
 }

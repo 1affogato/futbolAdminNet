@@ -33,14 +33,14 @@
                     Width="250" Height="60" Margin="0,0,0,20"
                     FontSize="18" FontWeight="SemiBold"
                     Background="#333333" Foreground="White"
-                    BorderThickness="0" Cursor="Hand"/>
+                    BorderThickness="0" Cursor="Hand" Click="ModificarJugadorButton_Click"/>
 
                 <!-- Botón Eliminar jugador -->
                 <Button Content="Eliminar jugador" x:Name="EliminarJugadorButton"
                     Width="250" Height="60"
                     FontSize="18" FontWeight="SemiBold"
                     Background="#333333" Foreground="White"
-                    BorderThickness="0" Cursor="Hand"/>
+                    BorderThickness="0" Cursor="Hand" Click="EliminarJugadorButton_Click"/>
             </StackPanel>
 
             <!-- Segunda columna -->
@@ -50,20 +50,20 @@
                     Width="250" Height="60" Margin="0,0,0,20"
                     FontSize="18" FontWeight="SemiBold"
                     Background="#333333" Foreground="White"
-                    BorderThickness="0" Cursor="Hand"/>
+                    BorderThickness="0" Cursor="Hand" Click="CrearJugadorButton_Click"/>
 
                 <!-- Botón Consultar jugador -->
                 <Button Content="Consultar jugador" x:Name="ConsultarJugadorButton"
                     Width="250" Height="60"
                     FontSize="18" FontWeight="SemiBold"
                     Background="#333333" Foreground="White"
-                    BorderThickness="0" Cursor="Hand"/>
+                    BorderThickness="0" Cursor="Hand" Click="ConsultarJugadorButton_Click"/>
             </StackPanel>
         </Grid>
 
         <!-- Botón Regresar -->
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
-            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5"  Background="#aaaaaa" />
+            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5"  Background="#aaaaaa" Click="BackButton_Click" />
         </StackPanel>
     </Grid>
 </Window>
