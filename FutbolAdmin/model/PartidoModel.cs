@@ -13,7 +13,7 @@ namespace FutbolAdmin.Model
         public EquipoModel EquipoLocal { get; set; }
         public EquipoModel EquipoVisitante { get; set; }
         public int Jornada {  get; set; }
-        public int Cmpletado { get; set; }
+        public int Completado { get; set; }
         public int GolesLocal { get; set; }
         public int GolesVisitante { get; set; }
     }
