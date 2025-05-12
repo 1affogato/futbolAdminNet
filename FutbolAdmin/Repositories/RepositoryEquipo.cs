@@ -112,5 +112,25 @@ namespace FutbolAdmin.Repositories
                 connection.Close();
             }
         }
+
+        public IEnumerable<JugadorModel> GetJugadoresByEquipoId(int id) {
+            using (var connection = GetConnection())
+            using (var command = new OracleCommand()) {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM JUGADOR WHERE ID_EQUIPO = :id";
+                command.Parameters.Add(new OracleParameter("id", id));
+                using (var reader = command.ExecuteReader()) {
+                    var jugadores = new List<JugadorModel>();
+                    while (reader.Read()) {
+                        var jugador = new JugadorModel {
+                            // Mapear el jugador a lo que regrese el reader
+                        };
+                        jugadores.Add(jugador);
+                    }
+                    return jugadores;
+                }
+            }
+        }
     }
 }

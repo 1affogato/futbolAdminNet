@@ -11,13 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FutbolAdmin.Model;
+using FutbolAdmin.ViewModel.Visitantes;
 
 namespace FutbolAdmin.View.Visitantes {
     /// <summary>
     /// Interaction logic for ConsultarEquiposWindow.xaml
     /// </summary>
     public partial class ConsultarEquiposWindow {
-        public ConsultarEquiposWindow() {
+        public ConsultarEquiposWindow(EquipoModel equipo) {
+            DataContext = new ConsultarEquiposViewModel(equipo);
+
             InitializeComponent();
         }
     }
