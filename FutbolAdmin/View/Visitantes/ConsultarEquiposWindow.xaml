@@ -71,7 +71,9 @@
                     </DataGrid.Columns>
                     <DataGrid.RowStyle>
                         <!-- Estilo para las filas -->
-                        <Style TargetType="RowDefinition"></Style>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="Black"/>
+                        </Style>
                     </DataGrid.RowStyle>
                 </DataGrid>
             </Grid>

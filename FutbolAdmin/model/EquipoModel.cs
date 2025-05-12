@@ -15,7 +15,7 @@ namespace FutbolAdmin.Model
         public int Empates { get; set; }
         public int GolesFavor {  get; set; }
         public int GolesContra { get; set; }
-        public int DifrerenciaGoles { get => GetDiferenciaDeGol(); }
+        public int DiferenciaGoles { get => GetDiferenciaDeGol(); }
         public int Puntos { get => GetPuntos(); }
         public int Posicion { get; set; }
 
