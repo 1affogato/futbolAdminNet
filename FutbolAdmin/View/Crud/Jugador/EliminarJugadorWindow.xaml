@@ -11,8 +11,8 @@
             <!-- Tabla con DataGrid -->
             <DataGrid x:Name="JugadoresDataGrid" ItemsSource="{Binding Jugadores}" AutoGenerateColumns="False"
                       HeadersVisibility="Column" Height="200" Margin="10"
-                      Background="DarkSlateGray" Foreground="White"
-                      RowBackground="LightGreen" AlternatingRowBackground="DarkSeaGreen">
+                      Background="DarkSlateGray" Foreground="White" SelectionMode="Single" IsReadOnly="True"
+                      RowBackground="LightGreen" AlternatingRowBackground="DarkSeaGreen" SelectionChanged="JugadoresDataGrid_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
                     <DataGridTextColumn Header="Edad" Binding="{Binding Edad}" Width="50"/>
