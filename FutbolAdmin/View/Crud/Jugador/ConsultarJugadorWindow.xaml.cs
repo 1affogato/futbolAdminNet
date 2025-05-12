@@ -18,12 +18,13 @@ namespace FutbolAdmin.View.Crud.Jugador {
     /// Interaction logic for ConsultarJugadorWindow.xaml
     /// </summary>
     public partial class ConsultarJugadorWindow : Window {
-        ConsultarJugadorViewModel _viewModel = new ConsultarJugadorViewModel();
+        protected ConsultarJugadorViewModel _viewModel;
 
         public ConsultarJugadorWindow() {
             InitializeComponent();
 
             _viewModel = new ConsultarJugadorViewModel();
+            DataContext = _viewModel;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
