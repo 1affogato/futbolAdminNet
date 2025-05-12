@@ -11,7 +11,7 @@ namespace FutbolAdmin.Repositories {
         private readonly string _connectionString;
 
         public RepositoryBase() {
-            _connectionString = "User Id=TU_USUARIO;Password=TU_CONTRASEÑA_DEL_USUARIO;Data Source=localhost:1521/ORCLPDB1;";
+            _connectionString = "User Id=FUTBOLADMIN;Password=oracle;Data Source=localhost:1521/xe;";
         }
 
         public OracleConnection GetConnection() {

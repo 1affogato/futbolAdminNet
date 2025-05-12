@@ -21,11 +21,22 @@ namespace FutbolAdmin.ViewModel {
         // Ventana
 
         protected bool _isViewVisible;
+        private string _errorMessage;
         public bool IsViewVisible {
             get => _isViewVisible;
             set {
                 _isViewVisible = value;
                 OnPropertyChanged(nameof(IsViewVisible));
+            }
+        }
+
+        public string ErrorMessage
+        {
+            get { return _errorMessage; }
+            set
+            {
+                _errorMessage = value;
+                OnPropertyChanged(nameof(ErrorMessage));
             }
         }
 
@@ -45,14 +56,12 @@ namespace FutbolAdmin.ViewModel {
             get => _password;
             set {
                 _password = value;
-                OnPropertyChanged(nameof(Username));
+                OnPropertyChanged(nameof(Password));
             }
         }
 
         public void ExecuteLogin() {
-            // Quitar cuando jale la BD
-            IsViewVisible = false;
-            return;
+
 
             var cuenta = _repositoryCuentaAdmin.GetByUsername(_username);
             if (cuenta != null) {
@@ -60,6 +69,7 @@ namespace FutbolAdmin.ViewModel {
                     IsViewVisible = false;
                 }
             } else {
+                ErrorMessage = "* Invalid Username or Password";
                 // La vista necesita un mensaje de error con el nombre de abajo
                 // MensajeError = "Usuario o contraseña incorrectos";
             }

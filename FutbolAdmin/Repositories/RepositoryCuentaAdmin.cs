@@ -56,7 +56,7 @@ namespace FutbolAdmin.Repositories {
                         var cuenta = new CuentaAdminModel {
                             Id_Cuenta = reader.GetInt32(0),
                             Nombre = reader.GetString(1),
-                            Contraseña = ToSecureString(reader.GetString(2))
+                            Contraseña = (reader.GetString(2))
                         };
                         cuentas.Add(cuenta);
                     }
@@ -79,7 +79,7 @@ namespace FutbolAdmin.Repositories {
                     var cuenta = new CuentaAdminModel {
                         Id_Cuenta = reader.GetInt32(0),
                         Nombre = reader.GetString(1),
-                        Contraseña = ToSecureString(reader.GetString(2))
+                        Contraseña = (reader.GetString(2))
                     };
                     return cuenta;
                 }
@@ -100,7 +100,7 @@ namespace FutbolAdmin.Repositories {
                     var cuenta = new CuentaAdminModel {
                         Id_Cuenta = reader.GetInt32(0),
                         Nombre = reader.GetString(1),
-                        Contraseña = ToSecureString(reader.GetString(2))
+                        Contraseña = (reader.GetString(2))
                     };
                     return cuenta;
                 }

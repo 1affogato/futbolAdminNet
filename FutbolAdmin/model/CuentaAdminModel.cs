@@ -9,6 +9,6 @@ namespace FutbolAdmin.Model {
     public class CuentaAdminModel {
         public int Id_Cuenta { get; set; }
         public string Nombre { get; set; }
-        public SecureString Contraseña { get; set; }
+        public string Contraseña { get; set; }
     }
 }
