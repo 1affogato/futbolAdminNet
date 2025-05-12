@@ -17,6 +17,7 @@ namespace FutbolAdmin.ViewModel.Visitantes {
         public ConsultarEquiposViewModel(EquipoModel equipo) {
             _repositoryEquipo = new RepositoryEquipo();
             _equipo = equipo;
+            _nombreEquipo = equipo.Nombre;
         }
 
         protected string _nombreEquipo;
