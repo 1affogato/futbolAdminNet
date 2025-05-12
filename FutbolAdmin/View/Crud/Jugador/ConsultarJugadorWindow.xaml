@@ -36,7 +36,7 @@
             </StackPanel>
 
             <!-- Tabla con DataGrid -->
-            <DataGrid x:Name="ClasificacionDataGrid" ItemsSource="{Binding Jugadores}" AutoGenerateColumns="False"
+            <DataGrid x:Name="ClasificacionDataGrid" ItemsSource="{Binding Jugadores}" AutoGenerateColumns="True"
                       HeadersVisibility="Column" Background="LightGreen" Foreground="Black" Height="200" Margin="10">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="#" Binding="{Binding Id_Jugador}" Width="Auto"/>
