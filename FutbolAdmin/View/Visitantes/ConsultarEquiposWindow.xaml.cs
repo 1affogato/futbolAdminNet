@@ -14,14 +14,18 @@ using System.Windows.Shapes;
 using FutbolAdmin.Model;
 using FutbolAdmin.ViewModel.Visitantes;
 
-namespace FutbolAdmin.View.Visitantes {
+namespace FutbolAdmin.View.Visitantes
+{
     /// <summary>
     /// Interaction logic for ConsultarEquiposWindow.xaml
     /// </summary>
-    public partial class ConsultarEquiposWindow {
-        public ConsultarEquiposWindow(EquipoModel equipo) {
-            DataContext = new ConsultarEquiposViewModel(equipo);
+    public partial class ConsultarEquiposWindow : Window
+    {
+        private ConsultarEquiposViewModel _viewModel;
 
+        public ConsultarEquiposWindow(EquipoModel equipo)
+        {
+            _viewModel = new ConsultarEquiposViewModel(equipo);
             InitializeComponent();
         }
     }

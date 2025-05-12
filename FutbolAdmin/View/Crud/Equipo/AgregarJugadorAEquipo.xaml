@@ -50,13 +50,13 @@
             </Grid.RowDefinitions>
 
             <Button Content="Nuevo Jugador" FontWeight="Bold" Background="SeaGreen" Grid.Row="0" Width="200" Height="50" 
-                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontSize="20"/>
+                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontSize="20" Click="SeleccionarJugadorButton_Click"/>
 
             <Button Content="Jugador Existente" FontWeight="Bold" Background="SeaGreen" Grid.Row="1" Width="200" Height="50" 
                     HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontSize="20"/>
 
             <Button Grid.Row="2" Width="200" Height="50" FontWeight="Bold"  Background="SeaGreen"
-                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontSize="20">
+                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontSize="20" Click="Button_Click">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <!-- <Image Source="Images/balon.png" Width="24" Height="24" Margin="0,0,10,0"/> -->
                     <TextBlock Text="Regresar" VerticalAlignment="Center"/>

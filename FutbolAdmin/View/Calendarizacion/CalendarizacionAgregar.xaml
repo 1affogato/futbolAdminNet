@@ -50,7 +50,7 @@
 
         <!-- Botón redondeado -->
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,10">
-            <Button Width="140" Height="50">
+            <Button Width="140" Height="50" Click="Button_Click">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Template">

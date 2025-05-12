@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FutbolAdmin.Model;
 using FutbolAdmin.ViewModel;
 using FutbolAdmin.ViewModel.Visitantes;
 
@@ -40,6 +41,14 @@ namespace FutbolAdmin.View.Visitantes {
 
         private void ClasificacionDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+            if (ClasificacionDataGrid.SelectedItem is EquipoModel equipoSeleccionado)
+            {
+                int idEquipo = equipoSeleccionado.Id_Equipo;
+
+                // Abre la ventana con el ID del equipo como parámetro
+                NavigationHelper.ShowWindowAndHideParent(new ConsultarEquiposWindow(idEquipo), this);
+            }
         }
     }
 }

@@ -34,7 +34,7 @@
             <DataGrid x:Name="JugadoresDataGrid" ItemsSource="{Binding Jugadores}" AutoGenerateColumns="False"
                       HeadersVisibility="Column" Height="200" Margin="10"
                       Background="DarkSlateGray" Foreground="White"
-                      RowBackground="LightGreen" AlternatingRowBackground="DarkSeaGreen">
+                      RowBackground="LightGreen" AlternatingRowBackground="DarkSeaGreen" SelectionChanged="JugadoresDataGrid_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="#" Binding="{Binding Id_Jugador}" Width="Auto"/>
                     <DataGridTextColumn Header="Equipo" Binding="{Binding Equipo.Nombre}" Width="50"/>

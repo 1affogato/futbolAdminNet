@@ -20,5 +20,10 @@ namespace FutbolAdmin.View.Crud.Equipo {
         public EliminarEquipoWindow() {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.CloseWindow(this);
+        }
     }
 }

@@ -12,12 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace FutbolAdmin.View.Crud.Equipo {
+namespace FutbolAdmin.View.Crud.Equipo
+{
     /// <summary>
-    /// Interaction logic for ConsultarEquipoWindow.xaml
+    /// Lógica de interacción para ModificarEquipoWindow.xaml
     /// </summary>
-    public partial class ConsultarEquipoWindow : Window {
-        public ConsultarEquipoWindow() {
+    public partial class ModificarEquipoWindow : Window
+    {
+        public ModificarEquipoWindow()
+        {
             InitializeComponent();
         }
 
