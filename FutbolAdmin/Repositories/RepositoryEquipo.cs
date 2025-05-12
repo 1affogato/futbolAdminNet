@@ -99,7 +99,7 @@ namespace FutbolAdmin.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "UPDATE EQUIPO SET NOMBRE = :nombre, VICTORIAS = :victorias, DERROTAS = :derrotas, EMPATES = :empates, GOLES_FAVOR = :goles_favor, GOLES_CONTRA = :goles_contra, ID_EQUIPO = :idEquipo WHERE ID_EQUIPO = :idEquipo";
+                command.CommandText = "UPDATE EQUIPO SET NOMBRE = :nombre, VICTORIAS = :victorias, DERROTAS = :derrotas, EMPATES = :empates, GOLES_FAVOR = :goles_favor, GOLES_CONTRA = :goles_contra, WHERE ID_EQUIPO = :idEquipo";
                 command.Parameters.Add(new OracleParameter("idEquipo", entity.Id_Equipo));
                 command.Parameters.Add(new OracleParameter("nombre", entity.Nombre));
                 command.Parameters.Add(new OracleParameter("victorias", entity.Victorias));
@@ -107,7 +107,6 @@ namespace FutbolAdmin.Repositories
                 command.Parameters.Add(new OracleParameter("empates", entity.Empates));
                 command.Parameters.Add(new OracleParameter("goles_favor", entity.GolesFavor));
                 command.Parameters.Add(new OracleParameter("goles_contra", entity.GolesContra));
-                command.Parameters.Add(new OracleParameter("idEquipo", entity.Id_Equipo));
                 command.ExecuteNonQuery();
                 connection.Close();
             }
