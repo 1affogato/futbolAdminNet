@@ -21,7 +21,7 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
             get => _playerSearchName;
             set {
                 _playerSearchName = value;
-                // NotifyPropertyChanged("PlayerSearchName");
+                OnPropertyChanged(nameof(PlayerSearchName));
             }
         }
 
@@ -32,7 +32,7 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
         public ObservableCollection<JugadorModel> SearchJugadores() {
             var jugadores = _repositorioJugador.GetAll();
             var filteredJugadores = jugadores.Where(j => j.Nombre.ToLower().Contains(PlayerSearchName.ToLower()));
-            return new ObservableCollection<JugadorModel>(filteredJugadores);
+            return new ObservableCollection<JugadorModel>(_repositorioJugador.GetAll());
         }
     }
 }

@@ -21,6 +21,8 @@ namespace FutbolAdmin.View.Crud.Jugador {
     /// </summary>
     public partial class EliminarJugadorWindow : Window {
         public EliminarJugadorWindow() {
+            var repository = new RepositoryJugador();
+            JugadoresDataGrid.ItemsSource = repository.GetAll();
             InitializeComponent();
         }
 
