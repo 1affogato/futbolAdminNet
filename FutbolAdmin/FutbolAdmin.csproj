@@ -117,6 +117,7 @@
     <Compile Include="Repositories\RepositoryEquipo.cs" />
     <Compile Include="Repositories\RepositoryEvento.cs" />
     <Compile Include="Repositories\RepositoryJugador.cs" />
+    <Compile Include="Repositories\RepositoryPartido.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\ComandoViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
