@@ -48,7 +48,12 @@ namespace FutbolAdmin.Repositories {
                     var eventos = new List<EventoModel>();
                     while (reader.Read()) {
                         var evento = new EventoModel {
-                            // Mapear cada evento a lo que regrese el reader
+                            Id_Evento = reader.GetInt32(0),
+                            // TipoEvento = new RepositoryTipoEvento().GetById(reader.GetInt32(1)),
+                            JugadorPrincipal = new RepositoryJugador().GetById(reader.GetInt32(2)),
+                            JugadorSecundario = new RepositoryJugador().GetById(reader.GetInt32(3)),
+                            Minuto = reader.GetInt32(4),
+                            // Partido = new RepositoryPartido().GetById(reader.GetInt32(5))
                         };
                         eventos.Add(evento);
                     }
@@ -69,7 +74,12 @@ namespace FutbolAdmin.Repositories {
                         return null;
                     }
                     var evento = new EventoModel {
-                        // Mapear cada evento a lo que regrese el reader
+                        Id_Evento = reader.GetInt32(0),
+                        // TipoEvento = new RepositoryTipoEvento().GetById(reader.GetInt32(1)),
+                        JugadorPrincipal = new RepositoryJugador().GetById(reader.GetInt32(2)),
+                        JugadorSecundario = new RepositoryJugador().GetById(reader.GetInt32(3)),
+                        Minuto = reader.GetInt32(4),
+                        // Partido = new RepositoryPartido().GetById(reader.GetInt32(5))
                     };
                     return evento;
                 }

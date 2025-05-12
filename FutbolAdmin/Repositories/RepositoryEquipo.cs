@@ -57,10 +57,15 @@ namespace FutbolAdmin.Repositories
                     var equipos = new List<EquipoModel>();
                     while (reader.Read())
                     {
-                        var equipo = new EquipoModel();
-                        {
-                            // Mapear cada jugador a lo que regrese el reader
-                        };
+                        var equipo = new EquipoModel(
+                            reader.GetInt32(0), // ID_EQUIPO
+                            reader.GetString(1), // NOMBRE  
+                            reader.GetInt32(2), // VICTORIAS
+                            reader.GetInt32(3), // DERROTAS
+                            reader.GetInt32(4), // EMPATES
+                            reader.GetInt32(5), // GOLES_FAVOR
+                            reader.GetInt32(6)  // GOLES_CONTRA
+                        );
                         equipos.Add(equipo);
                     }
                     return equipos;
@@ -83,10 +88,15 @@ namespace FutbolAdmin.Repositories
                     {
                         return null;
                     }
-                    var equipo = new EquipoModel
-                    {
-                        // Mapear el jugador a lo que regrese el reader
-                    };
+                    var equipo = new EquipoModel(
+                        reader.GetInt32(0), // ID_EQUIPO
+                        reader.GetString(1), // NOMBRE  
+                        reader.GetInt32(2), // VICTORIAS
+                        reader.GetInt32(3), // DERROTAS
+                        reader.GetInt32(4), // EMPATES
+                        reader.GetInt32(5), // GOLES_FAVOR
+                        reader.GetInt32(6)  // GOLES_CONTRA
+                    );
                     return equipo;
                 }
             }
@@ -123,7 +133,16 @@ namespace FutbolAdmin.Repositories
                     var jugadores = new List<JugadorModel>();
                     while (reader.Read()) {
                         var jugador = new JugadorModel {
-                            // Mapear el jugador a lo que regrese el reader
+                            Id_Jugador = reader.GetInt32(0),
+                            Nombre = reader.GetString(1),
+                            Edad = reader.GetInt32(2),
+                            PartidosJugados = reader.GetInt32(3),
+                            Goles = reader.GetInt32(4),
+                            Asistencias = reader.GetInt32(5),
+                            TarjetasRojas = reader.GetInt32(6),
+                            TarjetasAmarillas = reader.GetInt32(7),
+                            // Si no jala quitar a otra cosa
+                            Equipo = new RepositoryEquipo().GetById(reader.GetInt32(8)), 
                         };
                         jugadores.Add(jugador);
                     }
