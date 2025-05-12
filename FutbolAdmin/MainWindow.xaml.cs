@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FutbolAdmin.Repositories;
 using FutbolAdmin.View;
 
 namespace FutbolAdmin {
@@ -19,9 +20,13 @@ namespace FutbolAdmin {
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+        protected RepositoryEquipo _repositoryEquipo;
         public MainWindow() {
             // Nomás pa testear
-            new View.Visitantes.MainWindow().Show();
+            _repositoryEquipo = new RepositoryEquipo();
+            
+            
+            new View.Visitantes.ConsultarEquiposWindow(_repositoryEquipo.GetById(1)).Show();
             Close();
         }
     }
