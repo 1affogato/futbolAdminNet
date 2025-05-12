@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using FutbolAdmin.Model;
 using FutbolAdmin.View.Crud.Jugador.ventanasSecundarias;
+using FutbolAdmin.ViewModel.Crud.Jugador;
 
 namespace FutbolAdmin.View.Crud.Jugador {
     /// <summary>
@@ -20,6 +21,7 @@ namespace FutbolAdmin.View.Crud.Jugador {
     /// </summary>
     public partial class ModificarJugadorWindow : Window {
         public ModificarJugadorWindow() {
+            DataContext = new ModificarJugadorViewModel();
             InitializeComponent();
         }
 
