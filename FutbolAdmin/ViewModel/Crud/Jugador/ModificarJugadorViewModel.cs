@@ -8,10 +8,11 @@ using FutbolAdmin.Model;
 using FutbolAdmin.Repositories;
 
 namespace FutbolAdmin.ViewModel.Crud.Jugador {
-    public class ConsultarJugadorViewModel {
+
+    public class ModificarJugadorViewModel : ViewModelBase {
         protected RepositoryJugador _repositorioJugador;
 
-        public ConsultarJugadorViewModel() {
+        public ModificarJugadorViewModel() {
             _repositorioJugador = new RepositoryJugador();
         }
 

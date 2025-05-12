@@ -12,7 +12,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         </Grid.RowDefinitions>
 
         <!-- Título con nombre del jugador -->
-        <Label Grid.Row="0" Content="{Binding JugadorSeleccionado.NombreCompleto}" 
+        <Label Grid.Row="0" Content="{Binding JugadorSeleccionado.Nombre}" 
                FontSize="18" FontWeight="Bold"
                HorizontalAlignment="Center" Margin="0,0,0,15"/>
 
@@ -20,13 +20,13 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         <StackPanel Grid.Row="1">
 
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Nombre:" Margin="5" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="6" Height="25"/>
-            
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="6" Height="25" Text="{Binding NombreJugador, UpdateSourceTrigger=PropertyChanged}"/>
+
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Edad:" Margin="5" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25" Text="{Binding EdadJugador, UpdateSourceTrigger=PropertyChanged}"/>
             
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Equipo:" Margin="5" VerticalAlignment="Center"/>
-            <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25"/>
+            <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25" ItemsSource="{Binding Equipos}"/>
 
             <!-- Agrega más campos según necesites -->
         </StackPanel>
@@ -35,7 +35,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="Guardar" Width="100" Height="30" Margin="5"
                     Background="#333333" Foreground="White" FontWeight="Bold"
-                    Cursor="Hand" />
+                    Cursor="Hand" Command="{Binding ModificarJugadorCommand}"/>
 
             <Button Content="Cancelar" Width="100" Height="30" Margin="5"
                     Background="#333333" Foreground="White" FontWeight="Bold"

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FutbolAdmin.Model;
+using FutbolAdmin.ViewModel.Crud.Jugador.VentanasSecundarias;
 
 namespace FutbolAdmin.View.Crud.Jugador.ventanasSecundarias
 {
@@ -20,8 +22,11 @@ namespace FutbolAdmin.View.Crud.Jugador.ventanasSecundarias
     /// </summary>
     public partial class EditarJugadorWindow : Window
     {
-        public EditarJugadorWindow()
+        protected EditarJugadorViewModel _viewModel;
+
+        public EditarJugadorWindow(JugadorModel jugador)
         {
+            _viewModel = new EditarJugadorViewModel(jugador);
             InitializeComponent();
         }
 
