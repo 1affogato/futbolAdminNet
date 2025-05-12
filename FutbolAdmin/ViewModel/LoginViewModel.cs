@@ -10,6 +10,7 @@ namespace FutbolAdmin.ViewModel {
     public class LoginViewModel : ViewModelBase {
         
         protected readonly RepositoryCuentaAdmin _repositoryCuentaAdmin;
+
         public ICommand LoginCommand { get; }
 
         public LoginViewModel() {

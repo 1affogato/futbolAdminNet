@@ -21,7 +21,7 @@ namespace FutbolAdmin {
     public partial class MainWindow : Window {
         public MainWindow() {
             // Nomás pa testear
-            new LoginWindow().Show();
+            new View.Visitantes.MainWindow().Show();
             Close();
         }
     }

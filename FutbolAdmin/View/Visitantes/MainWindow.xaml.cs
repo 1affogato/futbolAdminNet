@@ -11,13 +11,20 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FutbolAdmin.ViewModel;
+using FutbolAdmin.ViewModel.Visitantes;
 
 namespace FutbolAdmin.View.Visitantes {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+
+        protected MainWindowViewModel _viewModel;
+
         public MainWindow() {
+            DataContext = new MainWindowViewModel();
+
             InitializeComponent();
         }
     }
