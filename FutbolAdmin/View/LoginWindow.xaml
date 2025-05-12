@@ -6,10 +6,8 @@
         xmlns:local="clr-namespace:FutbolAdmin.View"
         Title="LoginView" Height="500" Width="800"
         mc:Ignorable="d"
-        WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Background="Transparent"
-        AllowsTransparency="True">
+        Background="Transparent">
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleantToVisibility"/>
@@ -63,66 +61,7 @@
                                Grid.Column="0" 
                                VerticalAlignment="Center" 
                                Margin="10,0,0,0"/>
-                    <Button x:Name="BtnMinimizar"
-                            BorderThickness="0"
-                            Content="-"
-                            Foreground="White"
-                            FontSize="16"
-                            FontFamily="Montserrat"
-                            Cursor="Hand"
-                            Grid.Column="1"
-                            Click="BtnMinimizar_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#2D5A2D" />
-                                <!-- Verde -->
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#1E3A1E"/>
-                                        <!-- Verde oscuro -->
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="18" Height="18" CornerRadius="9" Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button x:Name="BtnCerrar"
-                            BorderThickness="0"
-                            Content="X"
-                            Foreground="White"
-                            FontSize="16"
-                            FontFamily="Montserrat"
-                            Cursor="Hand"
-                            Grid.Column="2"
-                            Click="BtnCerrar_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#D22B2B" />
-                                <!-- Rojo deportivo -->
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#A02222"/>
-                                        <!-- Rojo oscuro -->
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="18" Height="18" CornerRadius="9" Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+                    
                 </Grid>
                 <StackPanel Width="220"
                             Grid.Row="1"
@@ -200,7 +139,7 @@
                     <Button x:Name="btnLogin"
                             Command="{Binding LoginCommand}"
                             BorderThickness="0"
-                            Content="ACCEDER"
+                            Content="Acceder"
                             Foreground="White"
                             FontSize="14"
                             FontWeight="Bold"
@@ -230,6 +169,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
+                    <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="BackButton_Click"/>
                 </StackPanel>
             </Grid>
         </Border>

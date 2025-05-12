@@ -118,6 +118,7 @@
     <Compile Include="Repositories\RepositoryEvento.cs" />
     <Compile Include="Repositories\RepositoryJugador.cs" />
     <Compile Include="Repositories\RepositoryPartido.cs" />
+    <Compile Include="Repositories\RepositoryTipoEvento.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\ComandoViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
@@ -172,6 +173,7 @@
     <Compile Include="View\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\NavigationHelper.cs" />
     <Compile Include="View\VaciarPartidos\AgregarEventoWindow.xaml.cs">
       <DependentUpon>AgregarEventoWindow.xaml</DependentUpon>
     </Compile>

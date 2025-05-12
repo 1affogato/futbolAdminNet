@@ -30,7 +30,7 @@
         </DataGrid>
 
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Left" Margin="60,10">
-            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa"/>
+            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="BackButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>

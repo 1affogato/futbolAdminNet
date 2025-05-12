@@ -27,5 +27,15 @@ namespace FutbolAdmin.View.Visitantes {
 
             InitializeComponent();
         }
+
+        private void AdminButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.ShowWindowAndHideParent(new LoginWindow(), this);
+        }
+
+        private void VerPartidosButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.ShowWindowAndHideParent(new ConsultarResultadosWindow(), this);
+        }
     }
 }
