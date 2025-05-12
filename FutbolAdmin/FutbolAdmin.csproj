@@ -120,6 +120,7 @@
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\ComandoViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\Visitantes\ConsultarEquiposViewModel.cs" />
     <Compile Include="ViewModel\Visitantes\MainWindowViewModel.cs" />
     <Compile Include="View\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
