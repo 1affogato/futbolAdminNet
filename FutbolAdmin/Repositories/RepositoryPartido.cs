@@ -68,6 +68,7 @@ namespace FutbolAdmin.Repositories
                             Jornada = reader.GetInt32(4),
                             Completado = reader.GetInt32(5),
                             GolesLocal = reader.GetInt32(6),
+                            GolesVisitante = reader.GetInt32(7)
                         };
                         partidos.Add(partido);
                     }
@@ -83,7 +84,7 @@ namespace FutbolAdmin.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "SELECT * FROM PARTIDO WHERE ID_PARTIDO = :id";
+                command.CommandText = "SELECT * FROM PARTIDO WHERE ID_PARTIDO = :id;";
                 command.Parameters.Add(new OracleParameter("id", id));
                 using (var reader = command.ExecuteReader())
                 {

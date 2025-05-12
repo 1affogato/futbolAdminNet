@@ -19,13 +19,13 @@
                HorizontalAlignment="Center" Margin="0,10"/>
 
         <!-- Tabla de clasificación -->
-        <DataGrid Grid.Row="1" x:Name="PartidosDataGrid" ItemsSource="{Binding Partidos}">
+        <DataGrid Grid.Row="1" x:Name="PartidosDataGrid" ItemsSource="{Binding Partidos}" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}" Width="*"/>
-                <DataGridTextColumn Header="Local" Binding="{Binding Local}" Width="*"/>
-                <DataGridTextColumn Header="Goles local" Binding="{Binding GolesLocal}" Width="90"/>
+                <DataGridTextColumn Header="Local" Binding="{Binding EquipoLocal}" Width="*"/>
+                <DataGridTextColumn Header="Goles Local" Binding="{Binding GolesLocal}" Width="90"/>
                 <DataGridTextColumn Header="Goles Visitante" Binding="{Binding GolesVisitante}" Width="90"/>
-                <DataGridTextColumn Header="Visitante" Binding="{Binding Visitante}" Width="*"/>
+                <DataGridTextColumn Header="Visitante" Binding="{Binding EquipoVisitante}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 
