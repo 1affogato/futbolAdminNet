@@ -22,20 +22,19 @@ namespace FutbolAdmin.View.Crud.Jugador {
         protected CrearJugadorViewModel _viewModel;
 
         public CrearJugadorWindow() {
-            InitializeComponent();
 
             _viewModel = new CrearJugadorViewModel();
             DataContext = _viewModel;
+            InitializeComponent();
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
+        private void BackButton_Click(object sender, RoutedEventArgs e) {
             NavigationHelper.CloseWindow(this);
         }
 
-        private void BackButton_Click_1(object sender, RoutedEventArgs e)
-        {
+        private void BackButton_Click_1(object sender, RoutedEventArgs e) {
 
         }
+
     }
 }

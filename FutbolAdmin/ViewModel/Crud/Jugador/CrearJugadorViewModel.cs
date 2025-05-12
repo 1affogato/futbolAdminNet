@@ -4,52 +4,73 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using FutbolAdmin.Model;
 using FutbolAdmin.Repositories;
 
 namespace FutbolAdmin.ViewModel.Crud.Jugador {
-    public class CrearJugadorViewModel : ViewModelBase{
+    public class CrearJugadorViewModel : ViewModelBase {
         RepositoryJugador jugadorRepository;
         RepositoryEquipo equipoRepository;
 
         private string _nombre;
         private int _edad;
         private ObservableCollection<EquipoModel> _equipos;
+        private string _equipoSelected;
 
-        public string Nombre
-        {
+        public ICommand CrearJugador;
+
+        public string Nombre {
             get => _nombre;
-            set
-            {
+            set {
                 _nombre = value;
                 OnPropertyChanged(nameof(Nombre));
             }
         }
 
-        public int Edad
-        {
+        public int Edad {
             get => _edad;
-            set
-            {
+            set {
                 _edad = value;
                 OnPropertyChanged(nameof(Edad));
             }
         }
 
-        
+        public string EquipoSelected {
+            get => _equipoSelected;
+            set {
+                _equipoSelected = value;
+                OnPropertyChanged(nameof(EquipoSelected));
+            }
+        }
 
-        public ObservableCollection<EquipoModel> Equipos
-        {
+
+        public ObservableCollection<string> Equipos {
             get => GetEquipos();
         }
-        public ObservableCollection<EquipoModel> GetEquipos() {
+        public ObservableCollection<string> GetEquipos() {
             IEnumerable<EquipoModel> equipos = equipoRepository.GetAll();
-            return new ObservableCollection<EquipoModel>(equipos);
+            ObservableCollection<string> nombresEquipos = new ObservableCollection<string>();
+            foreach (var equipo in equipos) {
+                nombresEquipos.Add(equipo.Nombre);
+            }
+            return nombresEquipos;
         }
+        public void ExecuteCrearJugador() {
 
+            Console.WriteLine("3333333333");
+            JugadorModel nuevoJugador = new JugadorModel {
+                Nombre = Nombre,
+                Edad = Edad,
+                Equipo = equipoRepository.GetByName(EquipoSelected)
+            };
+            jugadorRepository.Add(nuevoJugador);
+        }
         public CrearJugadorViewModel() {
             jugadorRepository = new RepositoryJugador();
             equipoRepository = new RepositoryEquipo();
+            Console.WriteLine("111111111");
+            CrearJugador = new ComandoViewModel(execute => ExecuteCrearJugador());
         }
 
 

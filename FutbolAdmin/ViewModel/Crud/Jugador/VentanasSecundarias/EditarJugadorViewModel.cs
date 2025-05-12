@@ -15,6 +15,16 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador.VentanasSecundarias {
         protected RepositoryEquipo _equipoRepository;
 
         private JugadorModel _jugadorSeleccionado;
+
+        private string _equipoSeleccionado;
+
+        public string EquipoSeleccionado {
+            get { return _equipoSeleccionado; }
+            set {
+                _equipoSeleccionado = value;
+                OnPropertyChanged(nameof(EquipoSeleccionado));
+            }
+        }
         public JugadorModel JugadorSeleccionado {
             get { return _jugadorSeleccionado; }
             set {
@@ -23,13 +33,13 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador.VentanasSecundarias {
             }
         }
 
-        public ICommand ModificarJugadorCommand;
+        public ICommand ModificarJugadorCommand { get; }
 
         public EditarJugadorViewModel(JugadorModel jugador) {
             JugadorSeleccionado = jugador;
             _jugadorRepository = new RepositoryJugador();
             _equipoRepository = new RepositoryEquipo();
-            ModificarJugadorCommand = new ComandoViewModel(execute => ModificarJugador());
+            ModificarJugadorCommand = new ComandoViewModel(ExecuteModificarJugador);
         }
 
         private string _nombreJugador;
@@ -50,16 +60,32 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador.VentanasSecundarias {
             }
         }
 
-        public ObservableCollection<EquipoModel> Equipos {
-            get { return GetEquipos(); }
+        public ObservableCollection<string> Equipos {
+            get => GetEquipos();
         }
 
-        public ObservableCollection<EquipoModel> GetEquipos() {
-            return new ObservableCollection<EquipoModel>(_equipoRepository.GetAll());
+        public ObservableCollection<string> GetEquipos() {
+            IEnumerable<EquipoModel> equipos = _equipoRepository.GetAll();
+            ObservableCollection<string> nombresEquipos = new ObservableCollection<string>();
+            foreach (var equipo in equipos) {
+                nombresEquipos.Add(equipo.Nombre);
+            }
+            return nombresEquipos;
         }
 
-        public void ModificarJugador() {
+        public void ExecuteModificarJugador(Object objecto) {
+            JugadorModel jugador = new JugadorModel();
+            jugador.Id_Jugador = JugadorSeleccionado.Id_Jugador;
+            jugador.Nombre = NombreJugador;
+            jugador.Edad = EdadJugador;
+            jugador.PartidosJugados = JugadorSeleccionado.PartidosJugados;
+            jugador.Goles = JugadorSeleccionado.Goles;
+            jugador.Asistencias = JugadorSeleccionado.Asistencias;
+            jugador.TarjetasRojas = JugadorSeleccionado.TarjetasRojas;
+            jugador.TarjetasAmarillas = JugadorSeleccionado.TarjetasAmarillas;
+            jugador.Equipo = _equipoRepository.GetByName(EquipoSeleccionado);
 
+            _jugadorRepository.Update(jugador);
         }
     }
 }

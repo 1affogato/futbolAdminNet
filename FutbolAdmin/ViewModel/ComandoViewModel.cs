@@ -20,6 +20,11 @@ namespace FutbolAdmin.ViewModel {
             _canExecute = canExecute;
         }
 
+        public ComandoViewModel(Action<object> execute) {
+            _execute = execute;
+            _canExecute = null;
+        }
+
         public bool CanExecute(object parameter) => _canExecute?.Invoke(parameter) ?? true;
 
         public void Execute(object parameter) => _execute(parameter);

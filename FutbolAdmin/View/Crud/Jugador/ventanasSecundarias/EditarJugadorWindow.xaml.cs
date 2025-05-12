@@ -15,23 +15,20 @@ using System.Windows.Shapes;
 using FutbolAdmin.Model;
 using FutbolAdmin.ViewModel.Crud.Jugador.VentanasSecundarias;
 
-namespace FutbolAdmin.View.Crud.Jugador.ventanasSecundarias
-{
+namespace FutbolAdmin.View.Crud.Jugador.ventanasSecundarias {
     /// <summary>
     /// Lógica de interacción para EditarJugadorWindow.xaml
     /// </summary>
-    public partial class EditarJugadorWindow : Window
-    {
+    public partial class EditarJugadorWindow : Window {
         protected EditarJugadorViewModel _viewModel;
 
-        public EditarJugadorWindow(JugadorModel jugador)
-        {
+        public EditarJugadorWindow(JugadorModel jugador) {
             _viewModel = new EditarJugadorViewModel(jugador);
+            DataContext = _viewModel;
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        private void Button_Click(object sender, RoutedEventArgs e) {
             NavigationHelper.CloseWindow(this);
         }
     }

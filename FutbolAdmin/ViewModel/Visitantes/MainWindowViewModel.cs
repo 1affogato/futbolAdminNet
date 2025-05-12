@@ -21,13 +21,8 @@ namespace FutbolAdmin.ViewModel.Visitantes {
         }
 
         public MainWindowViewModel() {
-            // Descomentar cuando exista el repositorio
-            // Teams =  _repositoryEquipo.GetAll();
-            // Regresando equipos de prueba
-            Equipos = new ObservableCollection<EquipoModel> {
-                new EquipoModel(1, "Madri", 12, 8, 10, 80, 33),
-                new EquipoModel(2, "Barça", 10, 10, 10, 67, 33),
-            };
+            _repositoryEquipo = new RepositoryEquipo();
+            Equipos =  new ObservableCollection<EquipoModel>(_repositoryEquipo.GetAll());
 
             AsignarPosiciones();
         }
