@@ -7,7 +7,7 @@ using FutbolAdmin.Model;
 using Oracle.ManagedDataAccess.Client;
 
 namespace FutbolAdmin.Repositories {
-    internal class RepositoryJugador : RepositoryBase<JugadorModel> {
+    public class RepositoryJugador : RepositoryBase<JugadorModel> {
 
         public override void Add(JugadorModel entity) {
             using (var connection = GetConnection())

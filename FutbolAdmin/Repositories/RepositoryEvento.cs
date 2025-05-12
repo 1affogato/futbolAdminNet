@@ -8,7 +8,7 @@ using FutbolAdmin.Model;
 using Oracle.ManagedDataAccess.Client;
 
 namespace FutbolAdmin.Repositories {
-    internal class RepositoryEvento : RepositoryBase<EventoModel> {
+    public class RepositoryEvento : RepositoryBase<EventoModel> {
         public override void Add(EventoModel entity) {
             using (var connection = GetConnection())
             using (var command = new OracleCommand()) {

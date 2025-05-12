@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FutbolAdmin.ViewModel {
-    internal abstract class ViewModelBase : INotifyPropertyChanged {
+    public abstract class ViewModelBase : INotifyPropertyChanged {
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void OnPropertyChanged(string propertyName) {

@@ -20,5 +20,13 @@ namespace FutbolAdmin.View.Crud.Jugador {
         public ModificarJugadorWindow() {
             InitializeComponent();
         }
+
+        private void JugadoresListView_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }

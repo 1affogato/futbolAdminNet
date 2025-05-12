@@ -16,7 +16,7 @@ namespace FutbolAdmin.View.Visitantes {
     /// <summary>
     /// Interaction logic for ConsultarEquiposWindow.xaml
     /// </summary>
-    public partial class ConsultarEquiposWindow : Window {
+    public partial class ConsultarEquiposWindow {
         public ConsultarEquiposWindow() {
             InitializeComponent();
         }

@@ -8,7 +8,7 @@ using FutbolAdmin.Model;
 using Oracle.ManagedDataAccess.Client;
 
 namespace FutbolAdmin.Repositories {
-    internal class RepositoryCuentaAdmin : RepositoryBase<CuentaAdminModel> {
+    public class RepositoryCuentaAdmin : RepositoryBase<CuentaAdminModel> {
         public override void Add(CuentaAdminModel entity) {
             using (var connection = GetConnection())
             using (var command = new OracleCommand()) {
@@ -35,7 +35,7 @@ namespace FutbolAdmin.Repositories {
             }
         }
 
-        protected SecureString ToSecureString(string s) {
+        public static SecureString ToSecureString(string s) {
             SecureString secureString = new SecureString();
             foreach (char c in s) {
                 secureString.AppendChar(c);
@@ -72,6 +72,27 @@ namespace FutbolAdmin.Repositories {
                 command.Connection = connection;
                 command.CommandText = "SELECT * FROM CUENTAS_ADMIN WHERE ID_CUENTA = :id";
                 command.Parameters.Add(new OracleParameter("id", id));
+                using (var reader = command.ExecuteReader()) {
+                    if (!reader.Read()) {
+                        return null;
+                    }
+                    var cuenta = new CuentaAdminModel {
+                        Id_Cuenta = reader.GetInt32(0),
+                        Nombre = reader.GetString(1),
+                        Contraseña = ToSecureString(reader.GetString(2))
+                    };
+                    return cuenta;
+                }
+            }
+        }
+
+        public CuentaAdminModel GetByUsername(string username) {
+            using (var connection = GetConnection())
+            using (var command = new OracleCommand()) {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM CUENTAS_ADMIN WHERE NOMBRE = :nombre";
+                command.Parameters.Add(new OracleParameter("nombre", username));
                 using (var reader = command.ExecuteReader()) {
                     if (!reader.Read()) {
                         return null;

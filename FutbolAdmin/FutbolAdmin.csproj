@@ -117,6 +117,7 @@
     <Compile Include="Repositories\RepositoryEvento.cs" />
     <Compile Include="Repositories\RepositoryJugador.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\ComandoViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
@@ -168,9 +169,6 @@
     </Compile>
     <Compile Include="View\VaciarPartidos\AgregarEventoWindow.xaml.cs">
       <DependentUpon>AgregarEventoWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\VaciarPartidos\SeleccionarJugadorWindow.xaml.cs">
-      <DependentUpon>SeleccionarJugadorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\VaciarPartidos\VaciarPartidoWindow.xaml.cs">
       <DependentUpon>VaciarPartidoWindow.xaml</DependentUpon>
@@ -261,10 +259,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\VaciarPartidos\AgregarEventoWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\VaciarPartidos\SeleccionarJugadorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

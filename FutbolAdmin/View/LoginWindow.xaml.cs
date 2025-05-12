@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,14 +12,30 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FutbolAdmin.ViewModel;
 
 namespace FutbolAdmin.View {
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
     public partial class LoginWindow : Window {
+
+        protected readonly LoginViewModel _viewModel;
+
         public LoginWindow() {
             InitializeComponent();
+
+            _viewModel = new LoginViewModel();
+
+            DataContext = _viewModel;
+        }
+
+        private void IsViewVisibleChanged(object sender, PropertyChangedEventArgs e) {
+            if (e.PropertyName == nameof(LoginViewModel.IsViewVisible) && !_viewModel.IsViewVisible) {
+                // Se cierra la ventana de login y se procede a la de admin
+                new AdminWindow().Show();
+                Close();
+            }
         }
 
         public void BtnMinimizar_Click(object sender, RoutedEventArgs e) {
@@ -28,5 +45,7 @@ namespace FutbolAdmin.View {
         public void BtnCerrar_Click(object sender, RoutedEventArgs e) {
 
         }
+
+        
     }
 }
