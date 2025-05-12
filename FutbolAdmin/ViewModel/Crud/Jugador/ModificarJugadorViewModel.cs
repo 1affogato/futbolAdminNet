@@ -26,7 +26,7 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
         }
 
         public ObservableCollection<JugadorModel> Jugadores {
-            get => SearchJugadores();
+            get => new ObservableCollection<JugadorModel>(_repositorioJugador.GetAll());
         }
 
         public ObservableCollection<JugadorModel> SearchJugadores() {

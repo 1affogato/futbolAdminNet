@@ -31,7 +31,7 @@
             </StackPanel>
 
             <!-- Tabla con DataGrid -->
-            <DataGrid x:Name="JugadoresDataGrid" ItemsSource="{Binding Jugadores}" AutoGenerateColumns="False"
+            <DataGrid x:Name="JugadoresDataGrid" ItemsSource="{Binding Jugadores}" AutoGenerateColumns="True"
                       HeadersVisibility="Column" Height="200" Margin="10"
                       Background="DarkSlateGray" Foreground="White"
                       RowBackground="LightGreen" AlternatingRowBackground="DarkSeaGreen" SelectionChanged="JugadoresDataGrid_SelectionChanged">
