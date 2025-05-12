@@ -172,6 +172,7 @@
     <Compile Include="View\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\NavigationHelper.cs" />
     <Compile Include="View\VaciarPartidos\AgregarEventoWindow.xaml.cs">
       <DependentUpon>AgregarEventoWindow.xaml</DependentUpon>
     </Compile>

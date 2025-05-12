@@ -19,11 +19,13 @@ namespace FutbolAdmin.View {
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class LoginWindow : Window {
+    public partial class LoginWindow : Window
+    {
 
         protected readonly LoginViewModel _viewModel;
 
-        public LoginWindow() {
+        public LoginWindow()
+        {
             InitializeComponent();
 
             _viewModel = new LoginViewModel();
@@ -33,22 +35,25 @@ namespace FutbolAdmin.View {
             _viewModel.PropertyChanged += IsViewVisibleChanged;
         }
 
-        private void IsViewVisibleChanged(object sender, PropertyChangedEventArgs e) {
-            if (e.PropertyName == nameof(LoginViewModel.IsViewVisible) && !_viewModel.IsViewVisible) {
+        private void IsViewVisibleChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(LoginViewModel.IsViewVisible) && !_viewModel.IsViewVisible)
+            {
                 // Se cierra la ventana de login y se procede a la de admin
                 new AdminWindow().Show();
                 Close();
             }
         }
-
-        public void BtnMinimizar_Click(object sender, RoutedEventArgs e) {
-
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.CloseWindow(this);
         }
 
-        public void BtnCerrar_Click(object sender, RoutedEventArgs e) {
-
+        // Este método será llamado desde el ViewModel cuando el login sea exitoso
+        public void NavigateToAdminWindow()
+        {
+            var adminWindow = new AdminWindow();
+            NavigationHelper.ShowWindowAndHideParent(adminWindow, this);
         }
-
-        
     }
-}
+   }
