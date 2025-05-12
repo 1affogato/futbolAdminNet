@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FutbolAdmin.Model;
+using FutbolAdmin.View.Crud.Jugador.ventanasSecundarias;
 
 namespace FutbolAdmin.View.Crud.Jugador {
     /// <summary>
@@ -32,6 +34,16 @@ namespace FutbolAdmin.View.Crud.Jugador {
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationHelper.CloseWindow(this);
+        }
+
+        private void JugadoresDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (JugadoresDataGrid.SelectedItem is JugadorModel jugadorSeleccionado)
+            {
+                int idJugador = jugadorSeleccionado.Id_Jugador;
+
+                NavigationHelper.ShowWindowAndHideParent(new EditarJugadorWindow(idJugador), this);
+            }
         }
     }
 }

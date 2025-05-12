@@ -20,9 +20,13 @@ namespace FutbolAdmin.View.Crud.Jugador.ventanasSecundarias
     /// </summary>
     public partial class EditarJugadorWindow : Window
     {
-        public EditarJugadorWindow()
+        private int idJugador;
+
+        public EditarJugadorWindow(int idJugador)
         {
             InitializeComponent();
+            this.idJugador = idJugador;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
