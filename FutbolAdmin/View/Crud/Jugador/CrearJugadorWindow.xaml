@@ -36,14 +36,14 @@
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Equipo:" Margin="5" VerticalAlignment="Center"/>
 
             <!-- Campos de texto -->
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="6" Height="25"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25"/>
-            <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="6" Height="25" Text="{Binding Nombre}"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25"  Text="{Binding Edad}"/>
+                <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25" ItemsSource="{Binding Equipos}"/>
         </Grid>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Width="650">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Width="650" >
             <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5,0" Background="#aaaaaa" Click="BackButton_Click"/>
-            <Button x:Name="CrearJugadorButton" Content="Crear jugador" Width="120" Margin="400,0" Background="#aaaaaa" Height="20"/>
+            <Button x:Name="CrearJugadorButton" Content="Crear jugador" Width="120" Margin="400,0" Background="#aaaaaa" Height="20" />
         </StackPanel>
     </Grid>
 </Window>
