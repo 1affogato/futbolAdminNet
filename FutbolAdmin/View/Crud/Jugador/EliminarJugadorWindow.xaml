@@ -1,36 +1,94 @@
-﻿<Window x:Class="FutbolAdmin.View.Crud.Jugador.EliminarJugadorWindow"
+﻿<Window x:Class="FutbolAdmin.View.Visitantes.ConsultarEquiposWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FutbolAdmin.View.Crud.Jugador"
-        mc:Ignorable="d"
-        Title="EliminarJugadorWindow" Height="450" Width="800">
+        Title="Eliminar jugador" Height="450" Width="800" Background="MediumAquamarine">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+        <StackPanel Margin="10">
+            <!-- Título -->
+            <TextBlock HorizontalAlignment="Center" Text="Eliminar Jugador" FontSize="25" 
+                       FontWeight="Bold" Margin="0,0,0,8"/>
 
-        <!-- Título -->
-        <Label Grid.Row="0" Content="Eliminar jugador" 
-       FontSize="28" FontWeight="Bold" 
-       HorizontalAlignment="Center" Margin="0,10"/>
+            <!-- Tabla con DataGrid -->
+            <DataGrid x:Name="JugadoresDataGrid" ItemsSource="{Binding Jugadores}" AutoGenerateColumns="False"
+                      HeadersVisibility="Column" Height="200" Margin="10"
+                      Background="DarkSlateGray" Foreground="White"
+                      RowBackground="LightGreen" AlternatingRowBackground="DarkSeaGreen">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                    <DataGridTextColumn Header="Edad" Binding="{Binding Edad}" Width="50"/>
+                    <DataGridTextColumn Header="Equipo" Binding="{Binding Equipo}" Width="150"/>
+                </DataGrid.Columns>
 
-        <!-- Tabla de clasificación -->
-        <DataGrid Grid.Row="1" Width="400" x:Name="PartidosDataGrid">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
-                <DataGridTextColumn Header="Edad" Binding="{Binding Edad}" Width="70"/>
-                <DataGridTextColumn Header="Equipo" Binding="{Binding Equipo}" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
+                <!-- Estilo de encabezados -->
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="MediumAquamarine"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
 
-        <!-- Botones -->
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
-            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5"  Background="#aaaaaa" />
-            <Button x:Name="EliminarButton" Content="Eliminar" Width="120" Margin="5" Background="#aaaaaa" />
+                <!-- Bordes en las celdas -->
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                    </Style>
+                </DataGrid.CellStyle>
+            </DataGrid>
+
+            <!-- Botones inferior izquierda y derecha -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Botón de regreso -->
+                <Button Grid.Column="0" Width="150" Height="50" HorizontalAlignment="Left"
+                        Margin="10, 40, 0, 0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="SeaGreen" CornerRadius="20" Padding="10">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image Source="/Images/flechaAtras.png" Width="30" Height="30"/>
+                                                <TextBlock Text="  Regresar" VerticalAlignment="Center" FontSize="20" 
+                                                           FontWeight="Bold" Foreground="Black"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <!-- Botón eliminar alineado a la derecha -->
+                <Button Grid.Column="1" Width="150" Height="50" HorizontalAlignment="Right"
+                        Margin="0, 40, 10, 0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="LightCoral" CornerRadius="20" Padding="10">
+                                            <TextBlock Text="Eliminar jugador" VerticalAlignment="Center" FontSize="16" 
+                                                       FontWeight="Bold" Foreground="Black"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Grid>
         </StackPanel>
     </Grid>
 </Window>
