@@ -44,10 +44,8 @@ namespace FutbolAdmin.View.Visitantes {
 
             if (ClasificacionDataGrid.SelectedItem is EquipoModel equipoSeleccionado)
             {
-                int idEquipo = equipoSeleccionado.Id_Equipo;
-
                 // Abre la ventana con el ID del equipo como parámetro
-                NavigationHelper.ShowWindowAndHideParent(new ConsultarEquiposWindow(idEquipo), this);
+                NavigationHelper.ShowWindowAndHideParent(new ConsultarEquiposWindow(equipoSeleccionado), this);
             }
         }
     }
