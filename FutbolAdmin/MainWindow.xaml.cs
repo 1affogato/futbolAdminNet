@@ -20,11 +20,13 @@ namespace FutbolAdmin {
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
-        RepositoryEquipo _repositoryEquipo;
+        //RepositoryEquipo _repositoryEquipo;
         public MainWindow() {
-            _repositoryEquipo = new RepositoryEquipo();
+            //_repositoryEquipo = new RepositoryEquipo();
             // Nomás pa testear
-            new View.Visitantes.ConsultarEquiposWindow(_repositoryEquipo.GetById(1)).Show();
+            //new View.Visitantes.ConsultarEquiposWindow(_repositoryEquipo.GetById(1)).Show();
+            new View.Visitantes.MainWindow().Show();
+
             Close();
         }
     }
