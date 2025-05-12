@@ -11,18 +11,24 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FutbolAdmin.ViewModel.Crud.Jugador;
 
 namespace FutbolAdmin.View.Crud.Jugador {
     /// <summary>
     /// Interaction logic for ConsultarJugadorWindow.xaml
     /// </summary>
     public partial class ConsultarJugadorWindow : Window {
+        ConsultarJugadorViewModel _viewModel = new ConsultarJugadorViewModel();
+
         public ConsultarJugadorWindow() {
             InitializeComponent();
+
+            _viewModel = new ConsultarJugadorViewModel();
         }
 
-        private void SearchButton_Click(object sender, RoutedEventArgs e) {
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.CloseWindow(this);
         }
     }
 }

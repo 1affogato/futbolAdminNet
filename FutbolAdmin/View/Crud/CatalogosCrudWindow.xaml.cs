@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FutbolAdmin.View.Crud.Equipo;
+using FutbolAdmin.View.Crud.Jugador;
 
 namespace FutbolAdmin.View.Crud {
     /// <summary>
@@ -19,6 +21,21 @@ namespace FutbolAdmin.View.Crud {
     public partial class CatalogosCrudWindow : Window {
         public CatalogosCrudWindow() {
             InitializeComponent();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.CloseWindow(this);
+        }
+
+        private void GestionarEquipoButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.ShowWindowAndHideParent(new CrudEquipoWIndow(), this);
+        }
+
+        private void GestionarJugadoresButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.ShowWindowAndHideParent(new CrudJugadorWindow(), this);
         }
     }
 }

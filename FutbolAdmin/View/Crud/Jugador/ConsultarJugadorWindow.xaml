@@ -11,8 +11,13 @@
             <!-- Campo de búsqueda con botón -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10">
                 <TextBox Width="300" Height="40"
-                         BorderBrush="Black" Background="Aquamarine" BorderThickness="1" Padding="5"/>
-                <Button Width="120" Height="40" Margin="10,0,0,8">
+                         Text="{Binding PlayerSearchName, UpdateSourceTrigger=PropertyChanged}"
+                         BorderBrush="Black"
+                         Background="Aquamarine"
+                         BorderThickness="1"
+                         Padding="5"
+                />
+                <Button x:Name="SearchButton" Width="120" Height="40" Margin="10,0,0,8" Command="{Binding SearchCommand}">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Template">
@@ -31,18 +36,18 @@
             </StackPanel>
 
             <!-- Tabla con DataGrid -->
-            <DataGrid x:Name="ClasificacionDataGrid" ItemsSource="{Binding Equipos}" AutoGenerateColumns="False"
+            <DataGrid x:Name="ClasificacionDataGrid" ItemsSource="{Binding Jugadores}" AutoGenerateColumns="False"
                       HeadersVisibility="Column" Background="LightGreen" Foreground="Black" Height="200" Margin="10">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="#" Binding="{Binding Posicion}" Width="Auto"/>
+                    <DataGridTextColumn Header="#" Binding="{Binding Id_Jugador}" Width="Auto"/>
+                    <DataGridTextColumn Header="Equipo" Binding="{Binding Equipo.Nombre}" Width="50"/>
                     <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
-                    <DataGridTextColumn Header="V" Binding="{Binding Victorias}" Width="50"/>
-                    <DataGridTextColumn Header="E" Binding="{Binding Empates}" Width="50"/>
-                    <DataGridTextColumn Header="D" Binding="{Binding Derrotas}" Width="50"/>
-                    <DataGridTextColumn Header="GF" Binding="{Binding GolesFavor}" Width="50"/>
-                    <DataGridTextColumn Header="GC" Binding="{Binding GolesContra}" Width="50"/>
-                    <DataGridTextColumn Header="DG" Binding="{Binding DiferenciaGoles}" Width="50"/>
-                    <DataGridTextColumn Header="Pts" Binding="{Binding Puntos}" Width="50"/>
+                    <DataGridTextColumn Header="Edad" Binding="{Binding Edad}" Width="50"/>
+                    <DataGridTextColumn Header="PJ" Binding="{Binding PartidosJugados}" Width="50"/>
+                    <DataGridTextColumn Header="G" Binding="{Binding Goles}" Width="50"/>
+                    <DataGridTextColumn Header="A" Binding="{Binding Asistencias}" Width="50"/>
+                    <DataGridTextColumn Header="TA" Binding="{Binding TarjetasAmarillas}" Width="50"/>
+                    <DataGridTextColumn Header="TR" Binding="{Binding TarjetasRojas}" Width="50"/>
                 </DataGrid.Columns>
             </DataGrid>
 
@@ -59,7 +64,7 @@
 
                 <!-- Botón de regreso -->
                 <Button Grid.Column="0" Width="150" Height="50" HorizontalAlignment="Left"
-                        Margin="10, 40, 0, 0">
+                        Margin="10, 40, 0, 0" Click="Button_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Template">
@@ -80,24 +85,7 @@
                 </Button>
             </Grid>
 
-            <!-- Botón centrado en la parte inferior -->
-            <Button Width="200" Height="40"
-                    HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Background="RoyalBlue" CornerRadius="20" Padding="10">
-                                        <TextBlock Text="Continuar" HorizontalAlignment="Center" 
-                                                   FontWeight="Bold" Foreground="White"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Button.Style>
-            </Button>
+       
         </StackPanel>
     </Grid>
 </Window>

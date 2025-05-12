@@ -20,5 +20,10 @@ namespace FutbolAdmin.View.Crud.Jugador {
         public EliminarJugadorWindow() {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.CloseWindow(this);
+        }
     }
 }

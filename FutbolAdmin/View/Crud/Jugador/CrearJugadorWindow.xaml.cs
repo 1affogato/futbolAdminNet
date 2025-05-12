@@ -11,14 +11,26 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FutbolAdmin.ViewModel.Crud.Jugador;
 
 namespace FutbolAdmin.View.Crud.Jugador {
     /// <summary>
     /// Interaction logic for CrearJugadorWindow.xaml
     /// </summary>
     public partial class CrearJugadorWindow : Window {
+
+        protected CrearJugadorViewModel _viewModel;
+
         public CrearJugadorWindow() {
             InitializeComponent();
+
+            _viewModel = new CrearJugadorViewModel();
+            DataContext = _viewModel;
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.CloseWindow(this);
         }
     }
 }

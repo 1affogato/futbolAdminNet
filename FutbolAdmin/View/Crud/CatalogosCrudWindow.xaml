@@ -26,19 +26,19 @@
                 Width="250" Height="60" Margin="0,0,0,20"
                 FontSize="18"
                 Background="#333333" Foreground="White"
-                BorderThickness="0" Cursor="Hand"/>
+                BorderThickness="0" Cursor="Hand" Click="GestionarEquipoButton_Click"/>
 
             <!-- Boton gestionar jugadores -->
             <Button Content="Gestionar jugadores" x:Name="GestionarJugadoresButton"
                 Width="250" Height="60" Margin="0,0,0,20"
                 FontSize="18"
                 Background="#333333" Foreground="White"
-                BorderThickness="0" Cursor="Hand"/>
+                BorderThickness="0" Cursor="Hand" Click="GestionarJugadoresButton_Click"/>
 
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
-            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5"  Background="#aaaaaa" />
+            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5"  Background="#aaaaaa" Click="BackButton_Click" />
         </StackPanel>
     </Grid>
 </Window>
