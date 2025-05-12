@@ -20,5 +20,15 @@ namespace FutbolAdmin.View.Crud.Equipo {
         public AgregarJugadorAEquipo() {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.CloseWindow(this);
+        }
+
+        private void SeleccionarJugadorButton_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationHelper.ShowWindowAndHideParent(SeleccionarJugadorExistenteWindow(),this);
+        }
     }
 }

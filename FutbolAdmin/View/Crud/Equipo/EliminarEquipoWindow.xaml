@@ -75,7 +75,7 @@
 
             <!-- Botón de regreso en la esquina inferior izquierda -->
             <Button Grid.Row="4" Grid.Column="0" Width="150" Height="50" HorizontalAlignment="Left"
-                    VerticalAlignment="Bottom" Margin="10, 10, 0, 10">
+                    VerticalAlignment="Bottom" Margin="10, 10, 0, 10" Click="Button_Click">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Template">

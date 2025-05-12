@@ -35,7 +35,7 @@
         
         <!-- Botones -->
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,205,0,10" Width="668">
-            <Button Margin="50, 0" x:Name="BackButton" Content="Regresar" Width="120" Background="#aaaaaa" Height="21"/>
+            <Button Margin="50, 0" x:Name="BackButton" Content="Regresar" Width="120" Background="#aaaaaa" Height="21" Click="BackButton_Click"/>
             <Button Margin="50, 0" x:Name="AgregarEventoButton" Content="Agregar Evento" Width="120" Background="#aaaaaa" Height="21"/>
             <Button Margin="50, 0" x:Name="TerminarButton" Content="Terminar" Width="120" Background="#aaaaaa" Height="21"/>
         </StackPanel>
