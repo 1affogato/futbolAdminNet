@@ -62,10 +62,10 @@ namespace FutbolAdmin.Repositories
                         var partido = new PartidoModel
                         {
                             Id_Partido = reader.GetInt32(0),
-                            Fecha = reader.GetDateTime(1),
+                            Fecha = reader.IsDBNull(4) ? (DateTime?)null : reader.GetDateTime(1),
                             EquipoLocal = _repositoryEquipo.GetById(reader.GetInt32(2)),
                             EquipoVisitante = _repositoryEquipo.GetById(reader.GetInt32(3)),
-                            Jornada = reader.GetInt32(4),
+                            Jornada = reader.IsDBNull(4) ? (int?)null : reader.GetInt32(4),
                             Completado = reader.GetInt32(5),
                             GolesLocal = reader.GetInt32(6),
                             GolesVisitante = reader.GetInt32(7)

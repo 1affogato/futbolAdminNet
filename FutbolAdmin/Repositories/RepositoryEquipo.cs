@@ -37,7 +37,7 @@ namespace FutbolAdmin.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "DELETE FROM EQUIPO WHERE ID_CUENTA = :id";
+                command.CommandText = "DELETE FROM EQUIPO WHERE ID_EQUIPO = :id";
                 command.Parameters.Add(new OracleParameter("id", id));
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -55,6 +55,7 @@ namespace FutbolAdmin.Repositories
                 using (var reader = command.ExecuteReader())
                 {
                     var equipos = new List<EquipoModel>();
+                        Console.WriteLine("hola hola");
                     while (reader.Read())
                     {
                         var equipo = new EquipoModel(
@@ -81,12 +82,42 @@ namespace FutbolAdmin.Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = "SELECT * FROM EQUIPO WHERE ID_EQUIPO = :id";
-                command.Parameters.Add(new OracleParameter("id", id));
+                command.Parameters.Add(new OracleParameter("id", OracleDbType.Int32) { Value = id });
                 using (var reader = command.ExecuteReader())
                 {
                     if (!reader.Read())
                     {
-                        Console.WriteLine("NO ENCUENTRA EQUIPO CON EL ID ENVIADO");
+                        Console.WriteLine($"NO ENCUENTRA EQUIPO CON EL ID {id} ");
+                        return null;
+                    }
+                    var equipo = new EquipoModel(
+                        reader.GetInt32(0), // ID_EQUIPO
+                        reader.GetString(1), // NOMBRE  
+                        reader.GetInt32(2), // VICTORIAS
+                        reader.GetInt32(3), // DERROTAS
+                        reader.GetInt32(4), // EMPATES
+                        reader.GetInt32(5), // GOLES_FAVOR
+                        reader.GetInt32(6)  // GOLES_CONTRA
+                    );
+                    return equipo;
+                }
+            }
+        }
+
+        public EquipoModel GetByName(string name)
+        {
+            using (var connection = GetConnection())
+            using (var command = new OracleCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM EQUIPO WHERE NOMBRE = :name";
+                command.Parameters.Add(new OracleParameter("name", name));
+                using (var reader = command.ExecuteReader())
+                {
+                    if (!reader.Read())
+                    {
+                        Console.WriteLine($"NO ENCUENTRA EQUIPO CON EL Nombre {name} ");
                         return null;
                     }
                     var equipo = new EquipoModel(

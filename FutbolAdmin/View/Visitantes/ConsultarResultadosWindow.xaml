@@ -21,11 +21,11 @@
         <!-- Tabla de clasificación -->
         <DataGrid Grid.Row="1" x:Name="PartidosDataGrid" ItemsSource="{Binding Partidos}" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}" Width="*"/>
-                <DataGridTextColumn Header="Local" Binding="{Binding EquipoLocal}" Width="*"/>
+                <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha.Date}" Width="*"/>
+                <DataGridTextColumn Header="Local" Binding="{Binding EquipoLocal.Nombre}" Width="*"/>
                 <DataGridTextColumn Header="Goles Local" Binding="{Binding GolesLocal}" Width="90"/>
                 <DataGridTextColumn Header="Goles Visitante" Binding="{Binding GolesVisitante}" Width="90"/>
-                <DataGridTextColumn Header="Visitante" Binding="{Binding EquipoVisitante}" Width="*"/>
+                <DataGridTextColumn Header="Visitante" Binding="{Binding EquipoVisitante.Nombre}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 

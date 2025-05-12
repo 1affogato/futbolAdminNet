@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FutbolAdmin.Model;
 using FutbolAdmin.Repositories;
 using FutbolAdmin.View;
 
@@ -23,6 +24,8 @@ namespace FutbolAdmin {
         //RepositoryEquipo _repositoryEquipo;
         public MainWindow() {
             //_repositoryEquipo = new RepositoryEquipo();
+            
+            
             // Nomás pa testear
             //new View.Visitantes.ConsultarEquiposWindow(_repositoryEquipo.GetById(1)).Show();
             new View.Visitantes.MainWindow().Show();
