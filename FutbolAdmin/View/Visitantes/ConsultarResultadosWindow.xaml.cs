@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FutbolAdmin.ViewModel.Visitantes;
 
 namespace FutbolAdmin.View.Visitantes {
     /// <summary>
@@ -18,6 +19,8 @@ namespace FutbolAdmin.View.Visitantes {
     /// </summary>
     public partial class ConsultarResultadosWindow : Window {
         public ConsultarResultadosWindow() {
+            DataContext = new ConsultarResultadosViewModel();
+
             InitializeComponent();
         }
     }

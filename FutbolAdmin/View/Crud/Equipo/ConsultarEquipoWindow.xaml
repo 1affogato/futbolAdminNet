@@ -23,7 +23,7 @@
                HorizontalAlignment="Center" Margin="0,10"/>
 
         <!-- Nombre equipo -->
-        <Label Grid.Row="1" Content="*Nombre del equipo*" 
+        <Label Grid.Row="1" Content="{Binding NombreEquipo}"
                FontSize="18" FontWeight="Bold" 
                HorizontalAlignment="Center" Margin="0,10"/>
 

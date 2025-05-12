@@ -49,7 +49,7 @@ namespace FutbolAdmin.ViewModel.Visitantes {
         }
 
         public string DiferenciaGolesText {
-            get => $"DG: {_equipo.DifrerenciaGoles}";
+            get => $"DG: {_equipo.DiferenciaGoles}";
         }
 
         public string PuntosText {

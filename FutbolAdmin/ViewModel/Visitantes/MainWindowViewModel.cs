@@ -9,8 +9,7 @@ using FutbolAdmin.Repositories;
 
 namespace FutbolAdmin.ViewModel.Visitantes {
     public class MainWindowViewModel : ViewModelBase {
-        // Descomentar cuando exista el repositorio
-        // protected RepositoryEquipo _repositoryEquipo;
+        protected RepositoryEquipo _repositoryEquipo;
 
         protected ObservableCollection<EquipoModel> _equipos;
         public ObservableCollection<EquipoModel> Equipos {
