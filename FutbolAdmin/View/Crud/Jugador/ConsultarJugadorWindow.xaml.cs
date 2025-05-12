@@ -21,10 +21,9 @@ namespace FutbolAdmin.View.Crud.Jugador {
         protected ConsultarJugadorViewModel _viewModel;
 
         public ConsultarJugadorWindow() {
-            InitializeComponent();
-
             _viewModel = new ConsultarJugadorViewModel();
             DataContext = _viewModel;
+            InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

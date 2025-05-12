@@ -24,7 +24,7 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
             get => _playerSearchName;
             set {
                 _playerSearchName = value;
-                // NotifyPropertyChanged("PlayerSearchName");
+                OnPropertyChanged(nameof(PlayerSearchName));
             }
         }
 
