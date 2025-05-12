@@ -51,7 +51,16 @@ namespace FutbolAdmin.Repositories {
                     var jugadores = new List<JugadorModel>();
                     while (reader.Read()) {
                         var jugador = new JugadorModel {
-                            // Mapear cada jugador a lo que regrese el reader
+                            Id_Jugador = reader.GetInt32(0),
+                            Nombre = reader.GetString(1),
+                            Edad = reader.GetInt32(2),
+                            PartidosJugados = reader.GetInt32(3),
+                            Goles = reader.GetInt32(4),
+                            Asistencias = reader.GetInt32(5),
+                            TarjetasRojas = reader.GetInt32(6),
+                            TarjetasAmarillas = reader.GetInt32(7),
+                            // Si no jala quitar a otra cosa
+                            Equipo = new RepositoryEquipo().GetById(reader.GetInt32(8)),
                         };
                         jugadores.Add(jugador);
                     }
@@ -72,7 +81,16 @@ namespace FutbolAdmin.Repositories {
                         return null;
                     }
                     var jugador = new JugadorModel {
-                        // Mapear el jugador a lo que regrese el reader
+                        Id_Jugador = reader.GetInt32(0),
+                        Nombre = reader.GetString(1),
+                        Edad = reader.GetInt32(2),
+                        PartidosJugados = reader.GetInt32(3),
+                        Goles = reader.GetInt32(4),
+                        Asistencias = reader.GetInt32(5),
+                        TarjetasRojas = reader.GetInt32(6),
+                        TarjetasAmarillas = reader.GetInt32(7),
+                        // Si no jala quitar a otra cosa
+                        Equipo = new RepositoryEquipo().GetById(reader.GetInt32(8)),
                     };
                     return jugador;
                 }
