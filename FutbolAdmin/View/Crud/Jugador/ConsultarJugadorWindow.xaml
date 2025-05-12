@@ -80,24 +80,7 @@
                 </Button>
             </Grid>
 
-            <!-- Botón centrado en la parte inferior -->
-            <Button Width="200" Height="40"
-                    HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Background="RoyalBlue" CornerRadius="20" Padding="10">
-                                        <TextBlock Text="Continuar" HorizontalAlignment="Center" 
-                                                   FontWeight="Bold" Foreground="White"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Button.Style>
-            </Button>
+       
         </StackPanel>
     </Grid>
 </Window>
