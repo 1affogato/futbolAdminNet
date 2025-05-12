@@ -19,6 +19,17 @@ namespace FutbolAdmin.Model
         public int Puntos { get => GetPuntos(); }
         public int Posicion { get; set; }
 
+        public EquipoModel() {
+            Id_Equipo = 0;
+            Nombre = string.Empty;
+            Victorias = 0;
+            Derrotas = 0;
+            Empates = 0;
+            GolesFavor = 0;
+            GolesContra = 0;
+            Posicion = 0;
+        }
+
         public EquipoModel(int id_Equipo, string nombre, int victorias, int derrotas, int empates, int golesFavor, int golesContra) {
             Id_Equipo = id_Equipo;
             Nombre = nombre;
