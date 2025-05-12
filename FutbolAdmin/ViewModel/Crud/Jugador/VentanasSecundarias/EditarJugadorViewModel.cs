@@ -23,7 +23,7 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador.VentanasSecundarias {
             }
         }
 
-        ICommand ModificarJugadorCommand;
+        public ICommand ModificarJugadorCommand;
 
         public EditarJugadorViewModel(JugadorModel jugador) {
             JugadorSeleccionado = jugador;
