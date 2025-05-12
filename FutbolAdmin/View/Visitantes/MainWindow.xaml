@@ -58,7 +58,7 @@
                HorizontalAlignment="Center" Margin="0,10"/>
 
         <!-- Tabla de clasificación -->
-        <DataGrid Grid.Row="1" x:Name="ClasificacionDataGrid" ItemsSource="{Binding Equipos}" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="1" x:Name="ClasificacionDataGrid" ItemsSource="{Binding Equipos}" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="#" Binding="{Binding Posicion}" Width="Auto"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>

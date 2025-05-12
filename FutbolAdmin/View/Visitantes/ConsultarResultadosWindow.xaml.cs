@@ -20,7 +20,6 @@ namespace FutbolAdmin.View.Visitantes {
     public partial class ConsultarResultadosWindow : Window {
         public ConsultarResultadosWindow() {
             DataContext = new ConsultarResultadosViewModel();
-
             InitializeComponent();
         }
 

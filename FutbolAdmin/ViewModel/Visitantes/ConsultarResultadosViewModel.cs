@@ -5,11 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FutbolAdmin.Model;
+using FutbolAdmin.Repositories;
+using Remotion.Linq.Collections;
 
 namespace FutbolAdmin.ViewModel.Visitantes {
     public class ConsultarResultadosViewModel : ViewModelBase {
 
-        // protected RepositoryPartidos _repositoryPartidos;
+        protected RepositoryPartido _repositoryPartidos;
 
         protected ObservableCollection<PartidoModel> _partidos;
         public ObservableCollection<PartidoModel> Partidos {
@@ -21,8 +23,8 @@ namespace FutbolAdmin.ViewModel.Visitantes {
         }
 
         public ConsultarResultadosViewModel() {
-            // _repositoryPartidos = new RepositoryPartidos();
-            // Partidos = new ObservableCollection(_repositoryPartidos.GetAll());
+            _repositoryPartidos = new RepositoryPartido();
+            Partidos = new ObservableCollection<PartidoModel>(_repositoryPartidos.GetAll());
         }
     }
 }

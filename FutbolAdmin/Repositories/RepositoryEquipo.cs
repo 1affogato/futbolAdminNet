@@ -80,12 +80,13 @@ namespace FutbolAdmin.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "SELECT * FROM EQUIPO WHERE ID_JUGADOR = :id";
+                command.CommandText = "SELECT * FROM EQUIPO WHERE ID_EQUIPO = :id";
                 command.Parameters.Add(new OracleParameter("id", id));
                 using (var reader = command.ExecuteReader())
                 {
                     if (!reader.Read())
                     {
+                        Console.WriteLine("NO ENCUENTRA EQUIPO CON EL ID ENVIADO");
                         return null;
                     }
                     var equipo = new EquipoModel(
