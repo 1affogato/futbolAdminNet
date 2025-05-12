@@ -19,6 +19,8 @@ namespace FutbolAdmin.Model
         public int Puntos { get => GetPuntos(); }
         public int Posicion { get; set; }
 
+        public List<JugadorModel> Jugadores { get; }
+
         public EquipoModel() {
             Id_Equipo = 0;
             Nombre = string.Empty;
