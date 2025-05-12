@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FutbolAdmin.View.Visitantes;
 using FutbolAdmin.ViewModel;
 
 namespace FutbolAdmin.View {
@@ -26,8 +27,10 @@ namespace FutbolAdmin.View {
             InitializeComponent();
 
             _viewModel = new LoginViewModel();
-
+            _viewModel.IsViewVisible = true;
             DataContext = _viewModel;
+
+            _viewModel.PropertyChanged += IsViewVisibleChanged;
         }
 
         private void IsViewVisibleChanged(object sender, PropertyChangedEventArgs e) {

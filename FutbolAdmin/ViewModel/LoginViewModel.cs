@@ -18,6 +18,7 @@ namespace FutbolAdmin.ViewModel {
         }
 
         // Ventana
+
         protected bool _isViewVisible;
         public bool IsViewVisible {
             get => _isViewVisible;
@@ -48,13 +49,19 @@ namespace FutbolAdmin.ViewModel {
         }
 
         public void ExecuteLogin() {
-            Console.WriteLine($"Called login for Username: {Username}");
+            // Quitar cuando jale la BD
+            IsViewVisible = false;
+            return;
+
             var cuenta = _repositoryCuentaAdmin.GetByUsername(_username);
-            if (cuenta == null) {
-                IsViewVisible = false;
+            if (cuenta != null) {
+                if (cuenta.Nombre == _username && cuenta.Contraseña.Equals(_password)) {
+                    IsViewVisible = false;
+                }
+            } else {
+                // La vista necesita un mensaje de error con el nombre de abajo
+                // MensajeError = "Usuario o contraseña incorrectos";
             }
-            // La vista necesita un mensaje de error con el nombre de abajo
-            // MensajeError = "Usuario o contraseña incorrectos";
         }
     }
 }
