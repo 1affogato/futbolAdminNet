@@ -14,7 +14,7 @@ namespace FutbolAdmin.Repositories {
             using (var command = new OracleCommand()) {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO JUGADORES (ID_JUGADOR, NOMBRE, EDAD, PARTIDOS_JUGADOS, GOLES, ASISTENCIAS, TARJETAS_ROJAS, TARJETAS_AMARILLAS, ID_EQUIPO) VALUES (:idJugador, :nombre, :edad, :partidosJugados, :goles, :asistencias, :tarjetasRojas, :tarjetasAmarillas, :idEquipo)";
+                command.CommandText = "INSERT INTO JUGADOR (ID_JUGADOR, NOMBRE, EDAD, PARTIDOS_JUGADOS, GOLES, ASISTENCIAS, TARJETAS_ROJAS, TARJETAS_AMARILLAS, ID_EQUIPO) VALUES (:idJugador, :nombre, :edad, :partidosJugados, :goles, :asistencias, :tarjetasRojas, :tarjetasAmarillas, :idEquipo)";
                 command.Parameters.Add(new OracleParameter("idJugador", entity.Id_Jugador));
                 command.Parameters.Add(new OracleParameter("nombre", entity.Nombre));
                 command.Parameters.Add(new OracleParameter("edad", entity.Edad));
@@ -34,7 +34,7 @@ namespace FutbolAdmin.Repositories {
             using (var command = new OracleCommand()) {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "DELETE FROM JUGADORES WHERE ID_JUGADOR = :id";
+                command.CommandText = "DELETE FROM JUGADOR WHERE ID_JUGADOR = :id";
                 command.Parameters.Add(new OracleParameter("id", id));
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -46,7 +46,7 @@ namespace FutbolAdmin.Repositories {
             using (var command = new OracleCommand()) {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "SELECT * FROM JUGADORES";
+                command.CommandText = "SELECT * FROM JUGADOR";
                 using (var reader = command.ExecuteReader()) {
                     var jugadores = new List<JugadorModel>();
                     while (reader.Read()) {
@@ -74,7 +74,7 @@ namespace FutbolAdmin.Repositories {
             using (var command = new OracleCommand()) {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "SELECT * FROM JUGADORES WHERE ID_JUGADOR = :id";
+                command.CommandText = "SELECT * FROM JUGADOR WHERE ID_JUGADOR = :id";
                 command.Parameters.Add(new OracleParameter("id", id));
                 using (var reader = command.ExecuteReader()) {
                     if (!reader.Read()) {
@@ -102,7 +102,7 @@ namespace FutbolAdmin.Repositories {
             using (var command = new OracleCommand()) {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "UPDATE JUGADORES SET NOMBRE = :nombre, EDAD = :edad, PARTIDOS_JUGADOS = :partidosJugados, GOLES = :goles, ASISTENCIAS = :asistencias, TARJETAS_ROJAS = :tarjetasRojas, TARJETAS_AMARILLAS = :tarjetasAmarillas, ID_EQUIPO = :idEquipo WHERE ID_JUGADOR = :idJugador";
+                command.CommandText = "UPDATE JUGADOR SET NOMBRE = :nombre, EDAD = :edad, PARTIDOS_JUGADOS = :partidosJugados, GOLES = :goles, ASISTENCIAS = :asistencias, TARJETAS_ROJAS = :tarjetasRojas, TARJETAS_AMARILLAS = :tarjetasAmarillas, ID_EQUIPO = :idEquipo WHERE ID_JUGADOR = :idJugador";
                 command.Parameters.Add(new OracleParameter("idJugador", entity.Id_Jugador));
                 command.Parameters.Add(new OracleParameter("nombre", entity.Nombre));
                 command.Parameters.Add(new OracleParameter("edad", entity.Edad));
