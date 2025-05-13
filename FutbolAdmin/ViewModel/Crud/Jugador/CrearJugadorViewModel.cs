@@ -18,7 +18,7 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
         private ObservableCollection<EquipoModel> _equipos;
         private string _equipoSelected;
 
-        public ICommand CrearJugador;
+        public ICommand CrearJugador { get; }
 
         public string Nombre {
             get => _nombre;
@@ -56,7 +56,7 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
             }
             return nombresEquipos;
         }
-        public void ExecuteCrearJugador() {
+        public void ExecuteCrearJugador(Object objeto) {
 
             Console.WriteLine("3333333333");
             JugadorModel nuevoJugador = new JugadorModel {
@@ -70,7 +70,7 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
             jugadorRepository = new RepositoryJugador();
             equipoRepository = new RepositoryEquipo();
             Console.WriteLine("111111111");
-            CrearJugador = new ComandoViewModel(execute => ExecuteCrearJugador());
+            CrearJugador = new ComandoViewModel(ExecuteCrearJugador);
         }
 
 
