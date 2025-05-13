@@ -111,7 +111,12 @@ namespace FutbolAdmin.Repositories {
                 command.Parameters.Add(new OracleParameter("asistencias", entity.Asistencias));
                 command.Parameters.Add(new OracleParameter("tarjetasRojas", entity.TarjetasRojas));
                 command.Parameters.Add(new OracleParameter("tarjetasAmarillas", entity.TarjetasAmarillas));
-                command.Parameters.Add(new OracleParameter("idEquipo", entity.Equipo.Id_Equipo));
+                EquipoModel equipo = entity.Equipo;
+                if (equipo != null) {
+                    command.Parameters.Add(new OracleParameter("idEquipo", equipo.Id_Equipo));
+                } else {
+                    command.Parameters.Add(new OracleParameter("idEquipo", DBNull.Value));
+                }
                 command.ExecuteNonQuery();
                 connection.Close();
             }

@@ -20,10 +20,12 @@ namespace FutbolAdmin.View.Crud.Jugador {
     /// Interaction logic for EliminarJugadorWindow.xaml
     /// </summary>
     public partial class EliminarJugadorWindow : Window {
+        protected RepositoryJugador _repository;
+
         public EliminarJugadorWindow() {
-            RepositoryJugador repository = new RepositoryJugador();
-            JugadoresDataGrid.ItemsSource = repository.GetAll();
+            _repository = new RepositoryJugador();
             InitializeComponent();
+            JugadoresDataGrid.ItemsSource = _repository.GetAll();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

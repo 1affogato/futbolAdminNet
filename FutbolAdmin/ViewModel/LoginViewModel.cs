@@ -61,17 +61,13 @@ namespace FutbolAdmin.ViewModel {
         }
 
         public void ExecuteLogin() {
-
-
             var cuenta = _repositoryCuentaAdmin.GetByUsername(_username);
             if (cuenta != null) {
                 if (cuenta.Nombre == _username && cuenta.Contraseña.Equals(_password)) {
                     IsViewVisible = false;
                 }
             } else {
-                ErrorMessage = "* Invalid Username or Password";
-                // La vista necesita un mensaje de error con el nombre de abajo
-                // MensajeError = "Usuario o contraseña incorrectos";
+                ErrorMessage = "Usuario o contraseña inválidos";
             }
         }
     }

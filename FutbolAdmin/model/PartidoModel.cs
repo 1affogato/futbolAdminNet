@@ -10,6 +10,9 @@ namespace FutbolAdmin.Model
     {
         public int Id_Partido {  get; set; }
         public DateTime? Fecha { get; set; }
+        public string FechaString {
+            get => Fecha?.ToString("dd/MM/yyyy");
+        }
         public EquipoModel EquipoLocal { get; set; }
         public EquipoModel EquipoVisitante { get; set; }
         public int? Jornada {  get; set; }
