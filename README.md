@@ -1,4 +1,7 @@
-## Construir BD
+## Construir BD: Oracle DB
+
+Crear una base de datos con el usuario FUTBOLADMIN y la contraseña oracle.
+
 Para que funcione el programa se debe contar ya con la base de datos creada, para esto existe un archivo que contiene el codigo SQL para construir la BD. Se encuentra en futbolAdmin -> sqls -> FUTBOLADMIN.sql
 El codigo SQL se utiliza en el Oracle SQL develooper para crear la base de datos, se sigue el mismo procedimiento visto en la clase de BD
 
