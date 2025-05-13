@@ -36,11 +36,11 @@
             </StackPanel>
 
             <!-- Tabla con DataGrid -->
-            <DataGrid x:Name="ClasificacionDataGrid" ItemsSource="{Binding Jugadores}" AutoGenerateColumns="True"
+            <DataGrid x:Name="ClasificacionDataGrid" ItemsSource="{Binding Jugadores}" AutoGenerateColumns="False"
                       HeadersVisibility="Column" Background="LightGreen" Foreground="Black" Height="200" Margin="10">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="#" Binding="{Binding Id_Jugador}" Width="Auto"/>
-                    <DataGridTextColumn Header="Equipo" Binding="{Binding Equipo.Nombre}" Width="50"/>
+                    <DataGridTextColumn Header="Equipo" Binding="{Binding Equipo.Nombre}" Width="250"/>
                     <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
                     <DataGridTextColumn Header="Edad" Binding="{Binding Edad}" Width="50"/>
                     <DataGridTextColumn Header="PJ" Binding="{Binding PartidosJugados}" Width="50"/>
