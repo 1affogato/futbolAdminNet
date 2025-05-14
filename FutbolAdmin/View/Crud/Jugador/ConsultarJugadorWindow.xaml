@@ -98,8 +98,6 @@
                     </Style>
                 </DataGrid.CellStyle>
             </DataGrid>
-
-            <!-- Botones inferior izquierda y derecha -->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -114,10 +112,10 @@
                 <Button Grid.Column="0" Width="150" Height="50" HorizontalAlignment="Left"
                         Margin="10, 40, 0, 0" Click="Button_Click">
                     <Button.Style>
-                        <Style TargetType="Button">
+                        <Style TargetType="{x:Type Button}">
                             <Setter Property="Template">
                                 <Setter.Value>
-                                    <ControlTemplate TargetType="Button">
+                                    <ControlTemplate TargetType="{x:Type Button}">
                                         <Border Background="SeaGreen" CornerRadius="20" Padding="10">
                                             <StackPanel Orientation="Horizontal">
                                                 <Image Source="/Images/flechaAtras.png" Width="30" Height="30"/>
@@ -133,7 +131,9 @@
                 </Button>
             </Grid>
 
-       
+            <!-- Botones inferior izquierda y derecha -->
+
+
         </StackPanel>
     </Grid>
 </Window>

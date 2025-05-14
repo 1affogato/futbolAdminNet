@@ -15,7 +15,6 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
 
         private string _nombre;
         private int _edad;
-        private ObservableCollection<EquipoModel> _equipos;
         private string _equipoSelected;
 
         public ICommand CrearJugador { get; }
