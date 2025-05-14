@@ -26,7 +26,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25" Text="{Binding EdadJugador, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Equipo:" Margin="5" VerticalAlignment="Center"/>
-            <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25" ItemsSource="{Binding Equipos}" SelectedValue="{Binding EquipoSelecionado}"/>
+            <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25" ItemsSource="{Binding Equipos}" SelectedItem="{Binding EquipoSeleccionado, UpdateSourceTrigger=PropertyChanged}" />
 
             <!-- Agrega más campos según necesites -->
         </StackPanel>

@@ -102,8 +102,14 @@ namespace FutbolAdmin.Repositories {
             using (var command = new OracleCommand()) {
                 connection.Open();
                 command.Connection = connection;
+                EquipoModel equipo = entity.Equipo;
+                Object id_Equipo;
+                if (equipo != null) {
+                    id_Equipo = equipo.Id_Equipo;
+                } else {
+                    id_Equipo = DBNull.Value;
+                }
                 command.CommandText = "UPDATE JUGADOR SET NOMBRE = :nombre, EDAD = :edad, PARTIDOS_JUGADOS = :partidosJugados, GOLES = :goles, ASISTENCIAS = :asistencias, TARJETAS_ROJAS = :tarjetasRojas, TARJETAS_AMARILLAS = :tarjetasAmarillas, ID_EQUIPO = :idEquipo WHERE ID_JUGADOR = :idJugador";
-                command.Parameters.Add(new OracleParameter("idJugador", entity.Id_Jugador));
                 command.Parameters.Add(new OracleParameter("nombre", entity.Nombre));
                 command.Parameters.Add(new OracleParameter("edad", entity.Edad));
                 command.Parameters.Add(new OracleParameter("partidosJugados", entity.PartidosJugados));
@@ -111,12 +117,8 @@ namespace FutbolAdmin.Repositories {
                 command.Parameters.Add(new OracleParameter("asistencias", entity.Asistencias));
                 command.Parameters.Add(new OracleParameter("tarjetasRojas", entity.TarjetasRojas));
                 command.Parameters.Add(new OracleParameter("tarjetasAmarillas", entity.TarjetasAmarillas));
-                EquipoModel equipo = entity.Equipo;
-                if (equipo != null) {
-                    command.Parameters.Add(new OracleParameter("idEquipo", equipo.Id_Equipo));
-                } else {
-                    command.Parameters.Add(new OracleParameter("idEquipo", DBNull.Value));
-                }
+                command.Parameters.Add(new OracleParameter("idEquipo", id_Equipo));
+                command.Parameters.Add(new OracleParameter("idJugador", entity.Id_Jugador));
                 command.ExecuteNonQuery();
                 connection.Close();
             }
