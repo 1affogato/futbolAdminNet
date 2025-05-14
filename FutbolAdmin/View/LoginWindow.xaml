@@ -122,7 +122,6 @@
 
                     <Button x:Name="btnLogin"
                             Click="btnLogin_Click"
-                            Command="{Binding LoginCommand}"
                             BorderThickness="0"
                             Content="Acceder"
                             Foreground="White"

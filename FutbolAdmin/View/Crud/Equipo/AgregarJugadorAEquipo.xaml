@@ -9,11 +9,6 @@
         WindowStartupLocation="CenterScreen"
             Background="Transparent">
 
-
-    <Window.Visibility>
-        <Binding Path="IsViewVisible" Mode="TwoWay"/>
-    </Window.Visibility>
-
     <Border CornerRadius="12" BorderThickness="2">
         <Border.Background>
             <ImageBrush ImageSource="/Images/balon.png" Stretch="UniformToFill" />

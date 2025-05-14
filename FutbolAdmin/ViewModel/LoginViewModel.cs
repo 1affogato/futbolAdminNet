@@ -14,11 +14,8 @@ namespace FutbolAdmin.ViewModel {
         
         protected readonly RepositoryCuentaAdmin _repositoryCuentaAdmin;
 
-        public ICommand LoginCommand { get; }
-
         public LoginViewModel() {
             _repositoryCuentaAdmin = new RepositoryCuentaAdmin();
-            LoginCommand = new ComandoViewModel(execute => ExecuteLogin());
         }
 
         // Ventana

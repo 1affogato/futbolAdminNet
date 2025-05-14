@@ -9,14 +9,6 @@
         WindowStartupLocation="CenterScreen"
         Background="Transparent">
 
-    <Window.Resources>
-        <BooleanToVisibilityConverter x:Key="BooleantToVisibility"/>
-    </Window.Resources>
-
-    <Window.Visibility>
-        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleantToVisibility}"/>
-    </Window.Visibility>
-
     <Border CornerRadius="12" BorderThickness="2">
         <Border.Background>
             <ImageBrush ImageSource="/Images/balon.png" Stretch="UniformToFill" />
