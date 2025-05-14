@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FutbolAdmin.View.Crud.Jugador"
         mc:Ignorable="d"
-        Title="CrearJugadorWindow" Height="450" Width="800">
+        Title="CrearJugadorWindow" Height="450" Width="800" Background="MediumAquamarine">
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -24,6 +24,12 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -34,11 +40,25 @@
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Nombre:" Margin="5" VerticalAlignment="Center"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Edad:" Margin="5" VerticalAlignment="Center"/>
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Equipo:" Margin="5" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Partidos Jugados:" Margin="5" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Goles:" Margin="5" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Asistencias:" Margin="5" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Tarjetas Amarillas:" Margin="5" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Tarjetas Rojas:" Margin="5" VerticalAlignment="Center"/>
 
+            
+            
             <!-- Campos de texto -->
             <TextBox Grid.Row="0" Grid.Column="1" Margin="6" Height="25" Text="{Binding Nombre}"/>
             <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25"  Text="{Binding Edad}"/>
             <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25" ItemsSource="{Binding Equipos}" SelectedValue="{Binding EquipoSelected}"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Height="25" Text="{Binding PartidosJugados, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Height="25" Text="{Binding Goles, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Height="25" Text="{Binding Asistencias, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Height="25" Text="{Binding TarjetasAmarillas, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Row="7" Grid.Column="1" Margin="5" Height="25" Text="{Binding TarjetasRojas, UpdateSourceTrigger=PropertyChanged}"/>
+
+
         </Grid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Width="650" >
