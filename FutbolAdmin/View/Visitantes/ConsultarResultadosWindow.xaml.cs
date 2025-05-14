@@ -23,9 +23,8 @@ namespace FutbolAdmin.View.Visitantes {
             InitializeComponent();
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
+        private void BackButton_Click(object sender, RoutedEventArgs e) {
+            NavigationHelper.ShowWindowAndHideParent(new MainWindow(), this);
         }
     }
 }

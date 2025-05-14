@@ -52,9 +52,6 @@
 
 
             </Grid>
-            <!-- Espacio entre filas -->
-            <StackPanel Orientation="Vertical" Margin="8">
-            </StackPanel>
 
             <!-- Tabla de equipos -->
             <Grid>
@@ -69,12 +66,22 @@
                         <DataGridTextColumn Header="TA" Binding="{Binding TarjetasRojas}" Width="*"/>
                         <DataGridTextColumn Header="TR" Binding="{Binding TarjetasAmarillas}" Width="*"/>
                     </DataGrid.Columns>
-                    <DataGrid.RowStyle>
-                        <!-- Estilo para las filas -->
-                        <Style TargetType="DataGridRow">
-                            <Setter Property="Background" Value="Black"/>
+                    <!-- Estilo de encabezados -->
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="MediumAquamarine"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
                         </Style>
-                    </DataGrid.RowStyle>
+                    </DataGrid.ColumnHeaderStyle>
+
+                    <!-- Bordes en las celdas -->
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                        </Style>
+                    </DataGrid.CellStyle>
                 </DataGrid>
             </Grid>
 

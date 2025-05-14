@@ -26,6 +26,7 @@ namespace FutbolAdmin.View.Visitantes
         public ConsultarEquiposWindow(EquipoModel equipo)
         {
             _viewModel = new ConsultarEquiposViewModel(equipo);
+            DataContext = _viewModel;
             InitializeComponent();
         }
     }

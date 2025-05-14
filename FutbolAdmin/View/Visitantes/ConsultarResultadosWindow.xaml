@@ -40,8 +40,8 @@
         </DataGrid>
 
         <!-- Botón de regreso en la esquina inferior izquierda -->
-        <Button Grid.Row="2" Grid.Column="0" Width="150" Height="50" HorizontalAlignment="Left"
-                Margin="10, 10, 0, 10" Click="Button_Click">
+        <Button x:Name="BackButton"  Grid.Row="2" Grid.Column="0" Width="150" Height="50" HorizontalAlignment="Left"
+                Margin="10, 10, 0, 10" Click="BackButton_Click">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Template">
