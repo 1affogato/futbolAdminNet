@@ -23,7 +23,11 @@ namespace FutbolAdmin.Repositories {
                 command.Parameters.Add(new OracleParameter("asistencias", entity.Asistencias));
                 command.Parameters.Add(new OracleParameter("tarjetasRojas", entity.TarjetasRojas));
                 command.Parameters.Add(new OracleParameter("tarjetasAmarillas", entity.TarjetasAmarillas));
-                command.Parameters.Add(new OracleParameter("idEquipo", entity.Equipo.Id_Equipo));
+                if (entity.Equipo != null) {
+                    command.Parameters.Add(new OracleParameter("idEquipo", entity.Equipo.Id_Equipo));
+                } else {
+                    command.Parameters.Add(new OracleParameter("idEquipo", DBNull.Value));
+                }
                 command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -60,7 +64,7 @@ namespace FutbolAdmin.Repositories {
                             TarjetasRojas = reader.GetInt32(6),
                             TarjetasAmarillas = reader.GetInt32(7),
                             // Si no jala quitar a otra cosa
-                            Equipo = new RepositoryEquipo().GetById(reader.GetInt32(8)),
+                            Equipo = reader.IsDBNull(8) ? null : new RepositoryEquipo().GetById(reader.GetInt32(8)),
                         };
                         jugadores.Add(jugador);
                     }
