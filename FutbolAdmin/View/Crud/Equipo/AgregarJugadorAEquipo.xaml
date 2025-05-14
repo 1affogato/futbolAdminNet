@@ -47,7 +47,7 @@
 
                 <!-- Título -->
                 <StackPanel Grid.Row="0" Margin="10">
-                    <TextBlock HorizontalAlignment="Center" Text="Añadir jugador" FontSize="35" 
+                    <TextBlock HorizontalAlignment="Center" Foreground="White" Text="Añadir jugador" FontSize="35" 
                        FontWeight="Bold" Margin="0,0,0,15"/>
                 </StackPanel>
 

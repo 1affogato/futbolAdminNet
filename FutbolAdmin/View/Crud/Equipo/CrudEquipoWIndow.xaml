@@ -40,7 +40,7 @@
             </Border.Background>
             <Grid Margin="10">
                 <StackPanel Margin="10">
-                    <TextBlock HorizontalAlignment="Center" Text="Equipo" FontSize="25" FontWeight="Bold" Margin="0,0,0,45"/>
+                    <TextBlock HorizontalAlignment="Center" Foreground="White" Text="Equipo" FontSize="25" FontWeight="Bold" Margin="0,0,0,45"/>
 
                     <Grid>
                         <!-- Definir estructura de filas -->

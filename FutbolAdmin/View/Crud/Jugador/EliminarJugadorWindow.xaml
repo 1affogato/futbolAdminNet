@@ -41,7 +41,7 @@
             <Grid>
                 <StackPanel Margin="10">
                     <!-- Título -->
-                    <TextBlock HorizontalAlignment="Center" Text="Eliminar Jugador" FontSize="25" 
+                    <TextBlock HorizontalAlignment="Center" Foreground="White" Text="Eliminar Jugador" FontSize="25" 
                        FontWeight="Bold" Margin="0,0,0,8"/>
 
                     <!-- Campo de búsqueda con botón -->

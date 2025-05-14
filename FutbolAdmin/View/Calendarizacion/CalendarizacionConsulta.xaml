@@ -1,85 +1,123 @@
 ﻿<Window x:Class="FutbolAdmin.View.Calendarizacion.CalendarizacionConsulta"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Calendarización Consulta" Height="450" Width="800" Background="MediumAquamarine">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <!-- Título -->
-            <RowDefinition Height="*"/>
-            <!-- Tabla de datos -->
-            <RowDefinition Height="Auto"/>
-            <!-- Botón -->
-        </Grid.RowDefinitions>
+        Title="Calendarización Consulta" Height="450" Width="800"
+        
+    Background="Transparent">
 
-        <!-- Título -->
-        <TextBlock Grid.Row="0" Text="Eliminar" FontSize="28" FontWeight="Bold"
-                   HorizontalAlignment="Center" Margin="0,10" Foreground="Black"/>
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleantToVisibility"/>
+    </Window.Resources>
 
-        <!-- Tabla de clasificación con colores -->
-        <DataGrid Grid.Row="1" x:Name="PartidosDataGrid"
-                  Background="DarkSlateGray" Foreground="White"
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleantToVisibility}"/>
+    </Window.Visibility>
+
+    <Border CornerRadius="12" BorderThickness="2">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/balon.png" Stretch="UniformToFill" />
+        </Border.Background>
+        <Border CornerRadius="10" BorderThickness="2" Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#1E3A1E" Offset="0" />
+                    <!-- Verde oscuro -->
+                    <GradientStop Color="#5A8F5A" Offset="0.5"/>
+                    <!-- Verde medio -->
+                    <GradientStop Color="#1E3A1E" Offset="1"/>
+                    <!-- Verde oscuro -->
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.1,0" EndPoint="1,1">
+                    <GradientStop Color="#0A1E0A" Offset="0" />
+                    <!-- Verde muy oscuro -->
+                    <GradientStop Color="#2D5A2D" Offset="0.5"/>
+                    <!-- Verde -->
+                    <GradientStop Color="#F8F8F8" Offset="1"/>
+                    <!-- Blanco -->
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- Título -->
+                    <RowDefinition Height="*"/>
+                    <!-- Tabla de datos -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Botón -->
+                </Grid.RowDefinitions>
+
+                <!-- Título -->
+                <TextBlock Foreground="White" Grid.Row="0" Text="Eliminar" FontSize="28" FontWeight="Bold"
+                   HorizontalAlignment="Center" Margin="0,10"/>
+
+                <!-- Tabla de clasificación con colores -->
+                <DataGrid Grid.Row="1" x:Name="PartidosDataGrid"
+                  Background="LightGreen" Foreground="White"
                   RowBackground="LightGreen" AlternatingRowBackground="DarkSeaGreen"
                   BorderBrush="Black" BorderThickness="2">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}" Width="*"/>
-                <DataGridTextColumn Header="Local" Binding="{Binding Local}" Width="*"/>
-                <DataGridTextColumn Header="Goles Local" Binding="{Binding GolesLocal}" Width="90"/>
-                <DataGridTextColumn Header="Goles Visitante" Binding="{Binding GolesVisitante}" Width="90"/>
-                <DataGridTextColumn Header="Visitante" Binding="{Binding Visitante}" Width="*"/>
-            </DataGrid.Columns>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}" Width="*"/>
+                        <DataGridTextColumn Header="Local" Binding="{Binding Local}" Width="*"/>
+                        <DataGridTextColumn Header="Goles Local" Binding="{Binding GolesLocal}" Width="90"/>
+                        <DataGridTextColumn Header="Goles Visitante" Binding="{Binding GolesVisitante}" Width="90"/>
+                        <DataGridTextColumn Header="Visitante" Binding="{Binding Visitante}" Width="*"/>
+                    </DataGrid.Columns>
 
-            <!-- Estilo de encabezados -->
-            <DataGrid.ColumnHeaderStyle>
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="Background" Value="MediumAquamarine"/>
-                    <Setter Property="Foreground" Value="Black"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                </Style>
-            </DataGrid.ColumnHeaderStyle>
+                    <!-- Estilo de encabezados -->
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#447744"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
 
-            <!-- Bordes en las celdas -->
-            <DataGrid.CellStyle>
-                <Style TargetType="DataGridCell">
-                    <Setter Property="BorderBrush" Value="Black"/>
-                    <Setter Property="BorderThickness" Value="1"/>
-                </Style>
-            </DataGrid.CellStyle>
+                    <!-- Bordes en las celdas -->
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                        </Style>
+                    </DataGrid.CellStyle>
 
-            <!-- Efecto al pasar el mouse sobre una fila -->
-            <DataGrid.RowStyle>
-                <Style TargetType="DataGridRow">
-                    <Setter Property="Background" Value="LightGreen"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="PaleTurquoise"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.RowStyle>
-        </DataGrid>
+                    <!-- Efecto al pasar el mouse sobre una fila -->
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="LightGreen"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="PaleTurquoise"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.RowStyle>
+                </DataGrid>
 
-        <!-- Botón redondeado -->
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,10">
-            <Button Width="140" Height="50">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Background="SeaGreen" CornerRadius="30" Padding="10">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="/Images/flechaAtras.png" Width="30" Height="30"/>
-                                            <TextBlock Text="Regresar" VerticalAlignment="Center" FontSize="20" 
+                <!-- Botón redondeado -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,10">
+                    <Button Width="140" Height="50">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="SeaGreen" CornerRadius="30" Padding="10">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="/Images/flechaAtras.png" Width="30" Height="30"/>
+                                                    <TextBlock Text="Regresar" VerticalAlignment="Center" FontSize="20" 
                                                        FontWeight="Bold" Foreground="Black"/>
-                                        </StackPanel>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Button.Style>
-            </Button>
-        </StackPanel>
-    </Grid>
+                                                </StackPanel>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Border>
 </Window>
