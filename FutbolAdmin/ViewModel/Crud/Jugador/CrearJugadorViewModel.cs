@@ -58,7 +58,6 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
         }
         public void ExecuteCrearJugador(Object objeto) {
 
-            Console.WriteLine("3333333333");
             JugadorModel nuevoJugador = new JugadorModel {
                 Nombre = Nombre,
                 Edad = Edad,
@@ -69,7 +68,6 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
         public CrearJugadorViewModel() {
             jugadorRepository = new RepositoryJugador();
             equipoRepository = new RepositoryEquipo();
-            Console.WriteLine("111111111");
             CrearJugador = new ComandoViewModel(ExecuteCrearJugador);
         }
 
