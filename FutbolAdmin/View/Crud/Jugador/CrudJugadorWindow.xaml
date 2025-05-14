@@ -40,7 +40,7 @@
                                 <Setter.Value>
                                     <ControlTemplate TargetType="Button">
                                         <Border Background="Aquamarine" CornerRadius="20" Padding="10">
-                                            <TextBlock Text="Modificar Equipo" HorizontalAlignment="Center" 
+                                            <TextBlock Text="Modificar Jugador" HorizontalAlignment="Center" 
                                    FontWeight="Bold" Foreground="Black"/>
                                         </Border>
                                     </ControlTemplate>
@@ -63,7 +63,7 @@
                                 <Setter.Value>
                                     <ControlTemplate TargetType="Button">
                                         <Border Background="LightCoral" CornerRadius="20" Padding="10">
-                                            <TextBlock Text="- Eliminar Equipo" HorizontalAlignment="Center" 
+                                            <TextBlock Text="- Eliminar Jugador" HorizontalAlignment="Center" 
                                    FontWeight="Bold" Foreground="Black"/>
                                         </Border>
                                     </ControlTemplate>
@@ -87,9 +87,9 @@
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="Button">
-                                        <Border Background="LightGreen" CornerRadius="20" Padding="10">
-                                            <TextBlock Text="Consultar Equipo" HorizontalAlignment="Center" 
-                                                FontWeight="Bold" Foreground="Black"/>
+                                        <Border Background="LimeGreen" CornerRadius="20" Padding="10">
+                                            <TextBlock Text="+ Crear Jugadir" HorizontalAlignment="Center" 
+               FontWeight="Bold" Foreground="Black"/>
                                         </Border>
                                     </ControlTemplate>
                                 </Setter.Value>
@@ -110,9 +110,9 @@
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="Button">
-                                        <Border Background="LimeGreen" CornerRadius="20" Padding="10">
-                                            <TextBlock Text="+ Crear Equipo" HorizontalAlignment="Center" 
-                                   FontWeight="Bold" Foreground="Black"/>
+                                        <Border Background="LightGreen" CornerRadius="20" Padding="10">
+                                            <TextBlock Text="Consultar Jugador" HorizontalAlignment="Center" 
+                            FontWeight="Bold" Foreground="Black"/>
                                         </Border>
                                     </ControlTemplate>
                                 </Setter.Value>

@@ -96,7 +96,7 @@
                              Margin="0,5,0,0"
                              Padding="20,5,0,0">
                         <TextBox.Background>
-                            <ImageBrush ImageSource="/Images/balon.png"
+                            <ImageBrush ImageSource="/Images/user-icon.png"
                                         Stretch="None"
                                         AlignmentX="Left"/>
                         </TextBox.Background>
@@ -109,7 +109,7 @@
                                Margin="0,30,0,0"/>
 
                     <TextBox x:Name="password"
-                         Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
+                         Text="{Binding Password,   UpdateSourceTrigger=PropertyChanged}"
                          FontFamily="Montserrat"
                          FontSize="13"
                          FontWeight="Medium"
@@ -122,7 +122,7 @@
                          Margin="0,5,0,0"
                          Padding="20,5,0,0">
                         <TextBox.Background>
-                            <ImageBrush ImageSource="/Images/balon.png"
+                            <ImageBrush ImageSource="/Images/key-icon.png"
                             Stretch="None"
                             AlignmentX="Left"/>
                         </TextBox.Background>
@@ -137,6 +137,7 @@
                                TextWrapping="Wrap"/>
 
                     <Button x:Name="btnLogin"
+                            Click="btnLogin_Click"
                             Command="{Binding LoginCommand}"
                             BorderThickness="0"
                             Content="Acceder"
@@ -145,7 +146,7 @@
                             FontWeight="Bold"
                             FontFamily="Montserrat"
                             Cursor="Hand"
-                            Margin="0,30,0,0">
+                            Margin="0,5,0,20">
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="Background" Value="#2D5A2D"/>
@@ -169,7 +170,8 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="BackButton_Click"/>
+                    <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="BackButton_Click">
+                    </Button>
                 </StackPanel>
             </Grid>
         </Border>

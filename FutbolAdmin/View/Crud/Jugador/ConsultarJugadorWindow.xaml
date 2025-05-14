@@ -49,6 +49,23 @@
                     <DataGridTextColumn Header="TA" Binding="{Binding TarjetasAmarillas}" Width="50"/>
                     <DataGridTextColumn Header="TR" Binding="{Binding TarjetasRojas}" Width="50"/>
                 </DataGrid.Columns>
+
+                <!-- Estilo de encabezados -->
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="MediumAquamarine"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+
+                <!-- Bordes en las celdas -->
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                    </Style>
+                </DataGrid.CellStyle>
             </DataGrid>
 
             <!-- Botones inferior izquierda y derecha -->

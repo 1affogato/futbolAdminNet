@@ -37,23 +37,24 @@ namespace FutbolAdmin.View {
 
         private void IsViewVisibleChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(LoginViewModel.IsViewVisible) && !_viewModel.IsViewVisible)
-            {
+            if (e.PropertyName == nameof(LoginViewModel.IsViewVisible) && !_viewModel.IsViewVisible) {
+                
                 // Se cierra la ventana de login y se procede a la de admin
-                new AdminWindow().Show();
-                Close();
+                // new AdminWindow().Show();
+
+                // Close();
             }
         }
+
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationHelper.CloseWindow(this);
         }
 
-        // Este método será llamado desde el ViewModel cuando el login sea exitoso
-        public void NavigateToAdminWindow()
-        {
-            var adminWindow = new AdminWindow();
-            NavigationHelper.ShowWindowAndHideParent(adminWindow, this);
+        private void btnLogin_Click(object sender, RoutedEventArgs e) {
+            if (_viewModel.ExecuteLogin()) {
+                NavigationHelper.ShowWindowAndHideParent(new AdminWindow(), this);
+            }
         }
     }
-   }
+}

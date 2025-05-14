@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using FutbolAdmin.Repositories;
+using FutbolAdmin.View;
 
 namespace FutbolAdmin.ViewModel {
     public class LoginViewModel : ViewModelBase {
@@ -21,7 +22,6 @@ namespace FutbolAdmin.ViewModel {
         // Ventana
 
         protected bool _isViewVisible;
-        private string _errorMessage;
         public bool IsViewVisible {
             get => _isViewVisible;
             set {
@@ -30,6 +30,7 @@ namespace FutbolAdmin.ViewModel {
             }
         }
 
+        private string _errorMessage;
         public string ErrorMessage
         {
             get { return _errorMessage; }
@@ -60,14 +61,13 @@ namespace FutbolAdmin.ViewModel {
             }
         }
 
-        public void ExecuteLogin() {
+        public bool ExecuteLogin() {
             var cuenta = _repositoryCuentaAdmin.GetByUsername(_username);
             if (cuenta != null) {
-                if (cuenta.Nombre == _username && cuenta.Contraseña.Equals(_password)) {
-                    IsViewVisible = false;
-                }
+                return cuenta.Nombre == _username && cuenta.Contraseña.Equals(_password);
             } else {
                 ErrorMessage = "Usuario o contraseña inválidos";
+                return false;
             }
         }
     }
