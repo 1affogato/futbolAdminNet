@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using FutbolAdmin.Model;
 using FutbolAdmin.Repositories;
 
@@ -12,8 +13,12 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
     public class ModificarJugadorViewModel : ViewModelBase {
         protected RepositoryJugador _repositorioJugador;
 
+        public ICommand SearchCommand { get; }
+
         public ModificarJugadorViewModel() {
             _repositorioJugador = new RepositoryJugador();
+            SearchCommand = new ComandoViewModel(execute => SearchJugadores());
+            Jugadores = new ObservableCollection<JugadorModel>(_repositorioJugador.GetAll());
         }
 
         public string _playerSearchName;
@@ -25,14 +30,19 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
             }
         }
 
+        protected ObservableCollection<JugadorModel> _jugadores;
         public ObservableCollection<JugadorModel> Jugadores {
-            get => new ObservableCollection<JugadorModel>(_repositorioJugador.GetAll());
+            get => _jugadores;
+            set {
+                _jugadores = value;
+                OnPropertyChanged(nameof(Jugadores));
+            }
         }
 
-        public ObservableCollection<JugadorModel> SearchJugadores() {
+        public void SearchJugadores() {
             var jugadores = _repositorioJugador.GetAll();
             var filteredJugadores = jugadores.Where(j => j.Nombre.ToLower().Contains(PlayerSearchName.ToLower()));
-            return new ObservableCollection<JugadorModel>(_repositorioJugador.GetAll());
+            Jugadores = new ObservableCollection<JugadorModel>(filteredJugadores);
         }
     }
 }

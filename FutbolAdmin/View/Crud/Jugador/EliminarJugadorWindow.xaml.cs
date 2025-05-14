@@ -14,36 +14,29 @@ using System.Windows.Shapes;
 using FutbolAdmin.Model;
 using FutbolAdmin.Repositories;
 using FutbolAdmin.View.Visitantes;
+using FutbolAdmin.ViewModel.Crud.Jugador;
 
 namespace FutbolAdmin.View.Crud.Jugador {
     /// <summary>
     /// Interaction logic for EliminarJugadorWindow.xaml
     /// </summary>
     public partial class EliminarJugadorWindow : Window {
-        protected RepositoryJugador _repository;
+
+        protected EliminarJugadorViewModel _viewModel;
 
         public EliminarJugadorWindow() {
-            _repository = new RepositoryJugador();
+            _viewModel = new EliminarJugadorViewModel();
+            DataContext = _viewModel;
             InitializeComponent();
-            JugadoresDataGrid.ItemsSource = _repository.GetAll();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        private void Button_Click(object sender, RoutedEventArgs e) {
             NavigationHelper.CloseWindow(this);
         }
 
-        private void JugadoresDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (JugadoresDataGrid.SelectedItem is JugadorModel jugadorSeleccionado)
-            {
-                int idJugador = jugadorSeleccionado.Id_Jugador;
-
-                var repository = new RepositoryJugador();
-                repository.Delete(idJugador);
-
-                // Refrescar el DataGrid
-                JugadoresDataGrid.ItemsSource = repository.GetAll();
+        private void JugadoresDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            if (JugadoresDataGrid.SelectedItem is JugadorModel jugadorSeleccionado) {
+                _viewModel.EliminarJugador(jugadorSeleccionado);
             }
         }
     }

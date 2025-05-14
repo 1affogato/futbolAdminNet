@@ -124,6 +124,7 @@
     <Compile Include="Repositories\RepositoryTipoEvento.cs" />
     <Compile Include="ViewModel\Crud\Jugador\ConsultarJugadorViewModel.cs" />
     <Compile Include="ViewModel\Crud\Jugador\CrearJugadorViewModel.cs" />
+    <Compile Include="ViewModel\Crud\Jugador\EliminarJugadorViewModel.cs" />
     <Compile Include="ViewModel\Crud\Jugador\ModificarJugadorViewModel.cs" />
     <Compile Include="ViewModel\Crud\Jugador\VentanasSecundarias\EditarJugadorViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
