@@ -39,15 +39,6 @@
                       RowBackground="LightGreen" AlternatingRowBackground="DarkSeaGreen"
                       BorderBrush="Black" BorderThickness="2" SelectionChanged="EquposDataGrid_SelectionChanged">
                 <DataGrid.Columns>
-<<<<<<< HEAD
-                    <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50"/>
-                    <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
-                    <DataGridTextColumn Header="Edad" Binding="{Binding Edad}" Width="60"/>
-                    <DataGridTextColumn Header="G" Binding="{Binding G}" Width="60"/>
-                    <DataGridTextColumn Header="A" Binding="{Binding A}" Width="60"/>
-                    <DataGridTextColumn Header="TA" Binding="{Binding TA}" Width="60"/>
-                    <DataGridTextColumn Header="TR" Binding="{Binding TR}" Width="60"/>
-=======
                     <DataGridTextColumn Header="Id" Binding="{Binding Id_Equipo}" Width="40"/>
                     <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
                     <DataGridTextColumn Header="V" Binding="{Binding Victorias}" Width="50"/>
@@ -57,7 +48,6 @@
                     <DataGridTextColumn Header="GC" Binding="{Binding GolesContra}" Width="50"/>
                     <DataGridTextColumn Header="DG" Binding="{Binding DiferenciaGoles}" Width="50"/>
                     <DataGridTextColumn Header="Pts" Binding="{Binding Puntos}" Width="50"/>
->>>>>>> e0d1a7aa9fe5b2d5c99ba9a4ee9bacc5eebb2f2a
                 </DataGrid.Columns>
 
                 <!-- Estilo de encabezados -->
