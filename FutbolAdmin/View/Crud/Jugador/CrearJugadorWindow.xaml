@@ -5,66 +5,104 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FutbolAdmin.View.Crud.Jugador"
         mc:Ignorable="d"
-        Title="CrearJugadorWindow" Height="450" Width="800" Background="MediumAquamarine">
-    <Grid Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+        Title="CrearJugadorWindow" Height="450" Width="800" 
+            WindowStartupLocation="CenterScreen"
+    Background="Transparent">
 
-        <!-- Título -->
-        <Label Grid.Row="0" Content="Crear jugador" 
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleantToVisibility"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleantToVisibility}"/>
+    </Window.Visibility>
+
+    <Border CornerRadius="12" BorderThickness="2">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/balon.png" Stretch="UniformToFill" />
+        </Border.Background>
+        <Border CornerRadius="10" BorderThickness="2" Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#1E3A1E" Offset="0" />
+                    <!-- Verde oscuro -->
+                    <GradientStop Color="#5A8F5A" Offset="0.5"/>
+                    <!-- Verde medio -->
+                    <GradientStop Color="#1E3A1E" Offset="1"/>
+                    <!-- Verde oscuro -->
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.1,0" EndPoint="1,1">
+                    <GradientStop Color="#0A1E0A" Offset="0" />
+                    <!-- Verde muy oscuro -->
+                    <GradientStop Color="#2D5A2D" Offset="0.5"/>
+                    <!-- Verde -->
+                    <GradientStop Color="#F8F8F8" Offset="1"/>
+                    <!-- Blanco -->
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Título -->
+                <Label Foreground="White" Grid.Row="0" Content="Crear jugador" 
        FontSize="24" FontWeight="Bold"
        HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
-        <!-- Tabla con campos de texto -->
-        <Grid Grid.Row="1" Margin="70,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+                <!-- Tabla con campos de texto -->
+                <Grid Grid.Row="1" Margin="70,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-            <!-- Encabezados -->
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Nombre:" Margin="5" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="Edad:" Margin="5" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Equipo:" Margin="5" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="3" Grid.Column="0" Text="Partidos Jugados:" Margin="5" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="4" Grid.Column="0" Text="Goles:" Margin="5" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="5" Grid.Column="0" Text="Asistencias:" Margin="5" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="6" Grid.Column="0" Text="Tarjetas Amarillas:" Margin="5" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="7" Grid.Column="0" Text="Tarjetas Rojas:" Margin="5" VerticalAlignment="Center"/>
-
-            
-            
-            <!-- Campos de texto -->
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="6" Height="25" Text="{Binding Nombre}"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25"  Text="{Binding Edad}"/>
-            <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25" ItemsSource="{Binding Equipos}" SelectedValue="{Binding EquipoSelected}"/>
-            <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Height="25" Text="{Binding PartidosJugados, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Height="25" Text="{Binding Goles, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Height="25" Text="{Binding Asistencias, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Height="25" Text="{Binding TarjetasAmarillas, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Grid.Row="7" Grid.Column="1" Margin="5" Height="25" Text="{Binding TarjetasRojas, UpdateSourceTrigger=PropertyChanged}"/>
+                    <!-- Encabezados -->
+                    <TextBlock Grid.Row="0" Foreground="White" Grid.Column="0" Text="Nombre:" Margin="5" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="1" Foreground="White" Grid.Column="0" Text="Edad:" Margin="5" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="2" Foreground="White" Grid.Column="0" Text="Equipo:" Margin="5" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="3" Foreground="White" Grid.Column="0" Text="Partidos Jugados:" Margin="5" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="4" Foreground="White" Grid.Column="0" Text="Goles:" Margin="5" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="5" Foreground="White" Grid.Column="0" Text="Asistencias:" Margin="5" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="6" Foreground="White" Grid.Column="0" Text="Tarjetas Amarillas:" Margin="5" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="7" Foreground="White" Grid.Column="0" Text="Tarjetas Rojas:" Margin="5" VerticalAlignment="Center"/>
 
 
-        </Grid>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Width="650" >
-            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5,0" Background="#aaaaaa" Click="BackButton_Click"/>
-            <Button x:Name="CrearJugadorButton" Content="Crear jugador" Width="120" Margin="400,0" Background="#aaaaaa" Height="20" Command="{Binding CrearJugador}"/>
-        </StackPanel>
-    </Grid>
+                    <!-- Campos de texto -->
+                    <TextBox Grid.Row="0" Grid.Column="1" Margin="6" Height="25" Text="{Binding Nombre}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25"  Text="{Binding Edad}"/>
+                    <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25" ItemsSource="{Binding Equipos}" SelectedValue="{Binding EquipoSelected}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Height="25" Text="{Binding PartidosJugados, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Height="25" Text="{Binding Goles, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Height="25" Text="{Binding Asistencias, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Height="25" Text="{Binding TarjetasAmarillas, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Row="7" Grid.Column="1" Margin="5" Height="25" Text="{Binding TarjetasRojas, UpdateSourceTrigger=PropertyChanged}"/>
+
+
+                </Grid>
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Width="650" >
+                    <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5,0" Background="#aaaaaa" Click="BackButton_Click"/>
+                    <Button x:Name="CrearJugadorButton" Content="Crear jugador" Width="120" Margin="400,0" Background="#aaaaaa" Height="20" Command="{Binding CrearJugador}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Border>
 </Window>
     

@@ -5,145 +5,182 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FutbolAdmin.View.Crud.Jugador"
         mc:Ignorable="d"
-        Title="CrudJugadorWindow"  Height="400" Width="400" Background="MediumAquamarine">
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+        Title="CrudJugadorWindow"  Height="400" Width="400" 
+            WindowStartupLocation="CenterScreen"
+    Background="Transparent">
 
-        <!-- Titulo -->
-        <Label Grid.Row="0" Content="Jugador" 
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleantToVisibility"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleantToVisibility}"/>
+    </Window.Visibility>
+
+    <Border CornerRadius="12" BorderThickness="2">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/balon.png" Stretch="UniformToFill" />
+        </Border.Background>
+        <Border CornerRadius="10" BorderThickness="2" Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#1E3A1E" Offset="0" />
+                    <!-- Verde oscuro -->
+                    <GradientStop Color="#5A8F5A" Offset="0.5"/>
+                    <!-- Verde medio -->
+                    <GradientStop Color="#1E3A1E" Offset="1"/>
+                    <!-- Verde oscuro -->
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.1,0" EndPoint="1,1">
+                    <GradientStop Color="#0A1E0A" Offset="0" />
+                    <!-- Verde muy oscuro -->
+                    <GradientStop Color="#2D5A2D" Offset="0.5"/>
+                    <!-- Verde -->
+                    <GradientStop Color="#F8F8F8" Offset="1"/>
+                    <!-- Blanco -->
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Titulo -->
+                <Label Grid.Row="0" Foreground="White" Content="Jugador" 
        FontSize="28" FontWeight="Bold" 
-       HorizontalAlignment="Center" Margin="0,20"
-       Foreground="#333333"/>
+       HorizontalAlignment="Center" Margin="0,20"/>
 
-        <!-- Botones principales -->
-        <Grid Grid.Row="1" VerticalAlignment="Center">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+                <!-- Botones principales -->
+                <Grid Grid.Row="1" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-            <!-- Primera columna -->
-            <StackPanel Grid.Column="0" HorizontalAlignment="Center">
-                <!-- Botón Modificar jugador -->
-                <Button Content="Modificar jugador" x:Name="ModificarJugadorButton"
+                    <!-- Primera columna -->
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                        <!-- Botón Modificar jugador -->
+                        <Button Content="Modificar jugador" x:Name="ModificarJugadorButton"
                     Width="150" Height="40" Margin="0,0,0,35"
                     FontWeight="SemiBold"
                     Background="#333333" Foreground="White"
                     BorderThickness="0" Cursor="Hand" Click="ModificarJugadorButton_Click">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Background="Aquamarine" CornerRadius="20" Padding="10">
-                                            <TextBlock Text="Modificar Jugador" HorizontalAlignment="Center" 
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="Aquamarine" CornerRadius="20" Padding="10">
+                                                    <TextBlock Text="Modificar Jugador" HorizontalAlignment="Center" 
                                    FontWeight="Bold" Foreground="Black"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
 
 
-                <!-- Botón Eliminar jugador -->
-                <Button Content="Eliminar jugador" x:Name="EliminarJugadorButton"
+                        <!-- Botón Eliminar jugador -->
+                        <Button Content="Eliminar jugador" x:Name="EliminarJugadorButton"
                     Width="150" Height="40" Margin="0,0,0,35"
                     FontWeight="SemiBold"
                     Background="#333333" Foreground="White"
                     BorderThickness="0" Cursor="Hand" Click="EliminarJugadorButton_Click">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Background="LightCoral" CornerRadius="20" Padding="10">
-                                            <TextBlock Text="- Eliminar Jugador" HorizontalAlignment="Center" 
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="LightCoral" CornerRadius="20" Padding="10">
+                                                    <TextBlock Text="- Eliminar Jugador" HorizontalAlignment="Center" 
                                    FontWeight="Bold" Foreground="Black"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </Button.Style>
-                </Button>
-            </StackPanel>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
 
-            <!-- Segunda columna -->
-            <StackPanel Grid.Column="1" HorizontalAlignment="Center">
-                <!-- Botón Crear jugador -->
-                <Button Content="Crear jugador" x:Name="CrearJugadorButton"
+                    <!-- Segunda columna -->
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                        <!-- Botón Crear jugador -->
+                        <Button Content="Crear jugador" x:Name="CrearJugadorButton"
                     Width="150" Height="40" Margin="0,0,0,30"
                     FontWeight="SemiBold"
                     Background="#333333" Foreground="White"
                     BorderThickness="0" Cursor="Hand" Click="CrearJugadorButton_Click">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Background="LimeGreen" CornerRadius="20" Padding="10">
-                                            <TextBlock Text="+ Crear Jugador" HorizontalAlignment="Center" 
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="LimeGreen" CornerRadius="20" Padding="10">
+                                                    <TextBlock Text="+ Crear Jugador" HorizontalAlignment="Center" 
                FontWeight="Bold" Foreground="Black"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
 
 
-                <!-- Botón Consultar jugador -->
-                <Button Content="Consultar jugador" x:Name="ConsultarJugadorButton"
+                        <!-- Botón Consultar jugador -->
+                        <Button Content="Consultar jugador" x:Name="ConsultarJugadorButton"
                     Width="150" Height="40"
                     FontWeight="SemiBold"
                     Background="#333333" Foreground="White"
                     BorderThickness="0" Cursor="Hand" Click="ConsultarJugadorButton_Click">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Background="LightGreen" CornerRadius="20" Padding="10">
-                                            <TextBlock Text="Consultar Jugador" HorizontalAlignment="Center" 
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="LightGreen" CornerRadius="20" Padding="10">
+                                                    <TextBlock Text="Consultar Jugador" HorizontalAlignment="Center" 
                             FontWeight="Bold" Foreground="Black"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </Button.Style>
-                </Button>
-            </StackPanel>
-        </Grid>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+                </Grid>
 
-        <!-- Botón Regresar -->
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
-            <Button x:Name="BackButton" Content="Regresar" Margin="5"  Background="#aaaaaa" Click="BackButton_Click">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Background="SeaGreen" CornerRadius="20" Padding="7">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="/Images/flechaAtras.png" Width="20" Height="20"/>
-                                            <TextBlock Text="    Regresar" VerticalAlignment="Center" FontSize="14" 
+                <!-- Botón Regresar -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+                    <Button x:Name="BackButton" Content="Regresar" Margin="5"  Background="#aaaaaa" Click="BackButton_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="/Images/flechaAtras.png" Width="20" Height="20"/>
+                                                    <TextBlock Text="    Regresar" VerticalAlignment="Center" FontSize="14" 
                                                 FontWeight="Bold" Foreground="Black"/>
-                                        </StackPanel>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Button.Style>
-            </Button>
-        </StackPanel>
-    </Grid>
+                                                </StackPanel>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Border>
 </Window>

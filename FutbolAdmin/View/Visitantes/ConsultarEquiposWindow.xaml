@@ -5,109 +5,147 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FutbolAdmin.View.Visitantes"
         mc:Ignorable="d"
-        Title="Consulta de equipos" Height="450" Width="800" Background="MediumAquamarine">
-    <Grid>
-        
-        <StackPanel Margin="10">
-            <TextBlock HorizontalAlignment="Center" Text="{Binding NombreEquipo}" FontSize="25" 
+        Title="Consulta de equipos" Height="450" Width="800" 
+            WindowStartupLocation="CenterScreen"
+    Background="Transparent">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleantToVisibility"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleantToVisibility}"/>
+    </Window.Visibility>
+
+    <Border CornerRadius="12" BorderThickness="2">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/balon.png" Stretch="UniformToFill" />
+        </Border.Background>
+        <Border CornerRadius="10" BorderThickness="2" Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#1E3A1E" Offset="0" />
+                    <!-- Verde oscuro -->
+                    <GradientStop Color="#5A8F5A" Offset="0.5"/>
+                    <!-- Verde medio -->
+                    <GradientStop Color="#1E3A1E" Offset="1"/>
+                    <!-- Verde oscuro -->
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.1,0" EndPoint="1,1">
+                    <GradientStop Color="#0A1E0A" Offset="0" />
+                    <!-- Verde muy oscuro -->
+                    <GradientStop Color="#2D5A2D" Offset="0.5"/>
+                    <!-- Verde -->
+                    <GradientStop Color="#F8F8F8" Offset="1"/>
+                    <!-- Blanco -->
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+
+                <StackPanel Margin="10">
+                    <TextBlock HorizontalAlignment="Center" Text="{Binding NombreEquipo}" FontSize="25" 
                        FontWeight="Bold" Margin="0,0,0,8"/>
 
-            <!-- Tabla de estadísticas generales -->
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+                    <!-- Tabla de estadísticas generales -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
 
-                </Grid.RowDefinitions>
-                <Border BorderBrush="Black" Background="LimeGreen" BorderThickness="1" Grid.Row="0" Grid.Column="0">
-                    <TextBlock Text="{Binding VictoriasText}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </Border>
-                <Border BorderBrush="Black" Background="Gold" BorderThickness="1" Grid.Row="0" Grid.Column="1">
-                    <TextBlock Text="{Binding EmpatesText}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </Border>
-                <Border BorderBrush="Black" Background="Crimson" BorderThickness="1" Grid.Row="0" Grid.Column="2">
-                    <TextBlock Text="{Binding DerrotasText}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </Border>
-                <Border BorderBrush="Black" Background="DarkSeaGreen" BorderThickness="1" Grid.Row="0" Grid.Column="3">
-                    <TextBlock Text="{Binding GolesFavorText}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </Border>
-                <Border BorderBrush="Black" Background="DarkSeaGreen" BorderThickness="1" Grid.Row="0" Grid.Column="4">
-                    <TextBlock Text="{Binding GolesContraText}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </Border>
-                <Border BorderBrush="Black" Background="DarkSeaGreen" BorderThickness="1" Grid.Row="0" Grid.Column="5">
-                    <TextBlock Text="{Binding EmpatesText}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </Border>
-                <Border BorderBrush="Black" Background="DarkSeaGreen" BorderThickness="1" Grid.Row="0" Grid.Column="6">
-                    <TextBlock Text="{Binding PuntosText}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </Border>
+                        </Grid.RowDefinitions>
+                        <Border BorderBrush="Black" Background="LimeGreen" BorderThickness="1" Grid.Row="0" Grid.Column="0">
+                            <TextBlock Text="{Binding VictoriasText}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border BorderBrush="Black" Background="Gold" BorderThickness="1" Grid.Row="0" Grid.Column="1">
+                            <TextBlock Text="{Binding EmpatesText}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border BorderBrush="Black" Background="Crimson" BorderThickness="1" Grid.Row="0" Grid.Column="2">
+                            <TextBlock Text="{Binding DerrotasText}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border BorderBrush="Black" Background="DarkSeaGreen" BorderThickness="1" Grid.Row="0" Grid.Column="3">
+                            <TextBlock Text="{Binding GolesFavorText}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border BorderBrush="Black" Background="DarkSeaGreen" BorderThickness="1" Grid.Row="0" Grid.Column="4">
+                            <TextBlock Text="{Binding GolesContraText}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border BorderBrush="Black" Background="DarkSeaGreen" BorderThickness="1" Grid.Row="0" Grid.Column="5">
+                            <TextBlock Text="{Binding EmpatesText}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border BorderBrush="Black" Background="DarkSeaGreen" BorderThickness="1" Grid.Row="0" Grid.Column="6">
+                            <TextBlock Text="{Binding PuntosText}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
 
 
-            </Grid>
+                    </Grid>
 
-            <!-- Tabla de equipos -->
-            <Grid>
-                <!-- Tabla con DataGrid -->
-                <DataGrid x:Name="ClasificacionDataGrid" ItemsSource="{Binding Jugadores}" AutoGenerateColumns="False"
-                     HeadersVisibility="Column" Background="LightGreen" Foreground="Black" Height="200" Margin="10">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="#" Binding="{Binding Id_Jugador}" Width="Auto"/>
-                        <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
-                        <DataGridTextColumn Header="Edad" Binding="{Binding Edad}" Width="50"/>
-                        <DataGridTextColumn Header="PJ" Binding="{Binding PartidosJugados}" Width="50"/>
-                        <DataGridTextColumn Header="G" Binding="{Binding Goles}" Width="50"/>
-                        <DataGridTextColumn Header="A" Binding="{Binding Asistencias}" Width="50"/>
-                        <DataGridTextColumn Header="TA" Binding="{Binding TarjetasAmarillas}" Width="50"/>
-                        <DataGridTextColumn Header="TR" Binding="{Binding TarjetasRojas}" Width="50"/>
-                    </DataGrid.Columns>
+                    <!-- Tabla de equipos -->
+                    <Grid>
+                        <!-- Tabla con DataGrid -->
+                        <DataGrid x:Name="ClasificacionDataGrid" ItemsSource="{Binding Jugadores}" AutoGenerateColumns="False"
+                     HeadersVisibility="Column" Background="#004400" Foreground="Black" Height="200" Margin="10">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="#" Binding="{Binding Id_Jugador}" Width="Auto"/>
+                                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                                <DataGridTextColumn Header="Edad" Binding="{Binding Edad}" Width="50"/>
+                                <DataGridTextColumn Header="PJ" Binding="{Binding PartidosJugados}" Width="50"/>
+                                <DataGridTextColumn Header="G" Binding="{Binding Goles}" Width="50"/>
+                                <DataGridTextColumn Header="A" Binding="{Binding Asistencias}" Width="50"/>
+                                <DataGridTextColumn Header="TA" Binding="{Binding TarjetasAmarillas}" Width="50"/>
+                                <DataGridTextColumn Header="TR" Binding="{Binding TarjetasRojas}" Width="50"/>
+                            </DataGrid.Columns>
 
-                    <!-- Estilo de encabezados -->
-                    <DataGrid.ColumnHeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="Background" Value="MediumAquamarine"/>
-                            <Setter Property="Foreground" Value="Black"/>
-                            <Setter Property="FontWeight" Value="Bold"/>
-                        </Style>
-                    </DataGrid.ColumnHeaderStyle>
+                            <!-- Estilo de encabezados -->
+                            <DataGrid.ColumnHeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="#779977"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Style>
+                            </DataGrid.ColumnHeaderStyle>
 
-                    <!-- Bordes en las celdas -->
-                    <DataGrid.CellStyle>
-                        <Style TargetType="DataGridCell">
-                            <Setter Property="BorderBrush" Value="Black"/>
-                            <Setter Property="BorderThickness" Value="1"/>
-                        </Style>
-                    </DataGrid.CellStyle>
-                </DataGrid>
-            </Grid>
+                            <!-- Bordes en las celdas -->
+                            <DataGrid.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="BorderBrush" Value="Black"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                </Style>
+                            </DataGrid.CellStyle>
+                        </DataGrid>
+                    </Grid>
 
-            <!-- Botón de regreso -->
-            <Button Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Click="Button_Click">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Background="SeaGreen" CornerRadius="20" Padding="10">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="/Images/flechaAtras.png" Width="30" Height="30"/>
-                                            <TextBlock Text="  Regresar" VerticalAlignment="Center" FontSize="20" 
+                    <!-- Botón de regreso -->
+                    <Button Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Click="Button_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="SeaGreen" CornerRadius="20" Padding="10">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="/Images/flechaAtras.png" Width="30" Height="30"/>
+                                                    <TextBlock Text="  Regresar" VerticalAlignment="Center" FontSize="20" 
                                                        FontWeight="Bold" Foreground="Black"/>
-                                        </StackPanel>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Button.Style>
-            </Button>
-        </StackPanel>
-    </Grid>
+                                                </StackPanel>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Border>
 </Window>
