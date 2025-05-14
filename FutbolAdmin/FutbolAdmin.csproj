@@ -122,6 +122,8 @@
     <Compile Include="Repositories\RepositoryJugador.cs" />
     <Compile Include="Repositories\RepositoryPartido.cs" />
     <Compile Include="Repositories\RepositoryTipoEvento.cs" />
+    <Compile Include="ViewModel\Crud\Equipo\ConsultarEquipoViewModel.cs" />
+    <Compile Include="ViewModel\Crud\Equipo\CrearEquipoViewModel.cs" />
     <Compile Include="ViewModel\Crud\Equipo\EliminarEquipoViewModel.cs" />
     <Compile Include="ViewModel\Crud\Jugador\ConsultarJugadorViewModel.cs" />
     <Compile Include="ViewModel\Crud\Jugador\CrearJugadorViewModel.cs" />
