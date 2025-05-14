@@ -88,7 +88,7 @@
                                 <Setter.Value>
                                     <ControlTemplate TargetType="Button">
                                         <Border Background="LimeGreen" CornerRadius="20" Padding="10">
-                                            <TextBlock Text="+ Crear Jugadir" HorizontalAlignment="Center" 
+                                            <TextBlock Text="+ Crear Jugador" HorizontalAlignment="Center" 
                FontWeight="Bold" Foreground="Black"/>
                                         </Border>
                                     </ControlTemplate>
