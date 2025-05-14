@@ -60,6 +60,65 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador.VentanasSecundarias {
             }
         }
 
+
+        //Bindings de jugador
+        private int _partidosJugados;
+        private int _goles;
+        private int _asistencias;
+        private int _tarjetasAmarillas;
+        private int _tarjetasRojas;
+
+        public int PartidosJugados
+        {
+            get { return _partidosJugados; }
+            set
+            {
+                _partidosJugados = value;
+                OnPropertyChanged(nameof(PartidosJugados));
+            }
+        }
+
+        public int Goles
+        {
+            get { return _goles; }
+            set
+            {
+                _goles = value;
+                OnPropertyChanged(nameof(Goles));
+            }
+        }
+
+        public int Asistencias
+        {
+            get { return _asistencias; }
+            set
+            {
+                _asistencias = value;
+                OnPropertyChanged(nameof(Asistencias));
+            }
+        }
+
+        public int TarjetasAmarillas
+        {
+            get { return _tarjetasAmarillas; }
+            set
+            {
+                _tarjetasAmarillas = value;
+                OnPropertyChanged(nameof(TarjetasAmarillas));
+            }
+        }
+
+        public int TarjetasRojas
+        {
+            get { return _tarjetasRojas; }
+            set
+            {
+                _tarjetasRojas = value;
+                OnPropertyChanged(nameof(TarjetasRojas));
+            }
+        }
+
+
         public ObservableCollection<string> Equipos {
             get => GetEquipos();
         }
@@ -78,11 +137,11 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador.VentanasSecundarias {
             jugador.Id_Jugador = JugadorSeleccionado.Id_Jugador;
             jugador.Nombre = NombreJugador;
             jugador.Edad = EdadJugador;
-            jugador.PartidosJugados = JugadorSeleccionado.PartidosJugados;
-            jugador.Goles = JugadorSeleccionado.Goles;
-            jugador.Asistencias = JugadorSeleccionado.Asistencias;
-            jugador.TarjetasRojas = JugadorSeleccionado.TarjetasRojas;
-            jugador.TarjetasAmarillas = JugadorSeleccionado.TarjetasAmarillas;
+            jugador.PartidosJugados = PartidosJugados;
+            jugador.Goles = Goles;
+            jugador.Asistencias = Asistencias;
+            jugador.TarjetasRojas = TarjetasRojas;
+            jugador.TarjetasAmarillas = TarjetasAmarillas;
             jugador.Equipo = _equipoRepository.GetByName(EquipoSeleccionado);
 
             _jugadorRepository.Update(jugador);
