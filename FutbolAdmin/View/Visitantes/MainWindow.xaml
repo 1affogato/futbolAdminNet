@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
-        Background="White"
+        Background="MediumAquamarine"
         SizeToContent="Height"
         ResizeMode="NoResize">
 
@@ -58,9 +58,11 @@
                HorizontalAlignment="Center" Margin="0,10"/>
 
         <!-- Tabla de clasificación -->
-        <DataGrid Grid.Row="1" x:Name="ClasificacionDataGrid" ItemsSource="{Binding Equipos}" AutoGenerateColumns="False" SelectionMode="Single" SelectionChanged="ClasificacionDataGrid_SelectionChanged" IsReadOnly="True">
+        <DataGrid Grid.Row="1" x:Name="ClasificacionDataGrid" ItemsSource="{Binding Equipos}" AutoGenerateColumns="False" Background="LightGreen"
+                  SelectionMode="Single" SelectionChanged="ClasificacionDataGrid_SelectionChanged" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding Id_Equipo}" Visibility="Collapsed"/>
+                
+                <DataGridTextColumn Header="Id" Binding="{Binding Id_Equipo}" Visibility="Collapsed" />
                 <!-- Oculto pero disponible -->
                 <DataGridTextColumn Header="#" Binding="{Binding Posicion}" Width="Auto"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
@@ -72,12 +74,24 @@
                 <DataGridTextColumn Header="DG" Binding="{Binding DiferenciaGoles}" Width="50"/>
                 <DataGridTextColumn Header="Pts" Binding="{Binding Puntos}" Width="50"/>
             </DataGrid.Columns>
+
+            <!-- Estilo de encabezados -->
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="MediumAquamarine"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            
+            
         </DataGrid>
+        
 
         <!-- Botones -->
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
-            <Button x:Name="AdminButton" Content="Admin" Width="120" Margin="5"  Background="#aaaaaa" Click="AdminButton_Click"/>
-            <Button x:Name="VerPartidosButton" Content="Ver Partidos" Width="120" Margin="5" Background="#aaaaaa" Click="VerPartidosButton_Click"/>
+            <Button x:Name="AdminButton" Content="Admin" Width="120" Margin="5"  Background="SeaGreen" Click="AdminButton_Click"/>
+            <Button x:Name="VerPartidosButton" Content="Ver Partidos" Width="120" Margin="5" Background="YellowGreen" Click="VerPartidosButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>
