@@ -37,6 +37,7 @@ namespace FutbolAdmin.View.Crud.Jugador.ventanasSecundarias {
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
             // logica de guardar
+            this.Owner.DataContext = new ModificarJugadorViewModel();
             NavigationHelper.CloseWindow(this);
         }
     }
