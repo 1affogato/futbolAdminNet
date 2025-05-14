@@ -86,7 +86,7 @@
             </Grid>
 
             <!-- Botón de regreso -->
-            <Button Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10">
+            <Button Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Click="Button_Click">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Template">
