@@ -5,64 +5,77 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FutbolAdmin.View.Visitantes"
         mc:Ignorable="d"
-        Title="Consulta de equipos" Height="450" Width="800" Background="MediumAquamarine">
+        Title="Consulta de equipos" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+            Background="Transparent">
 
-    <!-- Redondear botones -->
-    <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="BorderBrush" Value="Gray"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="15"
-                                Padding="{TemplateBinding Padding}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay"/>
+    </Window.Visibility>
 
-        <!-- Título -->
-        <StackPanel Grid.Row="0" Margin="10">
-            <TextBlock HorizontalAlignment="Center" Text="Añadir jugador" FontSize="35" 
+    <Border CornerRadius="12" BorderThickness="2">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/balon.png" Stretch="UniformToFill" />
+        </Border.Background>
+        <Border CornerRadius="10" BorderThickness="2" Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#1E3A1E" Offset="0" />
+                    <!-- Verde oscuro -->
+                    <GradientStop Color="#5A8F5A" Offset="0.5"/>
+                    <!-- Verde medio -->
+                    <GradientStop Color="#1E3A1E" Offset="1"/>
+                    <!-- Verde oscuro -->
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.1,0" EndPoint="1,1">
+                    <GradientStop Color="#0A1E0A" Offset="0" />
+                    <!-- Verde muy oscuro -->
+                    <GradientStop Color="#2D5A2D" Offset="0.5"/>
+                    <!-- Verde -->
+                    <GradientStop Color="#F8F8F8" Offset="1"/>
+                    <!-- Blanco -->
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Título -->
+                <StackPanel Grid.Row="0" Margin="10">
+                    <TextBlock HorizontalAlignment="Center" Foreground="White" Text="Añadir jugador" FontSize="35" 
                        FontWeight="Bold" Margin="0,0,0,15"/>
-        </StackPanel>
+                </StackPanel>
 
-        <!-- Botones -->
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+                <!-- Botones -->
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-            <Button Content="Nuevo Jugador" FontWeight="Bold" Background="SeaGreen" Grid.Row="0" Width="200" Height="50" 
+                    <Button Content="Nuevo Jugador" FontWeight="Bold" Background="SeaGreen" Grid.Row="0" Width="200" Height="50" 
                     HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontSize="20" Click="SeleccionarJugadorButton_Click"/>
 
-            <Button Content="Jugador Existente" FontWeight="Bold" Background="SeaGreen" Grid.Row="1" Width="200" Height="50" 
+                    <Button Content="Jugador Existente" FontWeight="Bold" Background="SeaGreen" Grid.Row="1" Width="200" Height="50" 
                     HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontSize="20"/>
 
-            <Button Grid.Row="2" Width="200" Height="50" FontWeight="Bold"  Background="SeaGreen"
+                    <Button Grid.Row="2" Width="200" Height="50" FontWeight="Bold"  Background="SeaGreen"
                     HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontSize="20" Click="Button_Click">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <!-- <Image Source="Images/balon.png" Width="24" Height="24" Margin="0,0,10,0"/> -->
-                    <TextBlock Text="Regresar" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Button>
-        </Grid>
-    </Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <!-- <Image Source="Images/balon.png" Width="24" Height="24" Margin="0,0,10,0"/> -->
+                            <TextBlock Text="Regresar" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
 </Window>
 

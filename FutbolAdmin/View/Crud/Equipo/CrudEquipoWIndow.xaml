@@ -1,122 +1,160 @@
 ﻿<Window x:Class="FutbolAdmin.View.Crud.Equipo.CrudEquipoWIndow"      
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Crud equipo" Height="400" Width="400" Background="MediumAquamarine">
-    <Grid Margin="10">
-        <StackPanel Margin="10">
-            <TextBlock HorizontalAlignment="Center" Text="Equipo" FontSize="25" FontWeight="Bold" Margin="0,0,0,45"/>
+        Title="Crud equipo" Height="400" Width="400"
+        WindowStartupLocation="CenterScreen"
+    Background="Transparent">
 
-            <Grid>
-                <!-- Definir estructura de filas -->
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <!-- Para botones superiores -->
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                    <!-- Espacio restante -->
-                    <RowDefinition Height="Auto"/>
-                    <!-- Última fila solo para el botón inferior -->
-                </Grid.RowDefinitions>
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleantToVisibility"/>
+    </Window.Resources>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleantToVisibility}"/>
+    </Window.Visibility>
 
-                <!-- Botón Modificar equipo -->
-                <Button x:Name="ModificarButton" Width="150" Height="40" Grid.Row="0" Grid.Column="0"  Margin="0,0,0,35" Click="ModificarButton_Click">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Background="Aquamarine" CornerRadius="20" Padding="10">
-                                            <TextBlock Text="Modificar Equipo" HorizontalAlignment="Center" 
+    <Border CornerRadius="12" BorderThickness="2">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/balon.png" Stretch="UniformToFill" />
+        </Border.Background>
+        <Border CornerRadius="10" BorderThickness="2" Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#1E3A1E" Offset="0" />
+                    <!-- Verde oscuro -->
+                    <GradientStop Color="#5A8F5A" Offset="0.5"/>
+                    <!-- Verde medio -->
+                    <GradientStop Color="#1E3A1E" Offset="1"/>
+                    <!-- Verde oscuro -->
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.1,0" EndPoint="1,1">
+                    <GradientStop Color="#0A1E0A" Offset="0" />
+                    <!-- Verde muy oscuro -->
+                    <GradientStop Color="#2D5A2D" Offset="0.5"/>
+                    <!-- Verde -->
+                    <GradientStop Color="#F8F8F8" Offset="1"/>
+                    <!-- Blanco -->
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Margin="10">
+                <StackPanel Margin="10">
+                    <TextBlock HorizontalAlignment="Center" Foreground="White" Text="Equipo" FontSize="25" FontWeight="Bold" Margin="0,0,0,45"/>
+
+                    <Grid>
+                        <!-- Definir estructura de filas -->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <!-- Para botones superiores -->
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <!-- Espacio restante -->
+                            <RowDefinition Height="Auto"/>
+                            <!-- Última fila solo para el botón inferior -->
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Botón Modificar equipo -->
+                        <Button x:Name="ModificarButton" Width="150" Height="40" Grid.Row="0" Grid.Column="0"  Margin="0,0,0,35" Click="ModificarButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="Aquamarine" CornerRadius="20" Padding="10">
+                                                    <TextBlock Text="Modificar Equipo" HorizontalAlignment="Center" 
                                                        FontWeight="Bold" Foreground="Black"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
 
-                <!-- Botón Eliminar Equipo -->
-                <Button x:Name="EliminarButton" Width="150" Height="40" Grid.Row="1" Grid.Column="0" Margin="0,0,0,25" Click="EliminarButton_Click">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Background="LightCoral" CornerRadius="20" Padding="10">
-                                            <TextBlock Text="- Eliminar Equipo" HorizontalAlignment="Center" 
+                        <!-- Botón Eliminar Equipo -->
+                        <Button x:Name="EliminarButton" Width="150" Height="40" Grid.Row="1" Grid.Column="0" Margin="0,0,0,25" Click="EliminarButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="LightCoral" CornerRadius="20" Padding="10">
+                                                    <TextBlock Text="- Eliminar Equipo" HorizontalAlignment="Center" 
                                                        FontWeight="Bold" Foreground="Black"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
 
-                <!-- Botón Consultar Equipo -->
-                <Button x:Name="CosultarButton" Width="150" Height="40" Grid.Row="0" Grid.Column="1"  Margin="40,0,0,35" Click="ConsultarButton_Click">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Background="LightGreen" CornerRadius="20" Padding="10">
-                                            <TextBlock Text="Consultar Equipo" HorizontalAlignment="Center" 
+                        <!-- Botón Consultar Equipo -->
+                        <Button x:Name="CosultarButton" Width="150" Height="40" Grid.Row="0" Grid.Column="1"  Margin="40,0,0,35" Click="ConsultarButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="LightGreen" CornerRadius="20" Padding="10">
+                                                    <TextBlock Text="Consultar Equipo" HorizontalAlignment="Center" 
                                                        FontWeight="Bold" Foreground="Black"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
 
-                <!-- Botón Crear equipo -->
-                <Button x:Name="CrearButton" Width="150" Height="40" Grid.Row="1" Grid.Column="1" Margin="40,0,0,25" Click="CrearButton_Click">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Background="LimeGreen" CornerRadius="20" Padding="10">
-                                            <TextBlock Text="+ Crear Equipo" HorizontalAlignment="Center" 
+                        <!-- Botón Crear equipo -->
+                        <Button x:Name="CrearButton" Width="150" Height="40" Grid.Row="1" Grid.Column="1" Margin="40,0,0,25" Click="CrearButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="LimeGreen" CornerRadius="20" Padding="10">
+                                                    <TextBlock Text="+ Crear Equipo" HorizontalAlignment="Center" 
                                                        FontWeight="Bold" Foreground="Black"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
 
-                <!-- Botón Regresar -->
-                <Button Grid.Row="3" Grid.ColumnSpan="2" Height="40"
+                        <!-- Botón Regresar -->
+                        <Button Grid.Row="3" Grid.ColumnSpan="2" Height="40"
                         HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" Click="Button_Click">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Background="SeaGreen" CornerRadius="20" Padding="7">
-                                            <StackPanel Orientation="Horizontal">
-                                                <Image Source="/Images/flechaAtras.png" Width="20" Height="20"/>
-                                                <TextBlock Text="    Regresar" VerticalAlignment="Center" FontSize="14" 
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/flechaAtras.png" Width="20" Height="20"/>
+                                                        <TextBlock Text="    Regresar" VerticalAlignment="Center" FontSize="14" 
                                                     FontWeight="Bold" Foreground="Black"/>
-                                            </StackPanel>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                                                    </StackPanel>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </Grid>
+                </StackPanel>
             </Grid>
-        </StackPanel>
-    </Grid>
+        </Border>
+    </Border>
 </Window>

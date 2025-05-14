@@ -1,74 +1,112 @@
 ﻿<Window x:Class="FutbolAdmin.View.Calendarizacion.CalendarizacionAgregar"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Agregar Calendarización" Height="450" Width="800" Background="MediumAquamarine">
-    <Grid Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <!-- Título -->
-            <RowDefinition Height="*"/>
-            <!-- Tabla de datos -->
-            <RowDefinition Height="Auto"/>
-            <!-- Botón -->
-        </Grid.RowDefinitions>
+        Title="Agregar Calendarización" Height="450" Width="800"     WindowStartupLocation="CenterScreen"
+    Background="Transparent">
 
-        <!-- Título -->
-        <TextBlock Grid.Row="0" Text="Agregar Calendarización" FontSize="24" FontWeight="Bold"
-                   HorizontalAlignment="Center" Margin="0,0,0,20"/>
+<Window.Resources>
+    <BooleanToVisibilityConverter x:Key="BooleantToVisibility"/>
+</Window.Resources>
 
-        <!-- Tabla de datos con colores -->
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+<Window.Visibility>
+    <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleantToVisibility}"/>
+</Window.Visibility>
 
-            <!-- Encabezados -->
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Fecha:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="Jornada:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Local:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
-            <TextBlock Grid.Row="3" Grid.Column="0" Text="Visitante:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
-            <TextBlock Grid.Row="4" Grid.Column="0" Text="Goles Local:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
-            <TextBlock Grid.Row="5" Grid.Column="0" Text="Goles Visitante:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+<Border CornerRadius="12" BorderThickness="2">
+    <Border.Background>
+        <ImageBrush ImageSource="/Images/balon.png" Stretch="UniformToFill" />
+    </Border.Background>
+        <Border CornerRadius="10" BorderThickness="2" Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#1E3A1E" Offset="0" />
+                    <!-- Verde oscuro -->
+                    <GradientStop Color="#5A8F5A" Offset="0.5"/>
+                    <!-- Verde medio -->
+                    <GradientStop Color="#1E3A1E" Offset="1"/>
+                    <!-- Verde oscuro -->
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.1,0" EndPoint="1,1">
+                    <GradientStop Color="#0A1E0A" Offset="0" />
+                    <!-- Verde muy oscuro -->
+                    <GradientStop Color="#2D5A2D" Offset="0.5"/>
+                    <!-- Verde -->
+                    <GradientStop Color="#F8F8F8" Offset="1"/>
+                    <!-- Blanco -->
+                </LinearGradientBrush>
+            </Border.Background>
 
-            <!-- Campos de texto con fondo -->
-            <DatePicker Grid.Row="0" Grid.Column="1" Margin="5" Height="25" Background="LightGreen"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25" Background="LightGreen"/>
-            <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25" Background="LightGreen"/>
-            <ComboBox Grid.Row="3" Grid.Column="1" Margin="5" Height="25" Background="LightGreen"/>
-            <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Height="25" Background="LightGreen"/>
-            <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Height="25" Background="LightGreen"/>
-        </Grid>
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- Título -->
+                    <RowDefinition Height="*"/>
+                    <!-- Tabla de datos -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Botón -->
+                </Grid.RowDefinitions>
 
-        <!-- Botón redondeado -->
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,10">
-            <Button Width="140" Height="50" Click="Button_Click">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Background="SeaGreen" CornerRadius="30" Padding="10">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="/Images/flechaAtras.png" Width="30" Height="30"/>
-                                            <TextBlock Text="Regresar" VerticalAlignment="Center" FontSize="20" 
+                <!-- Título -->
+                <TextBlock Grid.Row="0" Text="Agregar Calendarización" FontSize="24" FontWeight="Bold"
+                   HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,20"/>
+
+                <!-- Tabla de datos con colores -->
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Encabezados -->
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Fecha:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Jornada:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Local:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Visitante:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Goles Local:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Goles Visitante:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+
+                    <!-- Campos de texto con fondo -->
+                    <DatePicker Grid.Row="0" Grid.Column="1" Margin="5" Height="25" Background="LightGreen"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25" Background="LightGreen"/>
+                    <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25" Background="LightGreen"/>
+                    <ComboBox Grid.Row="3" Grid.Column="1" Margin="5" Height="25" Background="LightGreen"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Height="25" Background="LightGreen"/>
+                    <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Height="25" Background="LightGreen"/>
+                </Grid>
+
+                <!-- Botón redondeado -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,10">
+                    <Button Width="140" Height="50" Click="Button_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="SeaGreen" CornerRadius="30" Padding="10">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="/Images/flechaAtras.png" Width="30" Height="30"/>
+                                                    <TextBlock Text="Regresar" VerticalAlignment="Center" FontSize="20" 
                                                        FontWeight="Bold" Foreground="Black"/>
-                                        </StackPanel>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Button.Style>
-            </Button>
-        </StackPanel>
-    </Grid>
+                                                </StackPanel>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Border>
 </Window>
