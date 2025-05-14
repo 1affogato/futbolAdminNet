@@ -12,11 +12,12 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
     public class ConsultarJugadorViewModel : ViewModelBase {
         protected RepositoryJugador _repositorioJugador;
 
-        public ICommand SearchCommand;
+        public ICommand SearchCommand { get; }
 
         public ConsultarJugadorViewModel() {
             _repositorioJugador = new RepositoryJugador();
             SearchCommand = new ComandoViewModel(execute => SearchJugadores());
+            Jugadores = new ObservableCollection<JugadorModel>(_repositorioJugador.GetAll());
         }
 
         public string _playerSearchName;
@@ -27,7 +28,7 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
                 OnPropertyChanged(nameof(PlayerSearchName));
             }
         }
-        /*
+        
         protected ObservableCollection<JugadorModel> _jugadores;
         public ObservableCollection<JugadorModel> Jugadores {
             get => _jugadores;
@@ -36,15 +37,10 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
                 OnPropertyChanged(nameof(Jugadores));
             }
         }
-        */
-        public ObservableCollection<JugadorModel> Jugadores {
-            get => new ObservableCollection<JugadorModel>(_repositorioJugador.GetAll());
-        }
 
         public void SearchJugadores() {
-            var jugadores = _repositorioJugador.GetAll();
-            var filteredJugadores = jugadores.Where(j => j.Nombre.ToLower().Contains(PlayerSearchName.ToLower()));
-            // Jugadores = new ObservableCollection<JugadorModel>(filteredJugadores);
+            var filteredJugadores = _repositorioJugador.GetAll().Where(j => j.Nombre.ToLower().Contains(PlayerSearchName.ToLower()));
+            Jugadores = new ObservableCollection<JugadorModel>(filteredJugadores);
         }
     }
 }
