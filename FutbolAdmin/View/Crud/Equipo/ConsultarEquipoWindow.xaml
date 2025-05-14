@@ -62,6 +62,15 @@
                 <DataGridTextColumn Header="DG" Binding="{Binding DiferenciaGoles}" Width="60"/>
                 <DataGridTextColumn Header="P" Binding="{Binding Puntos}" Width="60"/>
             </DataGrid.Columns>
+
+            <!-- Estilo de encabezados -->
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="MediumAquamarine"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
         </DataGrid>
 
         <!-- Botón de regreso en la esquina inferior izquierda -->

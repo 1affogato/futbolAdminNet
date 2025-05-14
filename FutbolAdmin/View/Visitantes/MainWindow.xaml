@@ -61,9 +61,6 @@
         <DataGrid Grid.Row="1" x:Name="ClasificacionDataGrid" ItemsSource="{Binding Equipos}" AutoGenerateColumns="False" Background="LightGreen"
                   SelectionMode="Single" SelectionChanged="ClasificacionDataGrid_SelectionChanged" IsReadOnly="True">
             <DataGrid.Columns>
-                
-                <DataGridTextColumn Header="Id" Binding="{Binding Id_Equipo}" Visibility="Collapsed" />
-                <!-- Oculto pero disponible -->
                 <DataGridTextColumn Header="#" Binding="{Binding Posicion}" Width="Auto"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
                 <DataGridTextColumn Header="V" Binding="{Binding Victorias}" Width="50"/>

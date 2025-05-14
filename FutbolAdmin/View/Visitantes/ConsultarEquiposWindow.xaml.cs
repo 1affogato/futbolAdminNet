@@ -22,12 +22,18 @@ namespace FutbolAdmin.View.Visitantes
     public partial class ConsultarEquiposWindow : Window
     {
         private ConsultarEquiposViewModel _viewModel;
+        private EquipoModel _equipo;
 
         public ConsultarEquiposWindow(EquipoModel equipo)
         {
             _viewModel = new ConsultarEquiposViewModel(equipo);
+            _equipo = equipo;
             DataContext = _viewModel;
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            NavigationHelper.ShowWindowAndHideParent(new MainWindow(), this);
         }
     }
 }
