@@ -1,12 +1,12 @@
 ﻿<Window x:Class="FutbolAdmin.View.Crud.Jugador.ventanasSecundarias.EditarJugadorWindow"
 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Editar Jugador" Height="450" Width="400"
+        Title="Editar Jugador" Height="600" Width="400"
         WindowStartupLocation="CenterOwner">
 
     <Grid Margin="15">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -28,7 +28,21 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Equipo:" Margin="5" VerticalAlignment="Center"/>
             <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25" ItemsSource="{Binding Equipos}" SelectedItem="{Binding EquipoSeleccionado, UpdateSourceTrigger=PropertyChanged}" />
 
-            <!-- Agrega más campos según necesites -->
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Partidos Jugados:" Margin="5" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25" Text="{Binding PartidosJugados, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Goles:" Margin="5" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25" Text="{Binding Goles, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Asistencias:" Margin="5" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25" Text="{Binding Asistencias, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Tarjetas Amarillas:" Margin="5" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25" Text="{Binding TarjetasAmarillas, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Tarjetas Rojas:" Margin="5" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25" Text="{Binding TarjetasRojas, UpdateSourceTrigger=PropertyChanged}"/>
+
         </StackPanel>
 
         <!-- Botones -->
