@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FutbolAdmin.Model;
+using FutbolAdmin.ViewModel.Crud.Jugador;
 using FutbolAdmin.ViewModel.Crud.Jugador.VentanasSecundarias;
 
 namespace FutbolAdmin.View.Crud.Jugador.ventanasSecundarias {
@@ -29,6 +30,14 @@ namespace FutbolAdmin.View.Crud.Jugador.ventanasSecundarias {
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
+            this.Owner.DataContext = new ModificarJugadorViewModel();
+            NavigationHelper.CloseWindow(this);
+        }
+
+        private void GuardarButton_Click(object sender, RoutedEventArgs e)
+        {
+            // logica de guardar
+            this.Owner.DataContext = new ModificarJugadorViewModel();
             NavigationHelper.CloseWindow(this);
         }
     }
