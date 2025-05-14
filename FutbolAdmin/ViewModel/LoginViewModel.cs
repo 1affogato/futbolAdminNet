@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -52,8 +54,8 @@ namespace FutbolAdmin.ViewModel {
             }
         }
 
-        protected string _password;
-        public string Password {
+        protected SecureString _password;
+        public SecureString Password {
             get => _password;
             set {
                 _password = value;
@@ -62,9 +64,9 @@ namespace FutbolAdmin.ViewModel {
         }
 
         public bool ExecuteLogin() {
-            var cuenta = _repositoryCuentaAdmin.GetByUsername(_username);
-            if (cuenta != null) {
-                return cuenta.Nombre == _username && cuenta.Contraseña.Equals(_password);
+            var creds = new NetworkCredential(Username, Password);
+            if (_repositoryCuentaAdmin.Auth(creds)) {
+                return true;
             } else {
                 ErrorMessage = "Usuario o contraseña inválidos";
                 return false;

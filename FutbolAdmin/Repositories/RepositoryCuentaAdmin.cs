@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
@@ -118,6 +119,19 @@ namespace FutbolAdmin.Repositories {
                 command.Parameters.Add(new OracleParameter("idCuenta", entity.Id_Cuenta));
                 command.ExecuteNonQuery();
                 connection.Close();
+            }
+        }
+
+        public bool Auth(NetworkCredential creds) {
+            using (var connection = GetConnection())
+            using (var command = new OracleCommand()) {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM CUENTAS_ADMIN WHERE NOMBRE = :username AND CONTRASENA = :password";
+                command.Parameters.Add(new OracleParameter("username", creds.UserName));
+                command.Parameters.Add(new OracleParameter("password", creds.Password));
+
+                return command.ExecuteScalar() != null;
             }
         }
     }
