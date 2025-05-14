@@ -4,17 +4,42 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using FutbolAdmin.Model;
 using FutbolAdmin.Repositories;
 
 namespace FutbolAdmin.ViewModel.Crud.Jugador {
     public class EliminarJugadorViewModel : ViewModelBase {
 
-        protected RepositoryJugador _repository;
+        protected RepositoryJugador _repositorioJugador;
+
+        public ICommand SearchCommand { get; }
+        public ICommand SearchTeamCommand { get; }
 
         public EliminarJugadorViewModel() {
-            _repository = new RepositoryJugador();
+            _repositorioJugador = new RepositoryJugador();
+            SearchCommand = new ComandoViewModel(execute => SearchJugadores());
+            SearchTeamCommand = new ComandoViewModel(execute => SearchJugadoresPorEquipo());
             Jugadores = GetJugadores();
+        }
+
+        public string _playerSearchName;
+        public string PlayerSearchName {
+            get => _playerSearchName;
+            set {
+                _playerSearchName = value;
+                OnPropertyChanged(nameof(PlayerSearchName));
+            }
+        }
+
+        private string _equipoSearchName;
+
+        public string EquipoSearchName {
+            get => _equipoSearchName;
+            set {
+                _equipoSearchName = value;
+                OnPropertyChanged(nameof(EquipoSearchName));
+            }
         }
 
         protected ObservableCollection<JugadorModel> _jugadores;
@@ -26,8 +51,20 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
             }
         }
 
+        public void SearchJugadoresPorEquipo() {
+            var filteredJugadores = _repositorioJugador.GetAll().Where(j => j.Equipo.Nombre.ToLower().Contains(EquipoSearchName.ToLower()));
+            Jugadores = new ObservableCollection<JugadorModel>(filteredJugadores);
+            PlayerSearchName = string.Empty;
+        }
+
+        public void SearchJugadores() {
+            var filteredJugadores = _repositorioJugador.GetAll().Where(j => j.Nombre.ToLower().Contains(PlayerSearchName.ToLower()));
+            Jugadores = new ObservableCollection<JugadorModel>(filteredJugadores);
+            EquipoSearchName = string.Empty;
+        }
+
         protected ObservableCollection<JugadorModel> GetJugadores() {
-            return new ObservableCollection<JugadorModel>(_repository.GetAll());
+            return new ObservableCollection<JugadorModel>(_repositorioJugador.GetAll());
         }
 
         public void EliminarJugador(JugadorModel jugador) {
@@ -37,7 +74,7 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
             repository.Delete(idJugador);
 
             // Refrescar el DataGrid
-            Jugadores = new ObservableCollection<JugadorModel>(_repository.GetAll());
+            Jugadores = new ObservableCollection<JugadorModel>(_repositorioJugador.GetAll());
         }
     }
 }
