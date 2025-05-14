@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FutbolAdmin.View"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="450" Width="800">
-    <Grid Background="#F0F0F0">
+        Title="AdminWindow" Height="450" Width="600" Background="MediumAquamarine">
+    <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -26,25 +26,89 @@
                     Width="250" Height="60" Margin="0,0,0,20"
                     FontSize="18"
                     Background="#333333" Foreground="White"
-                    BorderThickness="0" Cursor="Hand" Click="CalendarizacionButton_Click"/>
+                    BorderThickness="0" Cursor="Hand" Click="CalendarizacionButton_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="LightGreen" CornerRadius="20" Padding="0">
+                                        <TextBlock Text="Calendarización" HorizontalAlignment="Center"  VerticalAlignment="Center"
+                            FontWeight="Bold" Foreground="Black"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
 
             <!-- Boton gestionar catalogos -->
             <Button Content="Gestionar catalogos" x:Name="GestionarCatalogosButton"
                     Width="250" Height="60" Margin="0,0,0,20"
                     FontSize="18"
                     Background="#333333" Foreground="White"
-                    BorderThickness="0" Cursor="Hand" Click="GestionarCatalogosButton_Click"/>
+                    BorderThickness="0" Cursor="Hand" Click="GestionarCatalogosButton_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="LimeGreen" CornerRadius="20" Padding="0">
+                                        <TextBlock Text="Gestionar catálogos" HorizontalAlignment="Center"  VerticalAlignment="Center"
+                                            FontWeight="Bold" Foreground="Black"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
 
             <!-- Boton vaciar pedidos -->
             <Button Content="Vaciar partidos" x:Name="VaciarPartidoButton"
                     Width="250" Height="60"
                     FontSize="18"
                     Background="#333333" Foreground="White"
-                    BorderThickness="0" Cursor="Hand" Click="VaciarPartidoButton_Click"/>
+                    BorderThickness="0" Cursor="Hand" Click="VaciarPartidoButton_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="LightGreen" CornerRadius="20" Padding="0">
+                                        <TextBlock Text="Vaciar partidos" HorizontalAlignment="Center"  VerticalAlignment="Center"
+                            FontWeight="Bold" Foreground="Black"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
         </StackPanel>
 
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Left" Margin="60,10">
-            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="BackButton_Click"/>
+            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="BackButton_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="/Images/flechaAtras.png" Width="20" Height="20"/>
+                                            <TextBlock Text="    Regresar" VerticalAlignment="Center" FontSize="14" 
+                                FontWeight="Bold" Foreground="Black"/>
+                                        </StackPanel>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>
