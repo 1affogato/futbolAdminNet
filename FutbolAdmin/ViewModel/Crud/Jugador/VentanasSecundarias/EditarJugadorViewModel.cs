@@ -40,6 +40,14 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador.VentanasSecundarias {
             _jugadorRepository = new RepositoryJugador();
             _equipoRepository = new RepositoryEquipo();
             ModificarJugadorCommand = new ComandoViewModel(ExecuteModificarJugador);
+            NombreJugador = JugadorSeleccionado.Nombre;
+            EdadJugador = JugadorSeleccionado.Edad;
+            PartidosJugados = JugadorSeleccionado.PartidosJugados;
+            Goles = JugadorSeleccionado.Goles;
+            Asistencias = JugadorSeleccionado.Asistencias;
+            TarjetasAmarillas = JugadorSeleccionado.TarjetasAmarillas;
+            TarjetasRojas = JugadorSeleccionado.TarjetasRojas;
+            EquipoSeleccionado = JugadorSeleccionado.Equipo.Nombre;
         }
 
         private string _nombreJugador;
