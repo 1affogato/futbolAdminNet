@@ -194,6 +194,7 @@
     <Compile Include="View\VaciarPartidos\VaciarPartidoWindow.xaml.cs">
       <DependentUpon>VaciarPartidoWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewBase.cs" />
     <Compile Include="View\Visitantes\ConsultarEquiposWindow.xaml.cs">
       <DependentUpon>ConsultarEquiposWindow.xaml</DependentUpon>
     </Compile>

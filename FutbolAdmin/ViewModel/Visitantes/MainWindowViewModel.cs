@@ -22,7 +22,7 @@ namespace FutbolAdmin.ViewModel.Visitantes {
 
         public MainWindowViewModel() {
             _repositoryEquipo = new RepositoryEquipo();
-            Equipos =  new ObservableCollection<EquipoModel>(_repositoryEquipo.GetAll());
+            Equipos =  new ObservableCollection<EquipoModel>(_repositoryEquipo.GetAll().OrderByDescending(e => e.Puntos));
 
             AsignarPosiciones();
         }
