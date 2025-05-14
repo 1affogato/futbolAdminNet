@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:FutbolAdmin.View.Visitantes"
         mc:Ignorable="d"
         Title="Consulta de equipos" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
             Background="Transparent">
 
 
