@@ -30,5 +30,10 @@ namespace FutbolAdmin.View.Crud.Equipo {
         {
             //NavigationHelper.ShowWindowAndHideParent(SeleccionarJugadorExistenteWindow(),this);
         }
+
+        private void GestionarCatalogosButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

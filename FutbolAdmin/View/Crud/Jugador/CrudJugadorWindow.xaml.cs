@@ -46,5 +46,10 @@ namespace FutbolAdmin.View.Crud.Jugador {
         {
             NavigationHelper.ShowWindowAndHideParent(new ConsultarJugadorWindow(), this);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.CloseWindow(this);
+        }
     }
 }

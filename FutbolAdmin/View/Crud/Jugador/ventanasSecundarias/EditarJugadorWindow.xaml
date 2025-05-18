@@ -83,8 +83,8 @@ Margin="10, 20, 0, 0" Click="GuardarButton_Click" Command="{Binding ModificarJug
                                         <ControlTemplate TargetType="Button">
                                             <Border Background="SeaGreen" CornerRadius="20" Padding="10">
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="  Guardar  " VerticalAlignment="Center" FontSize="16" 
-                                   FontWeight="Bold" Foreground="Black"/>
+                                                    <Image Source="/Images/guardar.png" Margin="-5 0 0 0" Width="20" Height="16"/>
+                                                    <TextBlock Text="Guardar" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
                                                 </StackPanel>
                                             </Border>
                                         </ControlTemplate>
@@ -102,9 +102,8 @@ Margin="10, 20, 0, 0" Click="GuardarButton_Click" Command="{Binding ModificarJug
                                         <ControlTemplate TargetType="Button">
                                             <Border Background="SeaGreen" CornerRadius="20" Padding="10">
                                                 <StackPanel Orientation="Horizontal">
-                                                    <Image Source="/Images/flechaAtras.png" Width="20" Height="20"/>
-                                                    <TextBlock Text="Cancelar" VerticalAlignment="Center" FontSize="16" 
-                                           FontWeight="Bold" Foreground="Black"/>
+                                                    <Image Source="/Images/flechaAtras.png" Margin="-5 0 0 0" Width="20" Height="16"/>
+                                                    <TextBlock Text="Regresar" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
                                                 </StackPanel>
                                             </Border>
                                         </ControlTemplate>

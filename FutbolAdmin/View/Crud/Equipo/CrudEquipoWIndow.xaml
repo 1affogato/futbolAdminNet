@@ -52,15 +52,17 @@
                         </Grid.ColumnDefinitions>
 
                         <!-- Botón Modificar equipo -->
-                        <Button x:Name="ModificarButton" Width="150" Height="40" Grid.Row="0" Grid.Column="0"  Margin="0,0,0,35" Click="ModificarButton_Click">
+                        <Button x:Name="ModificarButton" Cursor="Hand" Width="155" Height="40" Grid.Row="0" Grid.Column="0"  Margin="0,0,0,35" Click="ModificarButton_Click">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="Button">
                                                 <Border Background="Aquamarine" CornerRadius="20" Padding="10">
-                                                    <TextBlock Text="Modificar Equipo" HorizontalAlignment="Center" 
-                                                       FontWeight="Bold" Foreground="Black"/>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/modificar.png" HorizontalAlignment="Center" Margin="7 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Modificar jugador" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
                                                 </Border>
                                             </ControlTemplate>
                                         </Setter.Value>
@@ -70,15 +72,17 @@
                         </Button>
 
                         <!-- Botón Eliminar Equipo -->
-                        <Button x:Name="EliminarButton" Width="150" Height="40" Grid.Row="1" Grid.Column="0" Margin="0,0,0,25" Click="EliminarButton_Click">
+                        <Button x:Name="EliminarButton" Cursor="Hand" Width="155" Height="40" Grid.Row="1" Grid.Column="0" Margin="0,0,0,25" Click="EliminarButton_Click">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="Button">
                                                 <Border Background="LightCoral" CornerRadius="20" Padding="10">
-                                                    <TextBlock Text="- Eliminar Equipo" HorizontalAlignment="Center" 
-                                                       FontWeight="Bold" Foreground="Black"/>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/Eliminar.png" HorizontalAlignment="Center" Margin="7 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Eliminar equipo" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
                                                 </Border>
                                             </ControlTemplate>
                                         </Setter.Value>
@@ -88,15 +92,17 @@
                         </Button>
 
                         <!-- Botón Consultar Equipo -->
-                        <Button x:Name="CosultarButton" Width="150" Height="40" Grid.Row="0" Grid.Column="1"  Margin="40,0,0,35" Click="ConsultarButton_Click">
+                        <Button x:Name="CosultarButton" Cursor="Hand" Width="155" Height="40" Grid.Row="0" Grid.Column="1"  Margin="40,0,0,35" Click="ConsultarButton_Click">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="Button">
                                                 <Border Background="LightGreen" CornerRadius="20" Padding="10">
-                                                    <TextBlock Text="Consultar Equipo" HorizontalAlignment="Center" 
-                                                       FontWeight="Bold" Foreground="Black"/>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/consultar.png" HorizontalAlignment="Center" Margin="7 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Consultar equipo" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
                                                 </Border>
                                             </ControlTemplate>
                                         </Setter.Value>
@@ -106,15 +112,17 @@
                         </Button>
 
                         <!-- Botón Crear equipo -->
-                        <Button x:Name="CrearButton" Width="150" Height="40" Grid.Row="1" Grid.Column="1" Margin="40,0,0,25" Click="CrearButton_Click">
+                        <Button x:Name="CrearButton" Cursor="Hand" Width="155" Height="40" Grid.Row="1" Grid.Column="1" Margin="40,0,0,25" Click="CrearButton_Click">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="Button">
                                                 <Border Background="LimeGreen" CornerRadius="20" Padding="10">
-                                                    <TextBlock Text="+ Crear Equipo" HorizontalAlignment="Center" 
-                                                       FontWeight="Bold" Foreground="Black"/>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/aggEquipo.png" HorizontalAlignment="Center" Margin="7 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Crear equipo" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
                                                 </Border>
                                             </ControlTemplate>
                                         </Setter.Value>
@@ -124,18 +132,16 @@
                         </Button>
 
                         <!-- Botón Regresar -->
-                        <Button Grid.Row="3" Grid.ColumnSpan="2" Height="40"
-                        HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" Click="Button_Click">
+                        <Button Grid.Row="3" Grid.ColumnSpan="2" Cursor="Hand" Content="Regresar" Width="105" Height="30" Margin="40" Background="#aaaaaa" Click="Button_Click">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="Button">
-                                                <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                                <Border Background="SeaGreen" CornerRadius="20" Padding="5">
                                                     <StackPanel Orientation="Horizontal">
-                                                        <Image Source="/Images/flechaAtras.png" Width="20" Height="20"/>
-                                                        <TextBlock Text="    Regresar" VerticalAlignment="Center" FontSize="14" 
-                                                    FontWeight="Bold" Foreground="Black"/>
+                                                        <Image Source="/Images/flechaAtras.png" HorizontalAlignment="Center" Margin="7 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Regresar" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black"/>
                                                     </StackPanel>
                                                 </Border>
                                             </ControlTemplate>

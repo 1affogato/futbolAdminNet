@@ -32,9 +32,9 @@ namespace FutbolAdmin.View.Crud.Jugador {
             NavigationHelper.CloseWindow(this);
         }
 
-        private void BackButton_Click_1(object sender, RoutedEventArgs e) {
+        private void CrearJugadorButton_Click(object sender, RoutedEventArgs e)
+        {
 
         }
-
     }
 }

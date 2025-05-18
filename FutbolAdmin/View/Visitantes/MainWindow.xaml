@@ -8,8 +8,8 @@
         Title="MainWindow" Height="600" Width="700"
         SizeToContent="Height"
         ResizeMode="NoResize"    
-            WindowStartupLocation="CenterScreen"
-    Background="Transparent">
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent">
 
     <Border CornerRadius="12" BorderThickness="2">
         <Border.Background>
@@ -79,8 +79,46 @@
 
                 <!-- Botones -->
                 <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
-                    <Button x:Name="AdminButton" Content="Admin" Width="120" Margin="5"  Background="SeaGreen" Click="AdminButton_Click"/>
-                    <Button x:Name="VerPartidosButton" Content="Ver Partidos" Width="120" Margin="5" Background="YellowGreen" Click="VerPartidosButton_Click"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="60, 10">
+                        <Button x:Name="AdminButton" Cursor="Hand" Content="Admin" Width="130" Margin="5" Background="#aaaaaa" Click="AdminButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/admin.png" Margin="6 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text="    Admin" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="60, 10">
+                        <Button x:Name="xd" Cursor="Hand" Content="Ver Partidos" Width="130" Margin="5" Background="#aaaaaa" Click="VerPartidosButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="YellowGreen" CornerRadius="20" Padding="7">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/verPartidos.png" Margin="6 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Ver partidos" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
                 </StackPanel>
             </Grid>
         </Border>

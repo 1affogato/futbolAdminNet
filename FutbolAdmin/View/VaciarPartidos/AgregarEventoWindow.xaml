@@ -5,45 +5,116 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FutbolAdmin.View.VaciarPartidos"
         mc:Ignorable="d"
-        Title="AgregarEventoWindow" Height="450" Width="800">
-    <Grid Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+        Title="AgregarEventoWindow" Height="450" Width="800"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent">
 
-        <!-- Título -->
-        <Label Grid.Row="0" Content="Gol" 
-           FontSize="24" FontWeight="Bold"
+    <Border CornerRadius="12" BorderThickness="2">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/balon.png" Stretch="UniformToFill" />
+        </Border.Background>
+        <Border CornerRadius="10" BorderThickness="2" Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#1E3A1E" Offset="0" />
+                    <!-- Verde oscuro -->
+                    <GradientStop Color="#5A8F5A" Offset="0.5"/>
+                    <!-- Verde medio -->
+                    <GradientStop Color="#1E3A1E" Offset="1"/>
+                    <!-- Verde oscuro -->
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.1,0" EndPoint="1,1">
+                    <GradientStop Color="#0A1E0A" Offset="0" />
+                    <!-- Verde muy oscuro -->
+                    <GradientStop Color="#2D5A2D" Offset="0.5"/>
+                    <!-- Verde -->
+                    <GradientStop Color="#F8F8F8" Offset="1"/>
+                    <!-- Blanco -->
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Título -->
+                <Label Grid.Row="0" Content="Gol" 
+           FontSize="24" FontWeight="Bold" Foreground="White"
            HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
-        <!-- Tabla con campos de texto -->
-        <Grid Grid.Row="1" Margin="70,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+                <!-- Tabla con campos de texto -->
+                <Grid Grid.Row="1" Margin="70,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-            <!-- Encabezados -->
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Anotó:" Margin="5" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="Asistió:" Margin="5" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Minuto:" Margin="5" VerticalAlignment="Center"/>
+                    <!-- Encabezados -->
+                    <TextBlock Foreground="White" Grid.Row="0" Grid.Column="0" Text="Anotó:" Margin="5" VerticalAlignment="Center"/>
+                    <TextBlock Foreground="White" Grid.Row="1" Grid.Column="0" Text="Asistió:" Margin="5" VerticalAlignment="Center"/>
+                    <TextBlock Foreground="White" Grid.Row="2" Grid.Column="0" Text="Minuto:" Margin="5" VerticalAlignment="Center"/>
 
-            <!-- Campos de texto -->
-            <ComboBox Grid.Row="0" Grid.Column="1" Margin="6" Height="25"/>
-            <ComboBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25"/>
-            <TextBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25"/>
-        </Grid>
+                    <!-- Campos de texto -->
+                    <ComboBox Grid.Row="0" Grid.Column="1" Margin="10" Height="25"/>
+                    <ComboBox Grid.Row="1" Grid.Column="1" Margin="10" Height="25"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Margin="10" Height="25"/>
+                </Grid>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Width="650">
-            <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5,0" Background="#aaaaaa"/>
-            <Button x:Name="AgregarEventoButton" Content="Agregar Evento" Width="120" Margin="400,0" Background="#aaaaaa" Height="20"/>
-        </StackPanel>
-    </Grid>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,10" Width="1000" >
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="60, 10">
+                        <Button x:Name="BackButton" Cursor="Hand" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="BackButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/flechaAtras.png" Margin="6 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Regresar" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="60, 10">
+                        <Button x:Name="AgregarEventoButton" Cursor="Hand" Content="CrearJugador" Width="150" Margin="5" Background="#aaaaaa" Click="AgregarEventoButton_Click" Command="{Binding CrearJugador}">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/flechaAdelante.png" Margin="6 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Agregar evento" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Border>
 </Window>

@@ -67,34 +67,34 @@
                             <RowDefinition Height="20"/>
 
                         </Grid.RowDefinitions>
-                        <Border BorderBrush="Black" Background="DarkSlateGray" BorderThickness="0" Grid.Row="0" Grid.Column="0">
+                        <Border BorderBrush="Black" Background="DarkSlateGray" Grid.Row="0" Grid.Column="0">
                             <TextBlock Text="Nombre" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
-                        <Border BorderBrush="Black" Background="DarkSlateGray" BorderThickness="1" Grid.Row="0" Grid.Column="1">
+                        <Border BorderBrush="Black" Background="DarkSlateGray" Grid.Row="0" Grid.Column="1">
                             <TextBlock Text="Edad" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
-                        <Border BorderBrush="Black" Background="LightGreen" BorderThickness="0" Grid.Row="1" Grid.Column="0">
+                        <Border BorderBrush="Black" Background="LightGreen" Grid.Row="1" Grid.Column="0">
                             <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
-                        <Border BorderBrush="Black" Background="LightGreen" BorderThickness="1" Grid.Row="1" Grid.Column="1">
+                        <Border BorderBrush="Black" Background="LightGreen" Grid.Row="1" Grid.Column="1">
                             <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
-                        <Border BorderBrush="Black" Background="DarkSeaGreen" BorderThickness="0" Grid.Row="2" Grid.Column="0">
+                        <Border BorderBrush="Black" Background="DarkSeaGreen" Grid.Row="2" Grid.Column="0">
                             <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
-                        <Border BorderBrush="Black" Background="DarkSeaGreen" BorderThickness="1" Grid.Row="2" Grid.Column="1">
+                        <Border BorderBrush="Black" Background="DarkSeaGreen" Grid.Row="2" Grid.Column="1">
                             <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
-                        <Border BorderBrush="Black" Background="LightGreen" BorderThickness="0" Grid.Row="3" Grid.Column="0">
+                        <Border BorderBrush="Black" Background="LightGreen" Grid.Row="3" Grid.Column="0">
                             <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
-                        <Border BorderBrush="Black" Background="LightGreen" BorderThickness="1" Grid.Row="3" Grid.Column="1">
+                        <Border BorderBrush="Black" Background="LightGreen" Grid.Row="3" Grid.Column="1">
                             <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
-                        <Border BorderBrush="Black" Background="DarkSeaGreen" BorderThickness="0" Grid.Row="4" Grid.Column="0">
+                        <Border BorderBrush="Black" Background="DarkSeaGreen" Grid.Row="4" Grid.Column="0">
                             <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
-                        <Border BorderBrush="Black" Background="DarkSeaGreen" BorderThickness="1" Grid.Row="4" Grid.Column="1">
+                        <Border BorderBrush="Black" Background="DarkSeaGreen" Grid.Row="4" Grid.Column="1">
                             <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
 
@@ -114,15 +114,17 @@
                         </Grid.ColumnDefinitions>
 
                         <!-- Botón Eliminar Jugador -->
-                        <Button x:Name="AgregarJugadorButton" Width="150" Height="30" Grid.Row="0" Grid.Column="0" Margin="5">
+                        <Button x:Name="EliminarEquipoButton" Width="145" Height="30" Grid.Row="0" Grid.Column="0" Margin="5">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="Button">
                                                 <Border Background="LightCoral" CornerRadius="20" Padding="5">
-                                                    <TextBlock Text="- Eliminar jugador" HorizontalAlignment="Center" 
-                                           FontWeight="Bold" Foreground="Black"/>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/Eliminar.png" HorizontalAlignment="Center" Margin="7 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Eliminar jugador" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
                                                 </Border>
                                             </ControlTemplate>
                                         </Setter.Value>
@@ -131,15 +133,17 @@
                             </Button.Style>
                         </Button>
                         <!-- Botón Regresar -->
-                        <Button x:Name="EliminarButton" Width="150" Height="30" Grid.Row="1" Grid.Column="0" Margin="5" Click="EliminarButton_Click">
+                        <Button x:Name="RegresarButton" Width="145" Height="30" Grid.Row="1" Grid.Column="0" Margin="5" Click="EliminarButton_Click">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="Button">
                                                 <Border Background="SeaGreen" CornerRadius="20" Padding="5">
-                                                    <TextBlock Text="Regresar" HorizontalAlignment="Center" 
-                                                FontWeight="Bold" Foreground="Black"/>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/flechaAtras.png" HorizontalAlignment="Center" Margin="7 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Regresar" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
                                                 </Border>
                                             </ControlTemplate>
                                         </Setter.Value>
@@ -147,16 +151,18 @@
                                 </Style>
                             </Button.Style>
                         </Button>
-                        <!-- Botón Añadir jugador -->
-                        <Button x:Name="AnadirButton"  Width="150" Height="30" Grid.Row="0" Grid.Column="1" Margin="45, 0, 0, 0">
+                        <!-- Botón Añadir equipo -->
+                        <Button x:Name="AnadirJugadorButton"  Width="145" Height="30" Grid.Row="0" Grid.Column="1" Margin="45, 0, 0, 0">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="Button">
                                                 <Border Background="Gold" CornerRadius="20" Padding="5">
-                                                    <TextBlock Text="+ Añadir jugador" HorizontalAlignment="Center" 
-                                 FontWeight="Bold" Foreground="Black"/>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/aggJugador.png" HorizontalAlignment="Center" Margin="7 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Añadir jugador" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
                                                 </Border>
                                             </ControlTemplate>
                                         </Setter.Value>
@@ -165,15 +171,17 @@
                             </Button.Style>
                         </Button>
                         <!-- Botón Crear equipo -->
-                        <Button x:Name="CrearEquipoButton" Width="150" Height="30" Grid.Row="1" Grid.Column="1" Margin="45, 0, 0, 0">
+                        <Button x:Name="CrearEquipoButton" Width="145" Height="30" Grid.Row="1" Grid.Column="1" Margin="45, 0, 0, 0">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="Button">
                                                 <Border Background="LimeGreen" CornerRadius="20" Padding="5">
-                                                    <TextBlock Text="Crear equipo" HorizontalAlignment="Center" 
-                                 FontWeight="Bold" Foreground="Black"/>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/aggEquipo.png" HorizontalAlignment="Center" Margin="7 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Crear equipo" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
                                                 </Border>
                                             </ControlTemplate>
                                         </Setter.Value>

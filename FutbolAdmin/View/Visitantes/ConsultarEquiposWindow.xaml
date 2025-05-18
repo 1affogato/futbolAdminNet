@@ -8,6 +8,8 @@
         Title="Consulta de equipos" Height="450" Width="800" 
             WindowStartupLocation="CenterScreen"
     Background="Transparent">
+    
+    
 
     <Border CornerRadius="12" BorderThickness="2">
         <Border.Background>
@@ -36,9 +38,12 @@
             </Border.Background>
             <Grid>
 
+                <!-- Título -->
+                <Label Foreground="White" Grid.Row="0" Content="Consultar equipo" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center" />
+
                 <StackPanel Margin="10">
                     <TextBlock HorizontalAlignment="Center" Text="{Binding NombreEquipo}" FontSize="25" 
-                       FontWeight="Bold" Margin="0,0,0,8"/>
+                       FontWeight="Bold" Margin="0,20,0,8"/>
 
                     <!-- Tabla de estadísticas generales -->
                     <Grid>
@@ -117,25 +122,26 @@
                     </Grid>
 
                     <!-- Botón de regreso -->
-                    <Button Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Click="Button_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Background="SeaGreen" CornerRadius="20" Padding="10">
-                                                <StackPanel Orientation="Horizontal">
-                                                    <Image Source="/Images/flechaAtras.png" Width="30" Height="30"/>
-                                                    <TextBlock Text="  Regresar" VerticalAlignment="Center" FontSize="20" 
-                                                       FontWeight="Bold" Foreground="Black"/>
-                                                </StackPanel>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </Button.Style>
-                    </Button>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="60, 10">
+                        <Button x:Name="BackButton" Cursor="Hand" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="Button_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/flechaAtras.png" Margin="6 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Regresar" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
                 </StackPanel>
             </Grid>
         </Border>

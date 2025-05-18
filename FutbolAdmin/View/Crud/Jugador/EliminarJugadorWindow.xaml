@@ -48,7 +48,7 @@
                          BorderThickness="1"
                          Padding="5"
                 />
-                            <Button x:Name="SearchButton" Width="120" Height="40" Margin="10,0,0,8" Command="{Binding SearchCommand}">
+                            <Button Cursor="Hand" x:Name="SearchButton" Width="120" Height="40" Margin="10,0,0,8" Command="{Binding SearchCommand}">
                                 <Button.Style>
                                     <Style TargetType="Button">
                                         <Setter Property="Template">
@@ -75,7 +75,7 @@
                          BorderThickness="1"
                          Padding="5"
 />
-                            <Button x:Name="SearchTeamButton" Width="120" Height="40" Margin="10,0,0,8" Command="{Binding SearchTeamCommand}">
+                            <Button Cursor="Hand" x:Name="SearchTeamButton" Width="120" Height="40" Margin="10,0,0,8" Command="{Binding SearchTeamCommand}">
                                 <Button.Style>
                                     <Style TargetType="Button">
                                         <Setter Property="Template">
@@ -94,7 +94,7 @@
                         </StackPanel>
                     </StackPanel>
 
-                    <TextBlock HorizontalAlignment="Center" Text="Selecciona para eliminar un jugador" FontSize="12" 
+                    <TextBlock HorizontalAlignment="Center" Foreground="White" Text="Selecciona para eliminar un jugador" FontSize="12" 
             Margin="0"/>
                     <!-- Tabla con DataGrid -->
                     <DataGrid x:Name="JugadoresDataGrid" ItemsSource="{Binding Jugadores}" AutoGenerateColumns="False"
@@ -111,7 +111,7 @@
                         <DataGrid.ColumnHeaderStyle>
                             <Style TargetType="DataGridColumnHeader">
                                 <Setter Property="Background" Value="#669966"/>
-                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter Property="Foreground" Value="White"/>
                                 <Setter Property="FontWeight" Value="Bold"/>
                             </Style>
                         </DataGrid.ColumnHeaderStyle>

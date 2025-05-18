@@ -36,5 +36,10 @@ namespace FutbolAdmin.View.Crud.Equipo {
                 NavigationHelper.ShowWindowAndHideParent(new ConsultarEquiposWindow(equipoSeleccionado), this);
             }
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationHelper.CloseWindow(this);
+        }
     }
 }

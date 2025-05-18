@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FutbolAdmin.View.Visitantes"
         mc:Ignorable="d"
-        Title="Consulta de equipos" Height="450" Width="800"
+        Title="Consulta de equipos" Height="450" Width="600"
         WindowStartupLocation="CenterScreen"
             Background="Transparent">
 
@@ -55,18 +55,66 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <Button Content="Nuevo Jugador" FontWeight="Bold" Background="SeaGreen" Grid.Row="0" Width="200" Height="50" 
-                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontSize="20" Click="SeleccionarJugadorButton_Click"/>
+                    
+                    <Button Content="Nuevo Jugador" x:Name="GestionarCatalogosButton"
+                    Width="250" Height="60" Margin="0,0,0,20"
+                    FontSize="18"
+                    Background="#333333" Foreground="White"
+                    BorderThickness="0" Cursor="Hand" Click="SeleccionarJugadorButton_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="LightGreen" CornerRadius="20" Padding="0">
+                                                <TextBlock Text="Nuevo Jugador" HorizontalAlignment="Center"  VerticalAlignment="Center"
+                                FontWeight="Bold" Foreground="Black"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
 
-                    <Button Content="Jugador Existente" FontWeight="Bold" Background="SeaGreen" Grid.Row="1" Width="200" Height="50" 
-                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontSize="20"/>
 
-                    <Button Grid.Row="2" Width="200" Height="50" FontWeight="Bold"  Background="SeaGreen"
-                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontSize="20" Click="Button_Click">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <!-- <Image Source="Images/balon.png" Width="24" Height="24" Margin="0,0,10,0"/> -->
-                            <TextBlock Text="Regresar" VerticalAlignment="Center"/>
-                        </StackPanel>
+                    <Button x:Name="JugadorExistenteButton" Content="Jugador Existente"  Width="250" Height="60" Margin="0,0,0,20"
+                        FontSize="18"
+                        Background="#333333" Foreground="White"
+                        BorderThickness="0" Cursor="Hand" Click="GestionarCatalogosButton_Click" Grid.Row="1">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="LimeGreen" CornerRadius="20" Padding="0">
+                                                <TextBlock Text="Gestionar catálogos" HorizontalAlignment="Center"  VerticalAlignment="Center"
+                                FontWeight="Bold" Foreground="Black"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+
+                    <Button Grid.Row="2" Cursor="Hand" Content="Regresar" Width="120" Height="30" Margin="40" Background="#aaaaaa" Click="Button_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="/Images/flechaAtras.png" Margin="6 0 0 0" Width="20" Height="16"/>
+                                                    <TextBlock Text=" Regresar" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
+                                                </StackPanel>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
                     </Button>
                 </Grid>
             </Grid>

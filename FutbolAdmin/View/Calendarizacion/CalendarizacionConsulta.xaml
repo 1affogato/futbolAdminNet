@@ -2,8 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Calendarización Consulta" Height="450" Width="800"
-        
-    Background="Transparent">
+        Background="Transparent">
 
     <Border CornerRadius="12" BorderThickness="2">
         <Border.Background>
@@ -41,7 +40,7 @@
                 </Grid.RowDefinitions>
 
                 <!-- Título -->
-                <TextBlock Foreground="White" Grid.Row="0" Text="Eliminar" FontSize="28" FontWeight="Bold"
+                <TextBlock Foreground="White" Grid.Row="0" Text="Calendarización Consulta" FontSize="28" FontWeight="Bold"
                    HorizontalAlignment="Center" Margin="0,10"/>
 
                 <!-- Tabla de clasificación con colores -->
@@ -53,7 +52,7 @@
                         <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}" Width="*"/>
                         <DataGridTextColumn Header="Local" Binding="{Binding Local}" Width="*"/>
                         <DataGridTextColumn Header="Goles Local" Binding="{Binding GolesLocal}" Width="90"/>
-                        <DataGridTextColumn Header="Goles Visitante" Binding="{Binding GolesVisitante}" Width="90"/>
+                        <DataGridTextColumn Header="Goles Visitante" Binding="{Binding GolesVisitante}" Width="100"/>
                         <DataGridTextColumn Header="Visitante" Binding="{Binding Visitante}" Width="*"/>
                     </DataGrid.Columns>
 
@@ -61,7 +60,7 @@
                     <DataGrid.ColumnHeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="Background" Value="#447744"/>
-                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="Foreground" Value="White"/>
                             <Setter Property="FontWeight" Value="Bold"/>
                         </Style>
                     </DataGrid.ColumnHeaderStyle>
@@ -89,17 +88,16 @@
 
                 <!-- Botón redondeado -->
                 <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,10">
-                    <Button Width="140" Height="50">
+                    <Button x:Name="BackButton" Cursor="Hand" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="BackButton_Click">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Template">
                                     <Setter.Value>
                                         <ControlTemplate TargetType="Button">
-                                            <Border Background="SeaGreen" CornerRadius="30" Padding="10">
+                                            <Border Background="SeaGreen" CornerRadius="20" Padding="7">
                                                 <StackPanel Orientation="Horizontal">
-                                                    <Image Source="/Images/flechaAtras.png" Width="30" Height="30"/>
-                                                    <TextBlock Text="Regresar" VerticalAlignment="Center" FontSize="20" 
-                                                       FontWeight="Bold" Foreground="Black"/>
+                                                    <Image Source="/Images/flechaAtras.png" Margin="6 0 0 0" Width="20" Height="16"/>
+                                                    <TextBlock Text=" Regresar" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
                                                 </StackPanel>
                                             </Border>
                                         </ControlTemplate>

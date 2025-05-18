@@ -77,21 +77,60 @@
 
 
                     <!-- Campos de texto -->
-                    <TextBox Grid.Row="0" Grid.Column="1" Margin="6" Height="25" Text="{Binding Nombre}"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25"  Text="{Binding Edad}"/>
-                    <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25" ItemsSource="{Binding Equipos}" SelectedValue="{Binding EquipoSelected}"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Height="25" Text="{Binding PartidosJugados, UpdateSourceTrigger=PropertyChanged}"/>
-                    <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Height="25" Text="{Binding Goles, UpdateSourceTrigger=PropertyChanged}"/>
-                    <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Height="25" Text="{Binding Asistencias, UpdateSourceTrigger=PropertyChanged}"/>
-                    <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Height="25" Text="{Binding TarjetasAmarillas, UpdateSourceTrigger=PropertyChanged}"/>
-                    <TextBox Grid.Row="7" Grid.Column="1" Margin="5" Height="25" Text="{Binding TarjetasRojas, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Margin="10" Height="25" Text="{Binding Nombre}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="10" Height="25"  Text="{Binding Edad}"/>
+                    <ComboBox Grid.Row="2" Grid.Column="1" Margin="10" Height="25" ItemsSource="{Binding Equipos}" SelectedValue="{Binding EquipoSelected}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Margin="10" Height="25" Text="{Binding PartidosJugados, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Margin="10" Height="25" Text="{Binding Goles, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Row="5" Grid.Column="1" Margin="10" Height="25" Text="{Binding Asistencias, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Row="6" Grid.Column="1" Margin="10" Height="25" Text="{Binding TarjetasAmarillas, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Row="7" Grid.Column="1" Margin="10" Height="25" Text="{Binding TarjetasRojas, UpdateSourceTrigger=PropertyChanged}"/>
 
 
                 </Grid>
 
-                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Width="650" >
-                    <Button x:Name="BackButton" Content="Regresar" Width="120" Margin="5,0" Background="#aaaaaa" Click="BackButton_Click"/>
-                    <Button x:Name="CrearJugadorButton" Content="Crear jugador" Width="120" Margin="400,0" Background="#aaaaaa" Height="20" Command="{Binding CrearJugador}"/>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,10" Width="1000" >
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="60, 10">
+                        <Button x:Name="BackButton" Cursor="Hand" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="BackButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/flechaAtras.png" Margin="6 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Regresar" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="60, 10">
+                        <Button x:Name="CrearJugadorButton" Cursor="Hand" Content="CrearJugador" Width="140" Margin="5" Background="#aaaaaa" Click="CrearJugadorButton_Click" Command="{Binding CrearJugador}">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/aggJugador.png" Margin="6 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" CrearJugador" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
                 </StackPanel>
             </Grid>
         </Border>

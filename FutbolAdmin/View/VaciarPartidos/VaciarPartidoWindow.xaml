@@ -5,39 +5,125 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FutbolAdmin.View.VaciarPartidos"
         mc:Ignorable="d"
-        Title="VaciarPartidoWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-            <RowDefinition Height="Auto" MinHeight="244.797"/>
-        </Grid.RowDefinitions>
+        Title="VaciarPartidoWindow" Height="450" Width="800"
+            ResizeMode="NoResize"    
+    WindowStartupLocation="CenterScreen"
+    Background="Transparent">
 
-        <!-- Título -->
-        <Label Grid.Row="0" Content="Vaciar partido" 
-       FontSize="28" FontWeight="Bold" 
+    <Border CornerRadius="12" BorderThickness="2">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/balon.png" Stretch="UniformToFill" />
+        </Border.Background>
+        <Border CornerRadius="10" BorderThickness="2" Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#1E3A1E" Offset="0" />
+                    <!-- Verde oscuro -->
+                    <GradientStop Color="#5A8F5A" Offset="0.5"/>
+                    <!-- Verde medio -->
+                    <GradientStop Color="#1E3A1E" Offset="1"/>
+                    <!-- Verde oscuro -->
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.1,0" EndPoint="1,1">
+                    <GradientStop Color="#0A1E0A" Offset="0" />
+                    <!-- Verde muy oscuro -->
+                    <GradientStop Color="#2D5A2D" Offset="0.5"/>
+                    <!-- Verde -->
+                    <GradientStop Color="#F8F8F8" Offset="1"/>
+                    <!-- Blanco -->
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto" MinHeight="244.797"/>
+                </Grid.RowDefinitions>
+
+                <!-- Título -->
+                <Label Grid.Row="0" Content="Vaciar partido" 
+       FontSize="28" FontWeight="Bold" Foreground="White"
        HorizontalAlignment="Center" Margin="0,10,0,10" Width="194"/>
 
-        <!-- Tabla de evento -->
-        <DataGrid x:Name="EventosDataGrid" Margin="200,67,200,10" Grid.RowSpan="2">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Evento" Binding="{Binding Evento}" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
+                <!-- Tabla de evento -->
+                <DataGrid x:Name="EventosDataGrid" Margin="200,67,200,10" Grid.RowSpan="2" Background="#004400" RowBackground="LightGreen" AlternatingRowBackground="#44cc44">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="   Evento" Binding="{Binding Evento}" Width="*"/>
+                    </DataGrid.Columns>
+                    <!-- Estilo de encabezados -->
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#447744"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                </DataGrid>
 
-        <!-- Tabla de eventos añadidos -->
-        <DataGrid Grid.Row="2" x:Name="EventosAnadidosDatagrid" Margin="157,22,157,81">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Eventos Añadidos" Binding="{Binding EventoAnadido}" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
-    
-        
-        <!-- Botones -->
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,205,0,10" Width="668">
-            <Button Margin="50, 0" x:Name="BackButton" Content="Regresar" Width="120" Background="#aaaaaa" Height="21" Click="BackButton_Click"/>
-            <Button Margin="50, 0" x:Name="AgregarEventoButton" Content="Agregar Evento" Width="120" Background="#aaaaaa" Height="21"/>
-            <Button Margin="50, 0" x:Name="TerminarButton" Content="Terminar" Width="120" Background="#aaaaaa" Height="21"/>
-        </StackPanel>
-    </Grid>
+                <!-- Tabla de eventos añadidos -->
+                <DataGrid Grid.Row="2" x:Name="EventosAnadidosDatagrid" Margin="157,22,157,81" Background="#004400" RowBackground="LightGreen" AlternatingRowBackground="#44cc44">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="   Eventos Añadidos" Binding="{Binding EventoAnadido}" Width="*"/>
+                    </DataGrid.Columns>
+                    <!-- Estilo de encabezados -->
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#447744"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                </DataGrid>
+
+
+                <!-- Botones -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,205,0,10" Width="668">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="60, 10">
+                        <Button x:Name="BackButton" Cursor="Hand" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="BackButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/flechaAtras.png" Margin="6 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Regresar" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20, 10">
+                        <Button x:Name="AgregarPartidoButton" Cursor="Hand" Content="Regresar" Width="150" Margin="5" Background="#aaaaaa" Click="BackButton_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="/Images/flechaAdelante.png" Margin="6 0 0 0" Width="20" Height="16"/>
+                                                        <TextBlock Text=" Agregar partido" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
+                                                    </StackPanel>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Border>
 </Window>
