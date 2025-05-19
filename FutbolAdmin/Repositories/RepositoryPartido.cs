@@ -140,7 +140,6 @@ namespace FutbolAdmin.Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = "UPDATE PARTIDO SET FECHA = :fecha, EQUIPO_LOCAL = :equipo_local, EQUIPO_VISITANTE = :equipo_visitante,  JORNADA = :jornada, COMPLETADO = :completado, GOLES_LOCAL = :goles_local, GOLES_VISITANTE = :goles_visitante WHERE ID_PARTIDO = :id_Partido";
-                command.Parameters.Add(new OracleParameter("idPartido", entity.Id_Partido));
                 command.Parameters.Add(new OracleParameter("fecha", entity.Fecha));
                 command.Parameters.Add(new OracleParameter("equipo_local", entity.EquipoLocal.Id_Equipo));
                 command.Parameters.Add(new OracleParameter("equipo_visitante", entity.EquipoVisitante.Id_Equipo));
@@ -148,6 +147,7 @@ namespace FutbolAdmin.Repositories
                 command.Parameters.Add(new OracleParameter("completado", entity.Completado));
                 command.Parameters.Add(new OracleParameter("goles_local", entity.GolesLocal));
                 command.Parameters.Add(new OracleParameter("goles_visitantes", entity.GolesVisitante));
+                command.Parameters.Add(new OracleParameter("id_Partido", entity.Id_Partido));
                 command.ExecuteNonQuery();
                 connection.Close();
             }
