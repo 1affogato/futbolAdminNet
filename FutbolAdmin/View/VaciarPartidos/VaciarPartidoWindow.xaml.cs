@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FutbolAdmin.ViewModel.VaciarPartidos;
 
 namespace FutbolAdmin.View.VaciarPartidos {
     /// <summary>
@@ -18,6 +19,7 @@ namespace FutbolAdmin.View.VaciarPartidos {
     /// </summary>
     public partial class VaciarPartidoWindow : Window {
         public VaciarPartidoWindow() {
+            DataContext = new VaciarPartidoViewModel();
             InitializeComponent();
         }
 

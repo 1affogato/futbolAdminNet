@@ -9,7 +9,6 @@
             ResizeMode="NoResize"    
     WindowStartupLocation="CenterScreen"
     Background="Transparent">
-
     <Border CornerRadius="12" BorderThickness="2">
         <Border.Background>
             <ImageBrush ImageSource="/Images/balon.png" Stretch="UniformToFill" />
@@ -35,93 +34,93 @@
                     <!-- Blanco -->
                 </LinearGradientBrush>
             </Border.Background>
-            <Grid>
+
+            <Grid Margin="20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition/>
-                    <RowDefinition Height="Auto" MinHeight="244.797"/>
+                    <!-- Título -->
+                    <RowDefinition Height="*"/>
+                    <!-- Tabla de datos -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Botón -->
                 </Grid.RowDefinitions>
 
                 <!-- Título -->
-                <Label Grid.Row="0" Content="Vaciar partido" 
-       FontSize="28" FontWeight="Bold" Foreground="White"
-       HorizontalAlignment="Center" Margin="0,10,0,10" Width="194"/>
+                <TextBlock Grid.Row="0" Text="Vaciar partido" FontSize="24" FontWeight="Bold"
+                   HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,20"/>
 
-                <!-- Tabla de evento -->
-                <DataGrid x:Name="EventosDataGrid" Margin="200,67,200,10" Grid.RowSpan="2" Background="#004400" RowBackground="LightGreen" AlternatingRowBackground="#44cc44">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="   Evento" Binding="{Binding Evento}" Width="*"/>
-                    </DataGrid.Columns>
-                    <!-- Estilo de encabezados -->
-                    <DataGrid.ColumnHeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="Background" Value="#447744"/>
-                            <Setter Property="Foreground" Value="White"/>
-                            <Setter Property="FontWeight" Value="Bold"/>
-                        </Style>
-                    </DataGrid.ColumnHeaderStyle>
-                </DataGrid>
+                <!-- Tabla de datos con colores -->
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-                <!-- Tabla de eventos añadidos -->
-                <DataGrid Grid.Row="2" x:Name="EventosAnadidosDatagrid" Margin="157,22,157,81" Background="#004400" RowBackground="LightGreen" AlternatingRowBackground="#44cc44">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="   Eventos Añadidos" Binding="{Binding EventoAnadido}" Width="*"/>
-                    </DataGrid.Columns>
-                    <!-- Estilo de encabezados -->
-                    <DataGrid.ColumnHeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="Background" Value="#447744"/>
-                            <Setter Property="Foreground" Value="White"/>
-                            <Setter Property="FontWeight" Value="Bold"/>
-                        </Style>
-                    </DataGrid.ColumnHeaderStyle>
-                </DataGrid>
+                    <!-- Encabezados -->
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Fecha:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Jornada:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Local:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Visitante:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Goles Local:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Goles Visitante:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
 
+                    <!-- Campos de texto con fondo -->
+                    <ComboBox Grid.Row="0" Grid.Column="1" Margin="5" Height="25" Background="White" ItemsSource="{Binding FechasPartidos}" SelectedItem="{Binding FechaPartido}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Height="25" Background="LightGreen" Text="{Binding NumJornada, UpdateSourceTrigger=PropertyChanged}"/>
+                    <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Height="25" Background="LightGreen" ItemsSource="{Binding EquiposNames}" SelectedItem="{Binding EquipoLocal}"/>
+                    <ComboBox Grid.Row="3" Grid.Column="1" Margin="5" Height="25" Background="LightGreen" ItemsSource="{Binding EquiposNames}" SelectedItem="{Binding EquipoVisitante}"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Height="25" Background="LightGreen" Text="{Binding GolesLocal, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Height="25" Background="LightGreen" Text="{Binding GolesVisitante, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
 
-                <!-- Botones -->
-                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,205,0,10" Width="668">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="60, 10">
-                        <Button x:Name="BackButton" Cursor="Hand" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="BackButton_Click">
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Background="SeaGreen" CornerRadius="20" Padding="7">
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <Image Source="/Images/flechaAtras.png" Margin="6 0 0 0" Width="20" Height="16"/>
-                                                        <TextBlock Text=" Regresar" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
-                                                    </StackPanel>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                    </StackPanel>
-                    
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20, 10">
-                        <Button x:Name="AgregarPartidoButton" Cursor="Hand" Content="Regresar" Width="150" Margin="5" Background="#aaaaaa" Click="BackButton_Click">
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Background="SeaGreen" CornerRadius="20" Padding="7">
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <Image Source="/Images/flechaAdelante.png" Margin="6 0 0 0" Width="20" Height="16"/>
-                                                        <TextBlock Text=" Agregar partido" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
-                                                    </StackPanel>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                    </StackPanel>
-
+                <!-- Botón redondeado -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="60, 10">
+                    <Button x:Name="BackButton" Cursor="Hand" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="BackButton_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="/Images/flechaAtras.png" Margin="6 0 0 0" Width="20" Height="16"/>
+                                                    <TextBlock Text=" Regresar" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
+                                                </StackPanel>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </StackPanel>
+                <!-- Botón redondeado -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="60, 10">
+                    <Button x:Name="SaveButton" Cursor="Hand" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Command="{Binding GuardarPartidoCommand}">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="SeaGreen" CornerRadius="20" Padding="7">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="      Guardar" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
+                                                </StackPanel>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
                 </StackPanel>
             </Grid>
         </Border>
