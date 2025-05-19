@@ -32,7 +32,7 @@ namespace FutbolAdmin.View {
 
         private void CalendarizacionButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationHelper.ShowWindowAndHideParent(new CalendarizacionAgregar(), this);
+            NavigationHelper.ShowWindowAndHideParent(new CalendarizacionConsulta(), this);
         }
 
         private void GestionarCatalogosButton_Click(object sender, RoutedEventArgs e)

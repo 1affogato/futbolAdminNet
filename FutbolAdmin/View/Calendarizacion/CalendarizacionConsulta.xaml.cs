@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FutbolAdmin.ViewModel.Calendarizacion;
 
 namespace FutbolAdmin.View.Calendarizacion {
     /// <summary>
@@ -18,12 +19,18 @@ namespace FutbolAdmin.View.Calendarizacion {
     /// </summary>
     public partial class CalendarizacionConsulta : Window {
         public CalendarizacionConsulta() {
+            DataContext = new CalendarizacionConsultaViewModel();
             InitializeComponent();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationHelper.CloseWindow(this);
+        }
+
+        private void GenerarButton_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

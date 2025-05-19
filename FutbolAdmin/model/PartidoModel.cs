@@ -19,5 +19,21 @@ namespace FutbolAdmin.Model
         public int Completado { get; set; }
         public int GolesLocal { get; set; }
         public int GolesVisitante { get; set; }
+
+        public PartidoModel()
+        {
+
+        }
+        public PartidoModel(int id_Partido, DateTime? fecha, EquipoModel equipoLocal, EquipoModel equipoVisitante, int? jornada)
+        {
+            Id_Partido = id_Partido;
+            Fecha = fecha;
+            EquipoLocal = equipoLocal;
+            EquipoVisitante = equipoVisitante;
+            Jornada = jornada;
+            Completado = 0;
+            GolesLocal = 0;
+            GolesVisitante = 0;
+        }
     }
 }
