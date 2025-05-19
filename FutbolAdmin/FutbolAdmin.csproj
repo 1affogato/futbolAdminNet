@@ -367,6 +367,17 @@
   <ItemGroup>
     <Resource Include="Images\flechaAdelante.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\admin.png" />
+    <Resource Include="Images\aggEquipo.png" />
+    <Resource Include="Images\aggJugador.png" />
+    <Resource Include="Images\consultar.png" />
+    <Resource Include="Images\Eliminar.png" />
+    <Resource Include="Images\guardar.png" />
+    <Resource Include="Images\jugadorSolo.png" />
+    <Resource Include="Images\modificar.png" />
+    <Resource Include="Images\verPartidos.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
