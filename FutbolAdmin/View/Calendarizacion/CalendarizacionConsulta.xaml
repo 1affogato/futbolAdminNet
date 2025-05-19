@@ -47,13 +47,14 @@
                 <DataGrid Grid.Row="1" x:Name="PartidosDataGrid"
                   Background="LightGreen" Foreground="White"
                   RowBackground="LightGreen" AlternatingRowBackground="DarkSeaGreen"
-                  BorderBrush="Black" BorderThickness="2">
+                  BorderBrush="Black" BorderThickness="2" AutoGenerateColumns="False" ItemsSource="{Binding Partidos}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}" Width="*"/>
-                        <DataGridTextColumn Header="Local" Binding="{Binding Local}" Width="*"/>
+                        <DataGridTextColumn Header="Local" Binding="{Binding EquipoLocal.Nombre}" Width="*"/>
                         <DataGridTextColumn Header="Goles Local" Binding="{Binding GolesLocal}" Width="90"/>
                         <DataGridTextColumn Header="Goles Visitante" Binding="{Binding GolesVisitante}" Width="100"/>
-                        <DataGridTextColumn Header="Visitante" Binding="{Binding Visitante}" Width="*"/>
+                        <DataGridTextColumn Header="Visitante" Binding="{Binding EquipoVisitante.Nombre}" Width="*"/>
+                        <DataGridTextColumn Header="Estado" Binding="{Binding Completado}" Width="*"/>
                     </DataGrid.Columns>
 
                     <!-- Estilo de encabezados -->
@@ -99,6 +100,23 @@
                                                     <Image Source="/Images/flechaAtras.png" Margin="6 0 0 0" Width="20" Height="16"/>
                                                     <TextBlock Text=" Regresar" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
                                                 </StackPanel>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button x:Name="GenerarButton" Cursor="Hand" Content="Regresar" Width="120" Margin="520,5,10,5" Background="#aaaaaa" Command="{Binding GenerarCalendarizacion}" Click="GenerarButton_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="SeaGreen" CornerRadius="20" Padding="7" HorizontalAlignment="Center">
+                                                
+                                                    <TextBlock Margin="15,0,15,0" Text="Generar" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
+
                                             </Border>
                                         </ControlTemplate>
                                     </Setter.Value>

@@ -32,6 +32,14 @@ namespace FutbolAdmin.Repositories
             }
         }
 
+        public void AddAll(IEnumerable<PartidoModel> partidos)
+        {
+            foreach (var item in partidos)
+            {
+                Add(item);
+            }
+        }
+
         public override void Delete(int id)
         {
             using (var connection = GetConnection())
@@ -39,12 +47,28 @@ namespace FutbolAdmin.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "DELETE FROM PARTIDO WHERE ID_PARTIDO = :id";
+
+
+                command.CommandText = "UPDATE EVENTO SET ID_PARTIDO = NULL WHERE ID_PARTIDO = :id";
                 command.Parameters.Add(new OracleParameter("id", id));
+                command.ExecuteNonQuery();
+
+                command.CommandText = "DELETE FROM PARTIDO WHERE ID_PARTIDO = :id";
                 command.ExecuteNonQuery();
                 connection.Close();
             }
         }
+
+        public void DeleteAll()
+        {
+            var partidos = GetAll();
+            foreach (var item in partidos)
+            {
+                Delete(item.Id_Partido);
+            }
+        }
+
+
 
         public override IEnumerable<PartidoModel> GetAll()
         {
