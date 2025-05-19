@@ -22,10 +22,9 @@ namespace FutbolAdmin.View.Visitantes {
     public partial class MainWindow : Window {
 
         protected MainWindowViewModel _viewModel;
-
+        
         public MainWindow() {
             DataContext = new MainWindowViewModel();
-
             InitializeComponent();
         }
 

@@ -59,7 +59,7 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
 
         public void SearchJugadoresPorEquipo()
         {
-            var filteredJugadores = _repositorioJugador.GetAll().Where(j => j.Equipo.Nombre.ToLower().Contains(EquipoSearchName.ToLower()));
+            var filteredJugadores = _repositorioJugador.GetAll().Where(j => j.Equipo != null ? j.Equipo.Nombre.ToLower().Contains(EquipoSearchName.ToLower()) : false);
             Jugadores = new ObservableCollection<JugadorModel>(filteredJugadores);
             PlayerSearchName = string.Empty;
         }

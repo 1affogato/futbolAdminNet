@@ -88,11 +88,11 @@
                     <!-- Tabla con DataGrid -->
                     <DataGrid x:Name="JugadoresDataGrid" ItemsSource="{Binding Jugadores}" AutoGenerateColumns="False"
                       HeadersVisibility="Column" Height="200" Margin="10"
-                      Background="LightGreen" Foreground="White"
+                      Background="LightGreen"
                       RowBackground="LightGreen" AlternatingRowBackground="DarkSeaGreen" SelectionChanged="JugadoresDataGrid_SelectionChanged">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="#" Binding="{Binding Id_Jugador}" Width="Auto"/>
-                            <DataGridTextColumn Header="Equipo" Binding="{Binding Equipo.Nombre}" Width="80"/>
+                            <DataGridTextColumn Header="Equipo" Binding="{Binding Equipo.Nombre}" Width="*"/>
                             <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
                             <DataGridTextColumn Header="Edad" Binding="{Binding Edad}" Width="50"/>
                             <DataGridTextColumn Header="PJ" Binding="{Binding PartidosJugados}" Width="50"/>

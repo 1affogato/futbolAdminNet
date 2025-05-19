@@ -20,6 +20,7 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
             SearchCommand = new ComandoViewModel(execute => SearchJugadores());
             SearchTeamCommand = new ComandoViewModel(execute => SearchJugadoresPorEquipo());
             Jugadores = new ObservableCollection<JugadorModel>(_repositorioJugador.GetAll());
+            _equipoSearchName = _playerSearchName = "";
         }
 
         public string _playerSearchName;
@@ -54,7 +55,7 @@ namespace FutbolAdmin.ViewModel.Crud.Jugador {
 
         public void SearchJugadoresPorEquipo()
         {
-            var filteredJugadores = _repositorioJugador.GetAll().Where(j => j.Equipo.Nombre.ToLower().Contains(EquipoSearchName.ToLower()));
+            var filteredJugadores = _repositorioJugador.GetAll().Where(j => j.Equipo != null ? j.Equipo.Nombre.ToLower().Contains(EquipoSearchName.ToLower()) : false);
             Jugadores = new ObservableCollection<JugadorModel>(filteredJugadores);
             PlayerSearchName = string.Empty;
         }

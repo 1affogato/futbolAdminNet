@@ -22,7 +22,6 @@ namespace FutbolAdmin.View.Visitantes
     public partial class ConsultarEquiposWindow : Window
     {
         private ConsultarEquiposViewModel _viewModel;
-        private EquipoModel _equipo;
 
         public ConsultarEquiposWindow(EquipoModel equipo)
         {

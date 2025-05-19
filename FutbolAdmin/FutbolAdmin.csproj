@@ -128,6 +128,7 @@
     <Compile Include="ViewModel\Crud\Equipo\ConsultarEquipoViewModel.cs" />
     <Compile Include="ViewModel\Crud\Equipo\CrearEquipoViewModel.cs" />
     <Compile Include="ViewModel\Crud\Equipo\EliminarEquipoViewModel.cs" />
+    <Compile Include="ViewModel\Crud\Equipo\ModificarEquipoViewModel.cs" />
     <Compile Include="ViewModel\Crud\Jugador\ConsultarJugadorViewModel.cs" />
     <Compile Include="ViewModel\Crud\Jugador\CrearJugadorViewModel.cs" />
     <Compile Include="ViewModel\Crud\Jugador\EliminarJugadorViewModel.cs" />
@@ -168,9 +169,6 @@
     </Compile>
     <Compile Include="View\Crud\Equipo\ModificarEquipoWindow.xaml.cs">
       <DependentUpon>ModificarEquipoWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Crud\Equipo\SeleccionarJugadorExistenteWindow.xaml.cs">
-      <DependentUpon>SeleccionarJugadorExistenteWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Crud\Jugador\ConsultarJugadorWindow.xaml.cs">
       <DependentUpon>ConsultarJugadorWindow.xaml</DependentUpon>
@@ -265,10 +263,6 @@
     <Page Include="View\Crud\Equipo\ModificarEquipoWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Crud\Equipo\SeleccionarJugadorExistenteWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Crud\Jugador\ConsultarJugadorWindow.xaml">
       <SubType>Designer</SubType>

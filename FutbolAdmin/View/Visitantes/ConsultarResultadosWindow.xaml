@@ -48,23 +48,32 @@
 
                 <!-- Tabla de clasificación -->
                 <DataGrid Grid.Row="1" x:Name="PartidosDataGrid" ItemsSource="{Binding Partidos}" 
-                  Background="#004400" AutoGenerateColumns="False">
+                  Background="#004400" AutoGenerateColumns="False"
+                  RowBackground="#bbffbb" AlternatingRowBackground="#99dd99"
+                >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Fecha" Binding="{Binding FechaString}" Width="*"/>
+                        <DataGridTextColumn Header="Fecha" Binding="{Binding FechaString}" Width="120"/>
                         <DataGridTextColumn Header="Local" Binding="{Binding EquipoLocal.Nombre}" Width="*"/>
                         <DataGridTextColumn Header="Goles Local" Binding="{Binding GolesLocal}" Width="90"/>
-                        <DataGridTextColumn Header="Goles Visitante" Binding="{Binding GolesVisitante}" Width="90"/>
                         <DataGridTextColumn Header="Visitante" Binding="{Binding EquipoVisitante.Nombre}" Width="*"/>
+                        <DataGridTextColumn Header="Goles Visitante" Binding="{Binding GolesVisitante}" Width="90"/>
                     </DataGrid.Columns>
 
                     <!-- Estilo de encabezados -->
                     <DataGrid.ColumnHeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="Background" Value="#779977"/>
-                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="Background" Value="#447744"/>
+                            <Setter Property="Foreground" Value="White"/>
                             <Setter Property="FontWeight" Value="Bold"/>
                         </Style>
                     </DataGrid.ColumnHeaderStyle>
+
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                        </Style>
+                    </DataGrid.CellStyle>
                 </DataGrid>
 
                 <!-- Botón de regreso en la esquina inferior izquierda -->

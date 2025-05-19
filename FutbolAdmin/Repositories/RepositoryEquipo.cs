@@ -37,8 +37,13 @@ namespace FutbolAdmin.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "DELETE FROM EQUIPO WHERE ID_EQUIPO = :id";
+
+                // Primero es necesario remover al equipo que se va a eliminar de los jugadores para evitar lo de las referencias y ajá
+                command.CommandText = "UPDATE JUGADOR SET ID_EQUIPO = NULL WHERE ID_EQUIPO = :id";
                 command.Parameters.Add(new OracleParameter("id", id));
+                command.ExecuteNonQuery();
+
+                command.CommandText = "DELETE FROM EQUIPO WHERE ID_EQUIPO = :id";
                 command.ExecuteNonQuery();
                 connection.Close();
             }

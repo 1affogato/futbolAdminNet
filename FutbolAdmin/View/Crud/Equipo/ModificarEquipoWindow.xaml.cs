@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FutbolAdmin.ViewModel.Crud.Equipo;
 
 namespace FutbolAdmin.View.Crud.Equipo
 {
@@ -21,11 +22,20 @@ namespace FutbolAdmin.View.Crud.Equipo
     {
         public ModificarEquipoWindow()
         {
+            DataContext = new ModificarEquipoViewModel();
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            NavigationHelper.CloseWindow(this);
+        }
+
+        private void EquiposDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e) {
             NavigationHelper.CloseWindow(this);
         }
     }

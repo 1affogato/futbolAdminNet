@@ -8,7 +8,6 @@
         Title="ModificarEquipoWindow" Height="450" Width="800" 
         WindowStartupLocation="CenterScreen"
     Background="Transparent">
-
     <Border CornerRadius="12" BorderThickness="2">
         <Border.Background>
             <ImageBrush ImageSource="/Images/balon.png" Stretch="UniformToFill" />
@@ -43,37 +42,56 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
+
                 <!-- Título -->
                 <Label Grid.Row="0" Foreground="White" Content="Modificar equipo" 
-           FontSize="28" FontWeight="Bold" 
-           HorizontalAlignment="Center" Margin="0,10"/>
+               FontSize="28" FontWeight="Bold" 
+               HorizontalAlignment="Center" Margin="0,10"/>
 
                 <!-- Estadísticas del equipo -->
-                <Border Grid.Row="2" Background="#558855" BorderBrush="Gray" BorderThickness="1" Margin="20,10" Padding="5">
-                    <UniformGrid Columns="7">
-                        <TextBlock Text="V: 32" Margin="5" HorizontalAlignment="Center"/>
-                        <TextBlock Text="E: 2" Margin="5" HorizontalAlignment="Center"/>
-                        <TextBlock Text="D: 4" Margin="5" HorizontalAlignment="Center"/>
-                        <TextBlock Text="GF: 95" Margin="5" HorizontalAlignment="Center"/>
-                        <TextBlock Text="GC: 23" Margin="5" HorizontalAlignment="Center"/>
-                        <TextBlock Text="DG: +72" Margin="5" HorizontalAlignment="Center"/>
-                        <TextBlock Text="Pts: 98" Margin="5" HorizontalAlignment="Center" FontWeight="Bold"/>
-                    </UniformGrid>
-                </Border>
+                <TextBlock Grid.Row="1" HorizontalAlignment="left" Foreground="White" Text="Buscar por nombre" FontSize="12" 
+                        FontWeight="Bold" Margin="30,10,8,0"/>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="30,2,10,10">
+                    <TextBox Width="300" Height="40"
+                         Text="{Binding EquipoSearchName, UpdateSourceTrigger=PropertyChanged}"
+                         BorderBrush="Black"
+                         Background="#77ff77"
+                         BorderThickness="1"
+                         Padding="5"
+/>
+                    <Button x:Name="SearchTeamButton" Width="120" Height="40" Margin="10,0,0,8" Command="{Binding SearchCommand}">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="Green" BorderBrush="Black" CornerRadius="15" Padding="10">
+                                                <TextBlock Text="Buscar" HorizontalAlignment="Center" 
+                                       FontWeight="Bold" Foreground="White"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </StackPanel>
 
                 <!-- Tabla de jugadores con estilos -->
-                <DataGrid Grid.Row="3" x:Name="JugadoresDataGrid" Margin="20,10" AutoGenerateColumns="False"
-              HeadersVisibility="Column" Background="LightGreen" Foreground="Black"
-              RowBackground="LightGreen" AlternatingRowBackground="DarkSeaGreen"
-              BorderBrush="Black" BorderThickness="2">
+                <DataGrid Grid.Row="3" x:Name="EquiposDataGrid" Margin="20,10" AutoGenerateColumns="False"
+                  HeadersVisibility="Column" Background="LightGreen" Foreground="Black"
+                  RowBackground="LightGreen" AlternatingRowBackground="DarkSeaGreen"
+                  BorderBrush="Black" BorderThickness="2" ItemsSource="{Binding Equipos}" SelectionChanged="EquiposDataGrid_SelectionChanged">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50"/>
+                        <DataGridTextColumn Header="ID" Binding="{Binding Id_Equipo}" Width="50"/>
                         <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
-                        <DataGridTextColumn Header="Edad" Binding="{Binding Edad}" Width="60"/>
-                        <DataGridTextColumn Header="G" Binding="{Binding G}" Width="60"/>
-                        <DataGridTextColumn Header="A" Binding="{Binding A}" Width="60"/>
-                        <DataGridTextColumn Header="TA" Binding="{Binding TA}" Width="60"/>
-                        <DataGridTextColumn Header="TR" Binding="{Binding TR}" Width="60"/>
+                        <DataGridTextColumn Header="V" Binding="{Binding Victorias}" Width="60"/>
+                        <DataGridTextColumn Header="D" Binding="{Binding Derrotas}" Width="60"/>
+                        <DataGridTextColumn Header="E" Binding="{Binding Empates}" Width="60"/>
+                        <DataGridTextColumn Header="GF" Binding="{Binding GolesFavor}" Width="60"/>
+                        <DataGridTextColumn Header="GC" Binding="{Binding GolesContra}" Width="60"/>
+                        <DataGridTextColumn Header="DG" Binding="{Binding DiferenciaGoles}" Width="60"/>
+                        <DataGridTextColumn Header="P" Binding="{Binding Puntos}" Width="60"/>
                     </DataGrid.Columns>
 
                     <!-- Estilo de encabezados -->
@@ -84,31 +102,11 @@
                             <Setter Property="FontWeight" Value="Bold"/>
                         </Style>
                     </DataGrid.ColumnHeaderStyle>
-
-                    <!-- Bordes en las celdas -->
-                    <DataGrid.CellStyle>
-                        <Style TargetType="DataGridCell">
-                            <Setter Property="BorderBrush" Value="Black"/>
-                            <Setter Property="BorderThickness" Value="1"/>
-                        </Style>
-                    </DataGrid.CellStyle>
-
-                    <!-- Efecto al pasar el mouse sobre una fila -->
-                    <DataGrid.RowStyle>
-                        <Style TargetType="DataGridRow">
-                            <Setter Property="Background" Value="LightGreen"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="PaleTurquoise"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </DataGrid.RowStyle>
                 </DataGrid>
 
                 <!-- Botón de regreso en la esquina inferior izquierda -->
-                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Left" Margin="60, 10">
-                    <Button x:Name="BackButton" Cursor="Hand" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="Button_Click">
+                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Left" Margin="60,10">
+                    <Button Cursor="Hand" x:Name="BackButton" Content="Regresar" Width="120" Margin="5" Background="#aaaaaa" Click="BackButton_Click">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Template">
@@ -117,7 +115,8 @@
                                             <Border Background="SeaGreen" CornerRadius="20" Padding="7">
                                                 <StackPanel Orientation="Horizontal">
                                                     <Image Source="/Images/flechaAtras.png" Margin="6 0 0 0" Width="20" Height="16"/>
-                                                    <TextBlock Text=" Regresar" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Black"/>
+                                                    <TextBlock Text=" Regresar" VerticalAlignment="Center" FontSize="14" 
+                        FontWeight="Bold" Foreground="Black"/>
                                                 </StackPanel>
                                             </Border>
                                         </ControlTemplate>

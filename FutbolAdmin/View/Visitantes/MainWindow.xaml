@@ -50,7 +50,9 @@
                HorizontalAlignment="Center" Margin="0,10,0,10"/>
 
                 <!-- Tabla de clasificación -->
-                <DataGrid Grid.Row="1" x:Name="ClasificacionDataGrid" ItemsSource="{Binding Equipos}" AutoGenerateColumns="False" Background="#004400" RowBackground="LightGreen" AlternatingRowBackground="#44cc44"
+                <!-- <DataGrid Grid.Row="1" x:Name="ClasificacionDataGrid" ItemsSource="{Binding Equipos}" AutoGenerateColumns="False" Background="#004400" RowBackground="LightGreen" AlternatingRowBackground="#44cc44"
+                  SelectionChanged="ClasificacionDataGrid_SelectionChanged" IsReadOnly="True" Margin="10,10,10,10">-->
+                <DataGrid Grid.Row="1" x:Name="ClasificacionDataGrid" ItemsSource="{Binding Equipos}" AutoGenerateColumns="False" Background="#004400" RowBackground="#bbffbb" AlternatingRowBackground="#99dd99"
                   SelectionChanged="ClasificacionDataGrid_SelectionChanged" IsReadOnly="True" Margin="10,10,10,10">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="#" Binding="{Binding Posicion}" Width="Auto"/>
@@ -72,8 +74,6 @@
                             <Setter Property="FontWeight" Value="Bold"/>
                         </Style>
                     </DataGrid.ColumnHeaderStyle>
-
-
                 </DataGrid>
 
 

@@ -25,5 +25,9 @@ namespace FutbolAdmin.View.VaciarPartidos {
         {
             NavigationHelper.CloseWindow(this);
         }
+
+        private void AgregarEventoButton_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
